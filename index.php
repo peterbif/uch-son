@@ -1,6 +1,4 @@
 <?php
-require_once ('connection.php');
-
 session_start();
 
 // check to see if $_SESSION['timeout'] is set
@@ -16,6 +14,7 @@ session_start();
 spl_autoload_register(function ($class) {
     include 'classes/' . $class . '.php';
 });
+
 
 $db = new Connect();
 
@@ -36,7 +35,7 @@ if(isset($_POST['generate'])) {
     if(((string) $row['pin']) == ((string) $_POST['pin']) && ($row['bar'] != 1)){
 
 
-      header('location:create_acct.php');
+        header('location:create_acct.php');
     }
 
     else if($row['bar'] == 1)
@@ -84,7 +83,7 @@ if(isset($_POST['login'])) {
 
     if(isset($_POST['login'])) {
 
-        $email = $_POST['email'];
+        $email = strtolower($_POST['email']);
 
         $password = md5($_POST['password']);
 
@@ -102,12 +101,9 @@ if(isset($_POST['login'])) {
         $query = $db->selectAllUsers($email);
         $record = mysqli_fetch_assoc($query);
 
-        // echo $record['uemail'];
 
-        //echo $row_pin['pin_no'] ;
-        // echo  $_POST['password'];
-        if ($record) {
-            if ($record['uemail'] != $email) {
+        if($record) {
+            if ((strtolower($record['uemail'])) != $email) {
 
                 echo '<script type="text/javascript"> alert("Email is incorrect") </script>';
             } else if ($record['password'] != $password) {
@@ -129,9 +125,9 @@ if(isset($_POST['login'])) {
         }
 
 
-        if (!$record){
+        if(!$record){
 
-            if ($row_pin['email'] != $email) {
+            if ((strtolower($row_pin['email'])) != $email) {
 
                 echo '<script type="text/javascript"> alert("Email is incorrect") </script>';
             } else if ($row_pin['pin_no'] != md5($_POST['password'])) {
@@ -224,7 +220,7 @@ if(isset($_POST['login'])) {
 <div class="container-fluid" >
     <?php require ('header.php');?>
     <div class="marquee">
-        <p id="div1"><span style="color: deeppink; background-color: #FFFFFF" id="son">Sales of School of Nursing Forms end on 28th of June, 2019. Examination is on 6th of July, 2019; the Venue and Time will be sent to all Applicants...<a href="http://son.uch-ibadan.org.ng/" target="_blank">Click here</a> </span>
+        <p id="div1"><span style="color: deeppink; background-color: #FFFFFF" id="son">Submission of Online Form ends on Wednesday, 03/07/2019 by 4pm. Please login to the Portal with ur email & password to confirm that the Passport on your Photo Card is intact or upload another one without you may not be able to login for the exam. Examination is on 6th of July, 2019; the Venue and Time will be sent to all Applicants.
         </p>
         <p id="div2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: purple; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC PERIOPERATIVE NURSING COURSE For 2019/2020 Academic Session are on ....<a href="https://pns.uch-ibadan.org.ng/" target="_blank">Click here</a></span></p>
         <p id="div3">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: dodgerblue; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC OCCUPATIONAL HEALTH NURSING COURSE  For 2019/2020 Academic Session are on ....<a href="SOHN.pdf" target="_blank">Click here</a></span></p>
@@ -380,7 +376,7 @@ if(isset($_POST['login'])) {
 
         function changeURLAdvert() {
 
-                arrayShow.visibility = visible();
+            arrayShow.visibility = visible();
 
         }
 
@@ -403,7 +399,7 @@ if(isset($_POST['login'])) {
 
             setInterval(function () {
                 showDiv(); // show next div
-            }, 20 * 1000); // do this every 20 seconds
+            }, 40 * 1000); // do this every 20 seconds
 
         });
     </script>
@@ -412,5 +408,5 @@ if(isset($_POST['login'])) {
 </body>
 
 </html>
-    </script>
+</script>
 

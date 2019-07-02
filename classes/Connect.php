@@ -6,7 +6,7 @@ class Connect
     private $hostname = "localhost";
     private $db_name = "son";
     private $username = "root";
-    private $password = "Password@234";
+    private $password = "";
 
     public $link;
 
