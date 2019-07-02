@@ -33,6 +33,11 @@ if($_SESSION['user']) {
     @$record_pin = mysqli_fetch_assoc($result_pin);
 
 
+    //query capture table
+
+    @$result_caps = $db->selectCapture(@$record_pin['pin_no_id']);
+    @$record_caps = mysqli_fetch_assoc($result_caps);
+
 //query schools table
     @$result_res = $db->selectSchools();
     @$record_res = mysqli_fetch_assoc($result_res);
@@ -95,7 +100,7 @@ if($_SESSION['user']) {
 
                 @$query = "INSERT INTO school (schools_id, code, session, applicant_id) VALUES('{$school}', '{$codes}', '{$session}', '{$applicant}')";
                 $db->insertPins($query);
-                    echo "<meta http-equiv='refresh' content='0'>";
+                echo "<meta http-equiv='refresh' content='0'>";
 
             } else {
 
@@ -730,9 +735,9 @@ if($_SESSION['user']) {
     if (isset($_POST['submit_add'])) {
 
         if ($record_pin) {
-           $query = "INSERT INTO additional_qualification(institution, qualification_id, grade_id, yfrom, yto, applicant_id) VALUES('{$institution_add}', '{$qualification_add}', '{$grade_add}', '{$yfrom_add}', '{$yto_add}', '{$applicant}')";
+            $query = "INSERT INTO additional_qualification(institution, qualification_id, grade_id, yfrom, yto, applicant_id) VALUES('{$institution_add}', '{$qualification_add}', '{$grade_add}', '{$yfrom_add}', '{$yto_add}', '{$applicant}')";
             $db->insert($query);
-           echo "<meta http-equiv='refresh' content='0'>";
+            echo "<meta http-equiv='refresh' content='0'>";
         }
     }
 
@@ -960,7 +965,7 @@ else{
     </script>
 
     <style>
-      .link {
+        .link {
             padding:5px;
         }
 
@@ -985,187 +990,191 @@ else{
 
 
 
-            <div class="row">
+    <div class="row">
 
-                </div><br />
-
-
-            <div class="row">
-                <div class="col-lg-12 heading">
-                    Biodata <br />
-
-                    <?php if(@$record_bio){ echo '<h3> Welcome, <strong>'.@$record_bio['bsurname']. '  '.  '  ' .@$record_bio['bfirstname']. '</strong>' .' '. 'Fill the Form one after the other</h3>';}?>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3">
-                <div class="btn btn-group btn-vertical">
-                    <a href="#"  style="text-align: left; display:inline;" class="btn btn-success btn-md link" data-toggle="modal" data-target="#myModalr">School <?php  if(@$record_res2){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
-                    <a href="capture.php" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link">Passport Photo <?php if(@$record_pass){echo'<i class="fa fa-check icon link" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
-                    <a href="#" style="text-align: left; display:inline;" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModal">Permanent Address <?php if(@$recordset_per){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
-                    <a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModal1">Contact Address <?php if(@$recordset_con){echo'<i class="fa fa-check icon" style="font-size:20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
-                    <a href="#" style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalre">O'Level Qualification <?php if(@$recordset_olevel){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
-
-                    <?php if($record_res2['schools_id'] == 11){
-                        echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModaljamb">Jamb Score';
-                        if(@$recordset_jamb){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
-                        ;}?>
-
-                    <?php if($record_res2['schools_id'] == 11){
-                        echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalprog">Program';
-                        if(@$recordset_prog2){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
-                        ;}?>
+    </div><br />
 
 
-                    <?php if($record_res2['schools_id'] == 11){
-                        echo  '<a href="#"style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModaladd">Additional Qualification';
-                        if(@$recordset_edu){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>></a>';}
-                        ;}?>
+    <div class="row">
+        <div class="col-lg-12 heading">
+            Biodata <br />
 
-                    <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9 or $record_res2['schools_id'] == 3){
-                  echo  '<a href="#"style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModal2">Academic Record';
+            <?php if(@$record_bio){ echo '<h3> Welcome, <strong>'.@$record_bio['bsurname']. '  '.  '  ' .@$record_bio['bfirstname']. '</strong>' .' '. 'Fill the Form one after the other</h3>';}?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="btn btn-group btn-vertical">
+                <?php if($record_res2['schools_id'] == 3){
+                    echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalexam">Exam NO';
+                    if(@$record_caps){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
+                    ;}?>
+                <a href="#"  style="text-align: left; display:inline;" class="btn btn-success btn-md link" data-toggle="modal" data-target="#myModalr">School <?php  if(@$record_res2){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
+                <a href="capture.php" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link">Passport Photo <?php if(@$record_pass){echo'<i class="fa fa-check icon link" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
+                <a href="#" style="text-align: left; display:inline;" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModal">Permanent Address <?php if(@$recordset_per){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
+                <a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModal1">Contact Address <?php if(@$recordset_con){echo'<i class="fa fa-check icon" style="font-size:20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
+                <a href="#" style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalre">O'Level Qualification <?php if(@$recordset_olevel){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
+
+                <?php if($record_res2['schools_id'] == 11){
+                    echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModaljamb">Jamb Score';
+                    if(@$recordset_jamb){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
+                    ;}?>
+
+                <?php if($record_res2['schools_id'] == 11){
+                    echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalprog">Program';
+                    if(@$recordset_prog2){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
+                    ;}?>
+
+
+                <?php if($record_res2['schools_id'] == 11){
+                    echo  '<a href="#"style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModaladd">Additional Qualification';
+                    if(@$recordset_edu){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>></a>';}
+                    ;}?>
+
+                <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9 or $record_res2['schools_id'] == 3){
+                    echo  '<a href="#"style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModal2">Academic Record';
                     if(@$recordset_edu){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
-                     ;}?>
+                    ;}?>
 
-                    <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9){
-                 echo '<a href="#"style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalwe"> Work Experience';
-                      if(@$recordset_wk){echo '<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
-                  ;}?>
-                    <?php if($record_res2['schools_id'] == 3  or $record_res2['schools_id'] == 11){
-                        echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModals">Sponsor';
-                        if(@$recordset_spon){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
-                        ;}?>
-                    <a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalnok">Next Of Kin <?php if(@$recordset_nok){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
-                    <a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalref">Referee<?php if(@$recordset_ref){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
-                    <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9){
+                <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9){
+                    echo '<a href="#"style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalwe"> Work Experience';
+                    if(@$recordset_wk){echo '<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
+                    ;}?>
+                <?php if($record_res2['schools_id'] == 3  or $record_res2['schools_id'] == 11){
+                    echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModals">Sponsor';
+                    if(@$recordset_spon){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
+                    ;}?>
+                <a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalnok">Next Of Kin <?php if(@$recordset_nok){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
+                <a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalref">Referee<?php if(@$recordset_ref){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
+                <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9){
                     echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalsp2">Sponsor';
                     if(@$recordset_spon22){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
-                      ;}?>
+                    ;}?>
 
-                    <?php if($record_res2['schools_id'] == 3){
-                        echo '<a href="preview_print.php" style="color: #ffffff;font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Preview Form</i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';}?>
+                <?php if($record_res2['schools_id'] == 3){
+                    echo '<a href="preview_print.php" style="color: #ffffff;font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Preview Form</i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';}?>
 
-                    <?php if($record_res2['schools_id'] == 3){
-                        echo '<a href="applicant.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Print Form</i></a>';}?>
+                <?php if($record_res2['schools_id'] == 3){
+                    echo '<a href="applicant.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Print Form</i></a>';}?>
 
-                    <?php if($record_res2['schools_id'] == 3){
-                        echo '<a href="photo_card.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Photo Card</i></a>';}?>
-
-
-
-                    <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9 ){
-                   echo '<a href="post_basic_preview_print.php" style="color: #ffffff;font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;Preview Form</i></a>';}?>
-
-                    <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9){
-                        echo '<a href="post_basic_print.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Print Form</i></a>';}?>
-
-                    <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9){
-                        echo '<a href="photo_card2.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Photo Card</i></a>';}?>
+                <?php if($record_res2['schools_id'] == 3){
+                    echo '<a href="photo_card.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Photo Card</i></a>';}?>
 
 
 
-                    <?php if($record_res2['schools_id'] == 11){
-                        echo '<a href="preview_shim.php" style="color: #ffffff;font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;Preview Form</i></a>';}?>
+                <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9 ){
+                    echo '<a href="post_basic_preview_print.php" style="color: #ffffff;font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;Preview Form</i></a>';}?>
 
-                    <?php if($record_res2['schools_id'] == 11){
-                        echo '<a href="shim_print.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Print Form</i></a>';}?>
+                <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9){
+                    echo '<a href="post_basic_print.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Print Form</i></a>';}?>
 
-                    <?php if($record_res2['schools_id'] == 11){
-                        echo '<a href="shim_photo_card.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Photo Card</i></a>';}?>
+                <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9){
+                    echo '<a href="photo_card2.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Photo Card</i></a>';}?>
 
 
-                             </div>
+
+                <?php if($record_res2['schools_id'] == 11){
+                    echo '<a href="preview_shim.php" style="color: #ffffff;font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;Preview Form</i></a>';}?>
+
+                <?php if($record_res2['schools_id'] == 11){
+                    echo '<a href="shim_print.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Print Form</i></a>';}?>
+
+                <?php if($record_res2['schools_id'] == 11){
+                    echo '<a href="shim_photo_card.php" style="color: #ffffff; font-size: 20px; display:inline;" class="btn btn-success  btn-md link" target="_blank"><i class="fa fa-print icon link">&nbsp;&nbsp;&nbsp;&nbsp;Photo Card</i></a>';}?>
+
+
+            </div>
+        </div>
+
+
+        <!--Biodata-->
+        <div class="col-lg-6 col-sm-offset-1">
+            <form class="form-horizontal"  method="post" autocomplete="on" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
+
+                <div class="input-container">
+                    <i class="fa fa-text-width icon"><br />Surname</i>
+                    <input class="input-field" type="text" placeholder="Surname" value="<?php echo @$surname; ?>" required name="bsurname">
+
                 </div>
 
-
-                <!--Biodata-->
-                <div class="col-lg-6 col-sm-offset-1">
-                    <form class="form-horizontal"  method="post" autocomplete="on" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
-
-                        <div class="input-container">
-                            <i class="fa fa-text-width icon"><br />Surname</i>
-                            <input class="input-field" type="text" placeholder="Surname" value="<?php echo @$surname; ?>" required name="bsurname">
-
-                        </div>
-
-                        <div class="input-container">
-                            <i class="fa fa-text-width icon"><br />Firstname</i>
-                            <input class="input-field" type="text"   placeholder="Firstname" value="<?php echo @$firstname; ?>" required name="bfirstname">
-                        </div>
-
-                        <div class="input-container">
-                            <i class="fa fa-text-width icon"><br />Other<br />Name</i>
-                            <input class="input-field" type="text" placeholder="Othername" value="<?php echo @$othername ?>"   name="bothername">
-                        </div>
-
-                        <div class="input-container">
-                            <i class="fa fa-text-width icon"><br />Maiden <br />Name</i>
-                            <input class="input-field" type="text" placeholder="Maiden Name" value="<?php echo @$maiden?>"   name="maiden">
-                        </div>
-                        <div class="input-container">
-                            <i class="fa fa-clock-o icon">&nbsp;<br /> Date of <br /> Birth</i>
-                            <?php if(@$record_bio){echo '<input class="input-field" type="date"   placeholder="DD-MM-YYYY" value="'.@$dob.'"  required name="dob">&nbsp;<span style="color: forestgreen; font-size: 20px;"><strong>'.@$age.'yrs</span><span style="color: #bf1208; font-size: 20px;"></strong></span>';}?>
-                            <?php if(!@$record_bio){echo '<input class="input-field" type="date"   placeholder="DD-MM-YYYY"    required name="dob"> &nbsp;&nbsp; <span style="color: #bf1208; font-size: 20px;"><strong></strong></span>';}?>
-
-                        </div>
-
-
-
-                        <div class="input-container">
-                            <i class="fa fa-sort-alpha-asc icon"></i><?php if(@$record_bio2){echo '<input type="text" value="'.@$gender.'" readonly>';}?>
-                            <select class="input-field" name="gender" required>
-                                <option value="">Select Gender</option>
-                                <?php do{ ?>
-                                    <option value="<?php echo @$record_ge['gender_id']; ?>"><?php echo @$record_ge['gender']; ?></option>
-                                <?php }while(@$record_ge = mysqli_fetch_assoc($result_ge))?>
-                            </select>
-                        </div>
-
-
-                        <div class="input-container">
-                            <i class="fa fa-sort-alpha-asc icon"></i><?php if(@$record_bio2){echo '<input type="text" value="'.@$marital.'" readonly>';}?>
-                            <select class="input-field" name="marital_status" required>
-                                <option value="">Select Marital Status</option>
-                                <?php do{ ?>
-                                    <option value="<?php echo @$record_ma['marital_status_id'];?>"><?php echo @$record_ma['status']; ?></option>
-                                <?php } while(@$record_ma = mysqli_fetch_assoc($result_ma));?>
-                            </select>
-                        </div>
-
-
-
-                        <div class="input-container">
-                            <i class="fa fa-sort-alpha-asc icon"><br /></i><?php if(@$record_bio2){echo '<input type="text" value="'.@$religion.'" readonly>';}?>
-                            <select class="input-field" name="religion" required>
-                                <option value="">Select Religion</option>
-                                <?php do{ ?>
-                                    <option value="<?php echo @$record_rel['religion_id'];?>"><?php echo @$record_rel['religion']; ?></option>
-                                <?php } while(@$record_rel = mysqli_fetch_assoc($result_rel));?>
-                            </select>
-                        </div>
-
-                        <div class="input-container">
-                            <i class="fa fa-text-width icon"><br />Hobbies</i>
-                            <input class="input-field" type="text"  value="<?php echo @$hobby?>"   name="hobby">
-                        </div>
-
-                        <div>
-                            <?php if(!@$record_bio){ echo'<button type="submit" name="submit" class="button btn btn-lg">Submit</button>';}?>
-                            <?php if(@$record_bio){ echo'<button type="submit" name="update_bio" style="background-color: #c9302c" class="button2 btn btn-lg">Update</button>';}?>
-                        </div>
-
-                    </form>
+                <div class="input-container">
+                    <i class="fa fa-text-width icon"><br />Firstname</i>
+                    <input class="input-field" type="text"   placeholder="Firstname" value="<?php echo @$firstname; ?>" required name="bfirstname">
                 </div>
 
+                <div class="input-container">
+                    <i class="fa fa-text-width icon"><br />Other<br />Name</i>
+                    <input class="input-field" type="text" placeholder="Othername" value="<?php echo @$othername ?>"   name="bothername">
+                </div>
 
-                <div class="col-md-2">
-                    <a href="logoutlogic.php" style="color: #ffffff; display:inline; font-size:20px;" class="button2 btn-danger  btn-md link">Logout</a>
+                <div class="input-container">
+                    <i class="fa fa-text-width icon"><br />Maiden <br />Name</i>
+                    <input class="input-field" type="text" placeholder="Maiden Name" value="<?php echo @$maiden?>"   name="maiden">
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-clock-o icon">&nbsp;<br /> Date of <br /> Birth</i>
+                    <?php if(@$record_bio){echo '<input class="input-field" type="date"   placeholder="DD-MM-YYYY" value="'.@$dob.'"  required name="dob">&nbsp;<span style="color: forestgreen; font-size: 20px;"><strong>'.@$age.'yrs</span><span style="color: #bf1208; font-size: 20px;"></strong></span>';}?>
+                    <?php if(!@$record_bio){echo '<input class="input-field" type="date"   placeholder="DD-MM-YYYY"    required name="dob"> &nbsp;&nbsp; <span style="color: #bf1208; font-size: 20px;"><strong></strong></span>';}?>
 
                 </div>
 
 
-            </div><br /><br />
+
+                <div class="input-container">
+                    <i class="fa fa-sort-alpha-asc icon"></i><?php if(@$record_bio2){echo '<input type="text" value="'.@$gender.'" readonly>';}?>
+                    <select class="input-field" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <?php do{ ?>
+                            <option value="<?php echo @$record_ge['gender_id']; ?>"><?php echo @$record_ge['gender']; ?></option>
+                        <?php }while(@$record_ge = mysqli_fetch_assoc($result_ge))?>
+                    </select>
+                </div>
+
+
+                <div class="input-container">
+                    <i class="fa fa-sort-alpha-asc icon"></i><?php if(@$record_bio2){echo '<input type="text" value="'.@$marital.'" readonly>';}?>
+                    <select class="input-field" name="marital_status" required>
+                        <option value="">Select Marital Status</option>
+                        <?php do{ ?>
+                            <option value="<?php echo @$record_ma['marital_status_id'];?>"><?php echo @$record_ma['status']; ?></option>
+                        <?php } while(@$record_ma = mysqli_fetch_assoc($result_ma));?>
+                    </select>
+                </div>
+
+
+
+                <div class="input-container">
+                    <i class="fa fa-sort-alpha-asc icon"><br /></i><?php if(@$record_bio2){echo '<input type="text" value="'.@$religion.'" readonly>';}?>
+                    <select class="input-field" name="religion" required>
+                        <option value="">Select Religion</option>
+                        <?php do{ ?>
+                            <option value="<?php echo @$record_rel['religion_id'];?>"><?php echo @$record_rel['religion']; ?></option>
+                        <?php } while(@$record_rel = mysqli_fetch_assoc($result_rel));?>
+                    </select>
+                </div>
+
+                <div class="input-container">
+                    <i class="fa fa-text-width icon"><br />Hobbies</i>
+                    <input class="input-field" type="text"  value="<?php echo @$hobby?>"   name="hobby">
+                </div>
+
+                <div>
+                    <?php if(!@$record_bio){ echo'<button type="submit" name="submit" class="button btn btn-lg">Submit</button>';}?>
+                    <?php if(@$record_bio){ echo'<button type="submit" name="update_bio" style="background-color: #c9302c" class="button2 btn btn-lg">Update</button>';}?>
+                </div>
+
+            </form>
+        </div>
+
+
+        <div class="col-md-2">
+            <a href="logoutlogic.php" style="color: #ffffff; display:inline; font-size:20px;" class="button2 btn-danger  btn-md link">Logout</a>
+
+        </div>
+
+
+    </div><br /><br />
 
 
 
@@ -1217,7 +1226,7 @@ else{
 
                                                         <div class="input-container">
                                                             <i class="fa fa-sort-alpha-asc icon"></i><?php if(@$record_res2){ echo '<input type="text" value="'. @$record_res2['school'].'" readonly >';}?>
-                                                           <!-- <select class="input-field state state-control" name="school" required>
+                                                            <!-- <select class="input-field state state-control" name="school" required>
                                                                 <option value="">Select School</option>
                                                                 <?php do{  ?>
                                                                     <option value="<?php echo @$record_res['schools_id']; ?>"><?php echo @$record_res['school'];?></option>
@@ -1311,6 +1320,56 @@ else{
 
 
 
+<!-- Exam No-->
+<div class="main-content">
+    <div class="fluid-container">
+
+        <div class="content-wrapper">
+
+            <div class="page-section" id="about">
+                <div class="container-fluid">
+
+                    <div class="modal fade" id="myModalexam" role="dialog">
+                        <div class="modal-dialog modal-lg">
+
+                            <!-- Modal content-->
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="panel panel-danger">
+                                        <?php require ('header.php')?>
+                                        <div class="panel-body" style="margin-left: 80px">
+                                            <button type="button" class="close" data-dismiss="modal" style="font-size: 30px; font-weight: 100; color: #000000;"><i class="fa fa-close"><span style="color: forestgreen">&nbsp;Close</span></i></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
+                                                        <div class="input-container">
+                                                            <h2><?php if(@$record_caps){ echo 'Exam NO: '.'<strong>'. substr($record_caps['capture'], 0, strlen($record_caps['capture']) -4).'</strong>';} else{echo 'NO Exam Number Yet';}?> </h2>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <!-- JAMB-->
 <div class="main-content">
@@ -1345,7 +1404,7 @@ else{
 
                                                         <div class="input-container">
                                                             <i class="fa fa-sort-alpha-asc icon"></i><?php if(@$recordset_jamb){ echo '<input type="text" value="'. @$recordset_jamb['jamb_score'].'" readonly >';}?>
-                                                           <input type="text" class="input-field" name="jamb_score" value="" placeholder="200">
+                                                            <input type="text" class="input-field" name="jamb_score" value="" placeholder="200">
                                                         </div>
 
                                                         <div class="input-container" style="float: right">
@@ -1571,228 +1630,228 @@ else{
                             <div class="container-fluid">
                                 <div class="col-lg-12">
                                     <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
-                                    <table class="table table-bordered">
-                                        <tr><td colspan="4" align="center"><h5><strong>All fields are required, select or fill in <span style="color:#ee1111">N/A</span></strong><strong> if not applicable</strong></h5></td></tr>
+                                        <table class="table table-bordered">
+                                            <tr><td colspan="4" align="center"><h5><strong>All fields are required, select or fill in <span style="color:#ee1111">N/A</span></strong><strong> if not applicable</strong></h5></td></tr>
 
-                                        <tr>
-                                            <td  colspan="2" align="center">Sitting
-                                                <select class="form-control" name="sitting" required>
-                                                    <option value="">Select Exam Sitting</option>
-                                                    <?php  do{?>
-                                                        <option value="<?php echo @$recordset_sit['sittings_id'];?>"> <?php echo @$recordset_sit['sitting'];?></option>
-                                                    <?php }while($recordset_sit = mysqli_fetch_assoc($query_sit));?>
-                                                </select></td>
+                                            <tr>
+                                                <td  colspan="2" align="center">Sitting
+                                                    <select class="form-control" name="sitting" required>
+                                                        <option value="">Select Exam Sitting</option>
+                                                        <?php  do{?>
+                                                            <option value="<?php echo @$recordset_sit['sittings_id'];?>"> <?php echo @$recordset_sit['sitting'];?></option>
+                                                        <?php }while($recordset_sit = mysqli_fetch_assoc($query_sit));?>
+                                                    </select></td>
 
-                                            <td  colspan="2" align="center">Exam Type
-                                                <select class="form-control" name="exam_type" required>
-                                                    <option value="">Select Exam type</option>
-                                                    <?php $count_2 = 0; do{?>
-                                                        <option value="<?php echo @$exam_id_list[$count_2]?>"> <?php echo @$exam_type_list[$count_2]; $count_2++;?></option>
-                                                    <?php }while($count_2 < $total_2);?>
-                                                </select></td>
-                                        </tr>
-                                        <tr>
-                                            <td  align="center" colspan="2">Exam Year <input class="form-control" required type="text" name="exam_year" placeholder="2016"/></td>
-                                            <td  align="center" colspan="2">Exam Number <input class="form-control" required type="text" name="exam_no" placeholder="A45678923"/></td>
-                                        </tr>
+                                                <td  colspan="2" align="center">Exam Type
+                                                    <select class="form-control" name="exam_type" required>
+                                                        <option value="">Select Exam type</option>
+                                                        <?php $count_2 = 0; do{?>
+                                                            <option value="<?php echo @$exam_id_list[$count_2]?>"> <?php echo @$exam_type_list[$count_2]; $count_2++;?></option>
+                                                        <?php }while($count_2 < $total_2);?>
+                                                    </select></td>
+                                            </tr>
+                                            <tr>
+                                                <td  align="center" colspan="2">Exam Year <input class="form-control" required type="text" name="exam_year" placeholder="2016"/></td>
+                                                <td  align="center" colspan="2">Exam Number <input class="form-control" required type="text" name="exam_no" placeholder="A45678923"/></td>
+                                            </tr>
 
-                                        <tr><td colspan="2" align="center">1. Subject
-                                                <select class="form-control" name="subject_1">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
+                                            <tr><td colspan="2" align="center">1. Subject
+                                                    <select class="form-control" name="subject_1">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
 
-                                            <td>1. Grade
-                                                <select class="form-control" name="grade_1">
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td>
-
-
-                                        </tr>
+                                                <td>1. Grade
+                                                    <select class="form-control" name="grade_1">
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td>
 
 
-                                        <tr><td  colspan="2" align="center">2. Subject
-                                                <select class="form-control" name="subject_2">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
+                                            </tr>
 
 
-                                            <td>2. Grade
-                                                <select class="form-control" name="grade_2">
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td></tr>
-
-                                        <tr>
-                                            <td  colspan="2" align="center">3. Subject
-                                                <select class="form-control" name="subject_3">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
+                                            <tr><td  colspan="2" align="center">2. Subject
+                                                    <select class="form-control" name="subject_2">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
 
 
-                                            <td>3. Grade
-                                                <select class="form-control" name="grade_3">
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td> </td>
-                                        </tr>
+                                                <td>2. Grade
+                                                    <select class="form-control" name="grade_2">
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td></tr>
 
-                                        <tr><td  colspan="2" align="center">4. Subject
-                                                <select class="form-control"    name="subject_4">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
-
-
-                                            <td>4. Grade
-                                                <select class="form-control" name="grade_4" >
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td></tr>
-
-                                        <tr><td  colspan="2" align="center">5. Subject
-                                                <select class="form-control" name="subject_5">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
+                                            <tr>
+                                                <td  colspan="2" align="center">3. Subject
+                                                    <select class="form-control" name="subject_3">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
 
 
-                                            <td>5. Grade
-                                                <select class="form-control" name="grade_5" >
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td></tr>
+                                                <td>3. Grade
+                                                    <select class="form-control" name="grade_3">
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td> </td>
+                                            </tr>
 
-                                        <tr><td  colspan="2" align="center">6. Subject
-                                                <select class="form-control"  name="subject_6">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
-
-
-                                            <td>6. Grade
-                                                <select class="form-control" name="grade_6">
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td></tr>
-                                        <tr><td  colspan="2" align="center">7. Subject
-                                                <select class="form-control" name="subject_7">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
+                                            <tr><td  colspan="2" align="center">4. Subject
+                                                    <select class="form-control"    name="subject_4">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
 
 
-                                            <td>7. Grade
-                                                <select class="form-control" name="grade_7">
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td></tr>
-                                        <tr><td  colspan="2" align="center">8. Subject
-                                                <select class="form-control"  name="subject_8">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
+                                                <td>4. Grade
+                                                    <select class="form-control" name="grade_4" >
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td></tr>
+
+                                            <tr><td  colspan="2" align="center">5. Subject
+                                                    <select class="form-control" name="subject_5">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
 
 
-                                            <td>8. Grade
-                                                <select class="form-control" name="grade_8">
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td></tr>
+                                                <td>5. Grade
+                                                    <select class="form-control" name="grade_5" >
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td></tr>
 
-                                        </tr><tr><td  colspan="2" align="center">9. Subject
-                                                <select class="form-control" name="subject_9">
-                                                    <option value="">Select Subject</option>
-                                                    <?php $count = 0; do{?>
-                                                        <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
-                                                    <?php }while($count < $total);?>
-                                                </select>
-                                            </td>
-
-
-                                            <td>9. Grade
-                                                <select class="form-control" name="grade_9">
-                                                    <option value="">Select Grade</option>
-                                                    <?php $count_1 = 0; do{?>
-                                                        <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
-                                                    <?php }while($count_1 < $total_1);?>
-                                                </select>
-                                            </td>
-                                        </tr>
+                                            <tr><td  colspan="2" align="center">6. Subject
+                                                    <select class="form-control"  name="subject_6">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
 
 
-                                        </tbody>
-                                    </table>
-                                    <table>
-                                   <tbody>
-                                        <tr>
-                                            <td colspan="3">10. Number Subject Passed at Credit Level and above:&nbsp;&nbsp;</td>
+                                                <td>6. Grade
+                                                    <select class="form-control" name="grade_6">
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td></tr>
+                                            <tr><td  colspan="2" align="center">7. Subject
+                                                    <select class="form-control" name="subject_7">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
 
-                                            <td colspan="3">
-                                                <select class="form-control" name="credit" required>
-                                                    <option value="">Select</option>
-                                                    <?php do{?>
-                                                        <option value="<?php echo @$recordset_credit_passess['credit_passes_id']?>"> <?php echo  @$recordset_credit_passess['credit_passes']?></option>
-                                                    <?php }while($recordset_credit_passess = mysqli_fetch_assoc($query_creit_passess));?>
-                                                </select>
-                                            </td>
+
+                                                <td>7. Grade
+                                                    <select class="form-control" name="grade_7">
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td></tr>
+                                            <tr><td  colspan="2" align="center">8. Subject
+                                                    <select class="form-control"  name="subject_8">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
+
+
+                                                <td>8. Grade
+                                                    <select class="form-control" name="grade_8">
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td></tr>
+
+                                            </tr><tr><td  colspan="2" align="center">9. Subject
+                                                    <select class="form-control" name="subject_9">
+                                                        <option value="">Select Subject</option>
+                                                        <?php $count = 0; do{?>
+                                                            <option value="<?php echo @$subject_id_list[$count]?>"> <?php echo @$subject_list[$count]; $count++;?></option>
+                                                        <?php }while($count < $total);?>
+                                                    </select>
+                                                </td>
+
+
+                                                <td>9. Grade
+                                                    <select class="form-control" name="grade_9">
+                                                        <option value="">Select Grade</option>
+                                                        <?php $count_1 = 0; do{?>
+                                                            <option value="<?php echo @$grade_id_list[$count_1]?>"> <?php echo @$grade_list[$count_1]; $count_1++;?></option>
+                                                        <?php }while($count_1 < $total_1);?>
+                                                    </select>
+                                                </td>
+                                            </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="3">10. Number Subject Passed at Credit Level and above:&nbsp;&nbsp;</td>
+
+                                                <td colspan="3">
+                                                    <select class="form-control" name="credit" required>
+                                                        <option value="">Select</option>
+                                                        <?php do{?>
+                                                            <option value="<?php echo @$recordset_credit_passess['credit_passes_id']?>"> <?php echo  @$recordset_credit_passess['credit_passes']?></option>
+                                                        <?php }while($recordset_credit_passess = mysqli_fetch_assoc($query_creit_passess));?>
+                                                    </select>
+                                                </td>
 
 
 
-                                        </tr>
+                                            </tr>
 
-                                        </tbody>
+                                            </tbody>
                                         </table>
 
 
@@ -1839,7 +1898,7 @@ else{
                                             <input class="input-field" type="text" placeholder="Name of Institution"  required name="institution">
                                         </div>
                                         <?php if($record_res2['schools_id'] != 3){
-                                          echo '<div class="input-container">
+                                            echo '<div class="input-container">
                                             <i class="fa fa-text-width icon"><br />Course</i>
                                             <input class="input-field" type="text"   placeholder="Computer Science"   name="course">
                                         </div>';} ?>
@@ -1856,7 +1915,7 @@ else{
                                             <i class="fa fa-text-width icon"><br />Registration <br />Number</i>
                                             <input class="input-field" type="text"   placeholder="345278" required  name="reg_no">
                                         </div>';} ?>
-                                      <!--  <div class="input-container">
+                                        <!--  <div class="input-container">
                                             <i class="fa fa-sort-alpha-asc icon"></i>
                                             <select class="input-field" name="qualification" required="required">
                                                 <option value="">Select Qualification</option>
@@ -1920,13 +1979,13 @@ else{
                                         </div>
 
 
-                                         <div class="input-container">
+                                        <div class="input-container">
                                             <i class="fa fa-sort-alpha-asc icon"></i>
                                             <select class="input-field" name="qualification_add" required="required">
                                                 <option value="">Select Qualification</option>
                                                 <?php $count = 0; do{  ?>
                                                     <option value="<?php echo $qualification_id[$count]; ?>"><?php echo $qualificationList[$count]; $count++;?></option>
-                                                    <?php   }while($count < $total2); ?>
+                                                <?php   }while($count < $total2); ?>
                                             </select>
                                         </div>
 

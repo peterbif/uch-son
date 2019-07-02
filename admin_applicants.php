@@ -26,27 +26,27 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
 
 
 
-    if (isset($_POST['search_button'])) {
+if (isset($_POST['search_button'])) {
 
 
-        @$query_sch2 = $db->selectSchool22(3);
-        $result_sch2 = mysqli_fetch_assoc($query_sch2);
+    @$query_sch2 = $db->selectSchool22(3);
+    $result_sch2 = mysqli_fetch_assoc($query_sch2);
 
-        @$school = 3;
-        @$session = htmlspecialchars($_POST['session']);
+    @$school = 3;
+    @$session = htmlspecialchars($_POST['session']);
 
-        if(@$school && @$session) {
+    if(@$school && @$session) {
 
-            $query = $db->selectPinNum2(@$school,$session);
-            $result = mysqli_fetch_assoc($query);
+        $query = $db->selectPinNum22(@$school,$session);
+        $result = mysqli_fetch_assoc($query);
 
-        }
-
-        if(!$result) {
-
-            echo '<script type="text/javascript"> alert("No records for this school") </script>';
-        }
     }
+
+    if(!$result) {
+
+        echo '<script type="text/javascript"> alert("No records for this school") </script>';
+    }
+}
 
 
 
@@ -145,10 +145,13 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
                         <tr>
 
                             <th>S/N</th>
+                            <th>Passport</th>
                             <th>Surname</th>
                             <th>Firstname</th>
                             <th>Othername</th>
-                            <th>Date of Birth</th>
+                            <th>Exam NO</th>
+                            <th>Form NO</th>
+                            <th>DOB/Age</th>
                             <th>Email</th>
                             <th>Phone NO</th>
 
@@ -158,9 +161,12 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
                         <?php $sn = 1; do{
 
                             if (@$result){
+                                $image = $result['capture'];
                                 $surname = $result['bsurname'];
                                 $firstname = $result['bfirstname'];
                                 $othername = $result['bothername'];
+                                $exam_no = substr($result['capture'],  0, strlen($result['capture']) - 4);
+                                $form_no = $result['code'];
                                 $date_of_birth = date('d-m-Y', strtotime($result['date_of_birth']));
                                 $email = $result['email'];
                                 $phone_no = $result['phone_no'];
@@ -177,10 +183,13 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
                             ?>
                             <tr>
                                 <td class="td"><?php if(@$result) {echo $sn++;} ?></td>
+                                <td><img  align="right" src="uploads/<?php echo @$image;?>" class="img-rounded" width="80px" height="80px" /></td>
                                 <td class="td"> <a href="admin_applicant.php?id=<?php echo @$applicant;?>" target="_blank" > <?php echo @$surname;?></a>
                                 <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
-                                <td><?php echo @$date_of_birth; ?></td>
+                                <td><?php echo @$exam_no; ?></td>
+                                <td><?php echo @$form_no; ?></td>
+                                <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($date_of_birth).'yrs)'; ?></td>
                                 <td><?php echo @$email; ?></td>
                                 <td><?php echo @$phone_no; ?></td>
 
@@ -200,7 +209,7 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
 
             <div class="row">
                 <div class="col-lg-12">
-                    <div align="right"><button class="button" ><a href="print.php" style="color: #FFFFFF;" target="_blank"><i class="fa fa-print"></i> Print</a> </button>
+                    <div align="right"><button class="button" ><a href="print22.php" style="color: #FFFFFF;" target="_blank"><i class="fa fa-print"></i> Print</a> </button>
                     </div>
                 </div>
                 <?php require ('footer.php')?>

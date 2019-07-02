@@ -8,18 +8,18 @@ class Connect
     private $username = "root";
     private $password = "Password@234";
 
-public $link;
+    public $link;
 
 
-public  function __construct(){
+    public  function __construct(){
 
-    $this->link = new mysqli($this->hostname, $this->username, $this->password, $this->db_name);
-    if (!($this->link)) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+        $this->link = new mysqli($this->hostname, $this->username, $this->password, $this->db_name);
+        if (!($this->link)) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
 
 //echo 'ok';
-}
+    }
 
 
 
@@ -65,24 +65,24 @@ public  function __construct(){
     public function insert($query)
     {
 
-    $result = $this->link->query($query);
+        $result = $this->link->query($query);
 
         if ($result) {
-                echo '<script type="text/javascript"> alert("Information successfully submitted") </script>';
-            }
-         else {
+            echo '<script type="text/javascript"> alert("Information successfully submitted") </script>';
+        }
+        else {
             echo '<script type="text/javascript"> alert("Information not submitted") </script>';
 
         }
 
-}
+    }
 
 
 
     public function insertPins($query)
     {
 
-         $this->link->query($query);
+        $this->link->query($query);
 
 
     }
@@ -121,7 +121,7 @@ public  function __construct(){
         if ($result){
 
             header("location:index.php");
-           // echo '<script type="text/javascript"> alert("Pin Discarded") </script>';
+            // echo '<script type="text/javascript"> alert("Pin Discarded") </script>';
         }
         else {
             echo '<script type="text/javascript"> alert("Pin not discarded") </script>';
@@ -293,7 +293,7 @@ public  function __construct(){
         return $from->diff($to)->y;
     }
 
- public function selectSchools()
+    public function selectSchools()
     {
         $query = "SELECT * FROM schools ORDER BY school ASC";
         $result = $this->link->query($query);
@@ -374,7 +374,7 @@ public  function __construct(){
     }
 
 
-       public function selectSchool()
+    public function selectSchool()
     {
         $query = "SELECT * FROM schools";
         $result = $this->link->query($query);
@@ -400,8 +400,8 @@ public  function __construct(){
     {
         $result = $this->link->query($query);
 
-       if($result) {
-             header("location:biodata.php");
+        if($result) {
+            header("location:biodata.php");
         }
         else {
             echo '<script type="text/javascript"> alert("Information not updated") </script>';
@@ -499,12 +499,12 @@ public  function __construct(){
 
 
     public function selectEducation($id)
-{
-    $query = "SELECT * FROM education WHERE applicant_id ='{$id}'";
-    $result = $this->link->query($query);
-    return $result;
+    {
+        $query = "SELECT * FROM education WHERE applicant_id ='{$id}'";
+        $result = $this->link->query($query);
+        return $result;
 
-}
+    }
 
 
 
@@ -524,9 +524,9 @@ public  function __construct(){
         return $result;
 
     }
-    
-    
-     public function selectEducation222($id)
+
+
+    public function selectEducation222($id)
     {
         $query = "SELECT * FROM education  WHERE applicant_id ='{$id}'";
         $result = $this->link->query($query);
@@ -836,12 +836,12 @@ public  function __construct(){
 
 
     public function selectEducation2($id)
-{
-    $query = "SELECT * FROM education WHERE education_id ='{$id}'";
-    $result = $this->link->query($query);
-    return $result;
+    {
+        $query = "SELECT * FROM education WHERE education_id ='{$id}'";
+        $result = $this->link->query($query);
+        return $result;
 
-}
+    }
 
 
 
@@ -1050,6 +1050,14 @@ public  function __construct(){
     }
 
 
+    public function selectPinNum22($school,$session)
+    {
+        $query = "SELECT * FROM pin_nos INNER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id INNER JOIN school ON school.applicant_id = bio_data.applicant_id INNER JOIN capture ON capture.applicant_id = bio_data.applicant_id  WHERE school.schools_id ='{$school}' AND school.session ='{$session}'  ORDER BY bio_data.biodata_id ASC";
+        $result = $this->link->query($query);
+        return $result;
+
+    }
+
 
     public function selectStat()
     {
@@ -1158,13 +1166,13 @@ public  function __construct(){
     }
 
     public function selectAllUsers($email)
-{
-    $query = "SELECT * FROM users WHERE uemail ='{$email}'";
-    $result = $this->link->query($query);
-    return $result;
+    {
+        $query = "SELECT * FROM users WHERE uemail ='{$email}'";
+        $result = $this->link->query($query);
+        return $result;
 
 
-}
+    }
 
     public function selectUserPara($email)
     {
