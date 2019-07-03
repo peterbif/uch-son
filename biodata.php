@@ -1007,7 +1007,7 @@ else{
         <div class="col-lg-3">
             <div class="btn btn-group btn-vertical">
                 <?php if($record_res2['schools_id'] == 3){
-                    echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalexam">Exam NO';
+                    echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalexams">Exam NO';
                     if(@$record_caps){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
                     ;}?>
                 <a href="#"  style="text-align: left; display:inline;" class="btn btn-success btn-md link" data-toggle="modal" data-target="#myModalr">School <?php  if(@$record_res2){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
