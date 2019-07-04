@@ -146,11 +146,11 @@ if (isset($_POST['search_button'])) {
 
                             <th>S/N</th>
                             <th>Passport</th>
+                            <th>Form NO</th>
                             <th>Surname</th>
                             <th>Firstname</th>
                             <th>Othername</th>
                             <th>Exam NO</th>
-                            <th>Form NO</th>
                             <th>DOB/Age</th>
                             <th>Email</th>
                             <th>Phone NO</th>
@@ -162,11 +162,12 @@ if (isset($_POST['search_button'])) {
 
                             if (@$result){
                                 $image = $result['capture'];
+                                $form_no = $result['code'];
                                 $surname = $result['bsurname'];
                                 $firstname = $result['bfirstname'];
                                 $othername = $result['bothername'];
                                 $exam_no = substr($result['capture'],  0, strlen($result['capture']) - 4);
-                                $form_no = $result['code'];
+
                                 $date_of_birth = date('d-m-Y', strtotime($result['date_of_birth']));
                                 $email = $result['email'];
                                 $phone_no = $result['phone_no'];
@@ -184,11 +185,11 @@ if (isset($_POST['search_button'])) {
                             <tr>
                                 <td class="td"><?php if(@$result) {echo $sn++;} ?></td>
                                 <td><img  align="right" src="uploads/<?php echo @$image;?>" class="img-rounded" width="80px" height="80px" /></td>
+                                <td><?php echo @$form_no; ?></td>
                                 <td class="td"> <a href="admin_applicant.php?id=<?php echo @$applicant;?>" target="_blank" > <?php echo @$surname;?></a>
                                 <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$exam_no; ?></td>
-                                <td><?php echo @$form_no; ?></td>
                                 <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($date_of_birth).'yrs)'; ?></td>
                                 <td><?php echo @$email; ?></td>
                                 <td><?php echo @$phone_no; ?></td>
