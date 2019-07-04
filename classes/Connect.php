@@ -1052,7 +1052,7 @@ class Connect
 
     public function selectPinNum22($school,$session)
     {
-        $query = "SELECT * FROM pin_nos INNER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id INNER JOIN school ON school.applicant_id = bio_data.applicant_id INNER JOIN capture ON capture.applicant_id = bio_data.applicant_id  WHERE school.schools_id ='{$school}' AND school.session ='{$session}'  ORDER BY bio_data.biodata_id ASC";
+        $query = "SELECT * FROM pin_nos INNER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id INNER JOIN school ON school.applicant_id = bio_data.applicant_id LEFT OUTER JOIN capture ON capture.applicant_id = bio_data.applicant_id  WHERE school.schools_id ='{$school}' AND school.session ='{$session}'  ORDER BY bio_data.biodata_id ASC";
         $result = $this->link->query($query);
         return $result;
 
