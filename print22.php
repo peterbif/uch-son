@@ -107,6 +107,7 @@ else{
                             <th>Surname</th>
                             <th>Firstname</th>
                             <th>Othername</th>
+                            <th>Gender</th>
                             <th>Exam NO</th>
 
                             <th>DOB/Age</th>
@@ -124,6 +125,8 @@ else{
                                 $surname = $result['bsurname'];
                                 $firstname = $result['bfirstname'];
                                 $othername = $result['bothername'];
+                                $gender = $result['gender'];
+
                                 $exam_no = substr($result['capture'],  0, strlen($result['capture']) - 4);
 
                                 $date_of_birth = date('d-m-Y', strtotime($result['date_of_birth']));
@@ -147,6 +150,7 @@ else{
                                 <td class="td"><?php echo @$surname;?></td>
                                 <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
+                                <td><?php echo @$gender; ?></td>
                                 <td><?php echo @$exam_no; ?></td>
 
                                 <td><?php echo  $date_of_birth  .  ' ('.@$db->age($date_of_birth).'yrs)'; ?></td>
