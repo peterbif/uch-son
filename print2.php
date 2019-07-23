@@ -21,21 +21,23 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
 
 
 
-    if(@$school && @$session) {
+if(@$school && @$session) {
 
-        @$query_sch2 = $db->selectSchool22($school);
-        $result_sch2 = mysqli_fetch_assoc($query_sch2);
+    @$query_sch2 = $db->selectSchool22($school);
+    $result_sch2 = mysqli_fetch_assoc($query_sch2);
 
-        $query = $db->selectPinNum2($school,$session);
-        $result = mysqli_fetch_assoc($query);
+    $query = $db->selectPinNum22($school,$session);
+    $result = mysqli_fetch_assoc($query);
 
 
-    }
+}
 
-    else{
+else{
 
-        echo '<script type="text/javascript"> alert("No records for this position") </script>';
-    }
+    echo '<script type="text/javascript"> alert("No records for this position") </script>';
+}
+
+
 
 
 
@@ -94,13 +96,17 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
                 <div class="col-lg-12" >
                     <table class="table table-bordered" id="applicants">
                         <thead>
-                        <tr> <td align="center" colspan="8"><h2  style="color: #000000"><?php if(@$result){echo 'List of '.  ' ' .@$result_sch2['school'].' '. 'Applicant(s)'.' ('.@$result_ses2['session'].' Session)';}?></h2></td> </tr>
+                        <tr> <td align="center" colspan="12"><h2 align="center" style="color: #000000"><?php if(@$result){echo 'List of '.  ' ' .@$result_sch2['school'].' '. 'Applicant(s)'.' ('.@$result_ses2['session'].' Session)';}?></h2></td> </tr>
                         <tr>
                             <th>S/N</th>
+                            <th>Passport</th>
+                            <th>Form NO</th>
                             <th>Surname</th>
                             <th>Firstname</th>
                             <th>Othername</th>
-                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>Exam NO</th>
+                            <th>DOB/Age</th>
                             <th>Email</th>
                             <th>Phone NO</th>
 
@@ -110,13 +116,21 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
                         <?php $sn = 1; do{
 
                             if (@$result){
+                                $image = $result['capture'];
+                                $form_no = $result['code'];
                                 $surname = $result['bsurname'];
                                 $firstname = $result['bfirstname'];
                                 $othername = $result['bothername'];
+                                $gender = $result['gender'];
+
+                                $exam_no = substr($result['capture'],  0, strlen($result['capture']) - 4);
+
                                 $date_of_birth = date('d-m-Y', strtotime($result['date_of_birth']));
                                 $email = $result['email'];
                                 $phone_no = $result['phone_no'];
                                 $applicant =  $result['pin_no_id'];
+
+                                // @$_SESSION['id'] = $result['pin_no_id'];
 
 
 
@@ -127,10 +141,14 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
                             ?>
                             <tr>
                                 <td class="td"><?php if(@$result) {echo $sn++;} ?></td>
-                                <td class="td"><a href="admin_applicant.php?id=<?php echo @$applicant?>" target="_blank"><?php echo @$surname; ?></a></td>
-                                <td class="td"><?php echo @$firstname; ?></td>
+                                <td><img  align="right" src="uploads/<?php echo @$image;?>" class="img-rounded" width="80px" height="80px" /></td>
+                                <td><?php echo @$form_no; ?></td>
+                                <td class="td"> <a href="admin_applicant.php?id=<?php echo @$applicant;?>" target="_blank" > <?php echo @$surname;?></a>
+                                <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
-                                <td><?php echo @$date_of_birth; ?></td>
+                                <td><?php echo @$gender; ?></td>
+                                <td><?php echo @$exam_no; ?></td>
+                                <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($date_of_birth).'yrs)'; ?></td>
                                 <td><?php echo @$email; ?></td>
                                 <td><?php echo @$phone_no; ?></td>
 

@@ -37,11 +37,12 @@ if (isset($_POST['user'])) {
     $firstname = ucwords(htmlspecialchars($_POST['firstname']));
     $email = strtolower(htmlspecialchars($_POST['email']));
     $phone_no = htmlspecialchars($_POST['phone_no']);
+    $school = htmlspecialchars($_POST['admin_school']);
     $password = htmlspecialchars($_POST['password']);
     $password1 = htmlspecialchars($_POST['password1']);
     @$role = htmlspecialchars($_POST['role']);
 
-    if ($result['email']) {
+    if (@$result['email']) {
         echo '<script type="text/javascript"> alert("This user exists") </script>';
 
     } elseif ($password != $password1) {
@@ -53,7 +54,7 @@ if (isset($_POST['user'])) {
     } else {
 
         $pass = md5($password);
-        $query = "INSERT INTO users(usurname, ufirstname, uemail, uphone_no, password, role) VALUES('{$surname}', '{$firstname}', '{$email}', '{$phone_no}', '{$pass}', '{$role}')";
+        @$query = "INSERT INTO users(usurname, ufirstname, uemail, uphone_no, password, role, school_id) VALUES('{$surname}', '{$firstname}', '{$email}', '{$phone_no}', '{$pass}', '{$role}','{$school}')";
         $run = $db->insert($query);
         echo "<meta http-equiv='refresh' content='0'>";
 
@@ -103,6 +104,11 @@ if (isset($_POST['button3'])) {
 
 
 }
+
+
+//query schools table
+$query_sch = $db->selectSchools();
+$result_sch = mysqli_fetch_assoc($query_sch);
 
 
 
@@ -192,10 +198,10 @@ if (isset($_POST['reset3'])) {
                 <a href="admin_applicants2.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Post Basic <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicants</a>
 
                 <a href="pin.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Generate Pin </a>
-        </div><br /><br />
+            </div><br /><br />
 
+        </div>
     </div>
-</div>
 </div>
 
 <!-- SIDEBAR -->
@@ -234,7 +240,7 @@ if (isset($_POST['reset3'])) {
                     <button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal3"><i class="fa fa-external-link icon"></i>Set Session</button>
                     <a href="school_logo.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Add School logo</a>
                     <!--<button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal"><a href="qualification.php" style="color: #ffffff"><i class="fa fa-external-link icon"></i>Add Qualification</a></button>-->
-                    <a href="admin_applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>SON Applicants</a>
+                    <!-- <a href="admin_applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>SON Applicants</a>-->
 
                     <a href="check_pin.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Check Pin</a>
                     <a href="admin_applicants2.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Post Basic <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicants</a>
@@ -305,6 +311,16 @@ if (isset($_POST['reset3'])) {
                                         <div class="input-container">
                                             <i class="fa fa-phone icon"></i>
                                             <input type="text" class="input-field" name="phone_no" value="<?php echo @$phone_no; ?>" required placeholder="Enter Phone NO">
+                                        </div>
+
+                                        <div class="input-container">
+                                            <i class="fa fa-sort-alpha-asc icon"></i>
+                                            <select class="input-field" name="admin_school" required="required">
+                                                <option value="">Select School</option>
+                                                <?php  do{  ?>
+                                                    <option value="<?php echo @$result_sch['schools_id']; ?>"><?php echo @$result_sch['school'];?></option>
+                                                <?php  }while(@$result_sch = mysqli_fetch_assoc($query_sch)); ?>
+                                            </select>
                                         </div>
 
                                         <div class="input-container">

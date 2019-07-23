@@ -1167,7 +1167,7 @@ class Connect
 
     public function selectAllUsers($email)
     {
-        $query = "SELECT * FROM users WHERE uemail ='{$email}'";
+        $query = "SELECT * FROM users LEFT JOIN schools ON schools.schools_id = users.school_id WHERE uemail ='{$email}'";
         $result = $this->link->query($query);
         return $result;
 
