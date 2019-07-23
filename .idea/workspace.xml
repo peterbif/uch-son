@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e77293d4-6da5-4cdb-83e0-da597adf679e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
-      <change beforePath="$PROJECT_DIR$/admin_applicants2.php" afterPath="$PROJECT_DIR$/admin_applicants2.php" />
-      <change beforePath="$PROJECT_DIR$/applicants.php" afterPath="$PROJECT_DIR$/applicants.php" />
-      <change beforePath="$PROJECT_DIR$/classes/Connect.php" afterPath="$PROJECT_DIR$/classes/Connect.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/connection.php" afterPath="$PROJECT_DIR$/connection.php" />
-      <change beforePath="$PROJECT_DIR$/print.php" afterPath="$PROJECT_DIR$/print.php" />
-      <change beforePath="$PROJECT_DIR$/print2.php" afterPath="$PROJECT_DIR$/print2.php" />
-      <change beforePath="$PROJECT_DIR$/super_admin.php" afterPath="$PROJECT_DIR$/super_admin.php" />
-      <change beforePath="$PROJECT_DIR$/update_users.php" afterPath="$PROJECT_DIR$/update_users.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Connect.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Connect.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/Connect.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -143,19 +137,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="462" column="7" lean-forward="false" selection-start-line="462" selection-start-column="7" selection-end-line="462" selection-end-column="7" />
-              <folding>
-                <marker date="1563905762378" expanded="true" signature="1383:1543" ph="INSERT INTO users... " />
-                <marker date="1563905762378" expanded="true" signature="2270:2349" ph="INSERT INTO set_session... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin_applicants2.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin_applicants2.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -166,11 +147,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connection.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="connection.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/connection.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -250,7 +251,6 @@
         <option value="$PROJECT_DIR$/admin_applicants.php" />
         <option value="$PROJECT_DIR$/print22.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/gitignore" />
         <option value="$PROJECT_DIR$/admin.php" />
         <option value="$PROJECT_DIR$/admin_applicants2.php" />
         <option value="$PROJECT_DIR$/applicants.php" />
@@ -258,8 +258,10 @@
         <option value="$PROJECT_DIR$/print2.php" />
         <option value="$PROJECT_DIR$/super_admin.php" />
         <option value="$PROJECT_DIR$/update_users.php" />
-        <option value="$PROJECT_DIR$/connection.php" />
         <option value="$PROJECT_DIR$/classes/Connect.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/gitignore" />
+        <option value="$PROJECT_DIR$/connection.php" />
       </list>
     </option>
   </component>
@@ -296,11 +298,6 @@
             <path>
               <item name="son4" type="b2602c69:ProjectViewProjectNode" />
               <item name="son4" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="son4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="son4" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="classes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -359,12 +356,12 @@
       <workItem from="1563179707538" duration="1274000" />
       <workItem from="1563564495369" duration="462000" />
       <workItem from="1563609940048" duration="1324000" />
-      <workItem from="1563904624457" duration="1470000" />
+      <workItem from="1563904624457" duration="2043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19636000" />
+    <option name="totallyTimeSpent" value="20209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1377,8 +1374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gitignore" />
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/biodata.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1456,14 +1451,6 @@
           <folding>
             <marker date="1563905945512" expanded="true" signature="2602:2794" ph="UPDATE users... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1584,6 +1571,30 @@
             <marker date="1563906457229" expanded="true" signature="36639:36686" ph="SELECT * FRO... pin_nos" />
             <marker date="1563906457229" expanded="true" signature="36836:36884" ph="SELECT * FRO... pin_nos" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
