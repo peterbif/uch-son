@@ -13,6 +13,8 @@ $db = new Connect();
 @$_SESSION['school'] = $_POST['school'];
 @$_SESSION['session'] = $_POST['session'];
 
+@$_SESSION['program'] = $_POST['program'];
+
 
 $query_sch = $db->selectSchools();
 $result_sch = mysqli_fetch_assoc($query_sch);
@@ -28,52 +30,100 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
 
 
 
-if (isset($_POST['search_button'])) {
+
+@$school2 = $_POST['school'];
+
+//query session table
+@$query_ses = $db->selectSession();
+$result_ses = mysqli_fetch_assoc($query_ses);
 
 
-    $query_sch2 = $db->selectSchool22($_POST['school']);
-    $result_sch2 = mysqli_fetch_assoc($query_sch2);
+//query program table
+@$query_pro = $db->selectPrograms();
+$result_pro = mysqli_fetch_assoc($query_pro);
 
-    @$school = htmlspecialchars($_POST['school']);
+
+@$query_ses2 = $db->selectSession3(@$_SESSION['session']);
+@$result_ses2 = mysqli_fetch_assoc($query_ses2);
+
+
+
+@$query_sch2 = $db->selectSchool22($school2);
+@$result_sch2 = mysqli_fetch_assoc($query_sch2);
+
+
+
+
+
+if(isset($_POST['search_button'])) {
+
+    @$school = $school2;
+    @$program = $_POST['program'];
+
     @$session = htmlspecialchars($_POST['session']);
 
-    if(@$school && @$session) {
+    if(@$school && @$session ) {
 
-        $query = $db->selectPinNum22($school,$session);
-        $result = mysqli_fetch_assoc($query);
+        if(@$school2 == 11 && $program) {
+            @$query = $db->selectPinNum222(@$school, @$session, @$_POST['program']);
+            @$result = mysqli_fetch_assoc($query);
+        }
+        else{
 
+            @$query = $db->selectPinNum22(@$school, $session);
+            @$result = mysqli_fetch_assoc($query);
+        }
 
     }
 
-    if(!$result){
+    if(!@$result) {
 
         echo '<script type="text/javascript"> alert("No records for this school") </script>';
     }
 }
 
+if(@$school2 == 11) {
 
 //loop through
 
-@$query2 = $db->selectPinNum22($school,$session);
-@$result2 = mysqli_fetch_assoc($query2);
+    @$query2 = $db->selectPinNum222($school, $session, $_POST['program']);
+    @$result2 = mysqli_fetch_assoc($query2);
 
-if(@$result2) {
-    @$count = 0;
+    if (@$result2) {
+        @$count = 0;
 
-    do {
-        @$result2["surname"];
-        @$count++;
-    } while (@$result2 = mysqli_fetch_assoc($query2));
+        do {
+            @$result2["surname"];
+            @$count++;
+        } while (@$result2 = mysqli_fetch_assoc($query2));
 
-    @$total_applicants = $count++;
+        @$total_applicants = $count++;
 
-}else{
-    @$total_applicants = 0;
+    } else {
+        @$total_applicants = 0;
+    }
+
 }
+else{
+    @$query2 = $db->selectPinNum22($school, $session);
+    @$result2 = mysqli_fetch_assoc($query2);
 
+    if (@$result2) {
+        @$count = 0;
 
+        do {
+            @$result2["surname"];
+            @$count++;
+        } while (@$result2 = mysqli_fetch_assoc($query2));
 
+        @$total_applicants = $count++;
+
+    } else {
+        @$total_applicants = 0;
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -123,7 +173,7 @@ if(@$result2) {
         <div class="panel-body">&nbsp;&nbsp;
             <div class="row">
                 <form class="form-horizontal form-inline"   method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
-                    <div class="input-container col-lg-6">
+                    <div class="input-container col-lg-8">
 
                         <select name="school" class="input-field" required>
                             <option value="">Select School</option>
@@ -139,17 +189,27 @@ if(@$result2) {
                             <?php }while(@$result_ses = mysqli_fetch_assoc($query_ses)); ?>
                         </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+                        <select class="input-field state state-control" name="program">
+                            <option value="">Select Program</option>
+                            <?php do{  ?>
+                                <option value="<?php echo @$result_pro['programs_id']; ?>"><?php echo @$result_pro['program'];?></option>
+                            <?php }while(@$result_pro = mysqli_fetch_assoc($query_pro)); ?>
+                        </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
                         <button type="submit"  name="search_button" class="button">Search</button>
+                    </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+
+                    <div class="col-lg-2" align="right">
+                        <h6 class="button"> Applicant(s): <?php echo @$total_applicants;?></h6>
                     </div>
 
-
-
-
-                    <div class="col-lg-3" align="right">
-                        <h6 class="button"> Total Applicants: <?php echo @$total_applicants;?></h6>
-                    </div>
-
-                    <div class="col-lg-3" align="right">
+                    <div class="col-lg-2" align="right">
                         <a href="super_admin.php" style="font-size: 23px;" class="button fa fa-backward">
                             Back
                         </a>
@@ -170,7 +230,7 @@ if(@$result2) {
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 align="center"  style="color: #000000"><?php if(@$result){echo 'List of '.  ' ' .@$result_sch2['school'].' '. 'Applicant(s)'.' ('.@$result_ses2['session'].' Session)';}?></h2>
+                    <h3 align="center"  style="color: #000000"><?php if(@$result){echo 'List of '. ' ' .@$result_sch2['school'].' '; if(@$school2 == 11){echo 'for ';} '  ' . '  '; echo @$result['program'].' '.'Applicant(s)'.' ('.@$result_ses2['session'].' Session)';}?></h3>
                     <table class="table table-bordered" id="myTable">
 
                         <tr>

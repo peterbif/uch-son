@@ -14,6 +14,8 @@ $db = new Connect();
 @$_SESSION['session'] = $_POST['session'];
 
 
+
+
 $query_sch = $db->selectSchools();
 $result_sch = mysqli_fetch_assoc($query_sch);
 

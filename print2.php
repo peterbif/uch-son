@@ -12,6 +12,7 @@ $db = new Connect();
 
 @$school = $_SESSION['school'] ;
 @$session = $_SESSION['session'];
+@$program = $_SESSION['program'];
 
 
 
@@ -19,30 +20,79 @@ $query_ses2 = $db->selectSession3(@$_SESSION['session']);
 $result_ses2 = mysqli_fetch_assoc($query_ses2);
 
 
+@$query_sch2 = $db->selectSchool22($school);
+@$result_sch2 = mysqli_fetch_assoc($query_sch2);
 
 
-if(@$school && @$session) {
 
-    @$query_sch2 = $db->selectSchool22($school);
-    $result_sch2 = mysqli_fetch_assoc($query_sch2);
+    if(@$school && @$session ) {
 
-    $query = $db->selectPinNum22($school,$session);
-    $result = mysqli_fetch_assoc($query);
+        if(@$school == 11 && $program) {
+            @$query = $db->selectPinNum222(@$school, @$session, $program);
+            @$result = mysqli_fetch_assoc($query);
+        }
+        else{
+
+            @$query = $db->selectPinNum22(@$school, $session);
+            @$result = mysqli_fetch_assoc($query);
+        }
 
 
+
+    if(!@$result) {
+
+        echo '<script type="text/javascript"> alert("No records for this school") </script>';
+    }
 }
 
+if(@$school2 == 11) {
+
+//loop through
+
+    @$query2 = $db->selectPinNum222($school, $session, $program);
+    @$result2 = mysqli_fetch_assoc($query2);
+
+    if (@$result2) {
+        @$count = 0;
+
+        do {
+            @$result2["surname"];
+            @$count++;
+        } while (@$result2 = mysqli_fetch_assoc($query2));
+
+        @$total_applicants = $count++;
+
+    } else {
+        @$total_applicants = 0;
+    }
+
+}
 else{
+    @$query2 = $db->selectPinNum22($school, $session);
+    @$result2 = mysqli_fetch_assoc($query2);
 
-    echo '<script type="text/javascript"> alert("No records for this position") </script>';
+    if (@$result2) {
+        @$count = 0;
+
+        do {
+            @$result2["surname"];
+            @$count++;
+        } while (@$result2 = mysqli_fetch_assoc($query2));
+
+        @$total_applicants = $count++;
+
+    } else {
+        @$total_applicants = 0;
+    }
 }
-
-
-
-
-
-
 ?>
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,7 +146,8 @@ else{
                 <div class="col-lg-12" >
                     <table class="table table-bordered" id="applicants">
                         <thead>
-                        <tr> <td align="center" colspan="12"><h2 align="center" style="color: #000000"><?php if(@$result){echo 'List of '.  ' ' .@$result_sch2['school'].' '. 'Applicant(s)'.' ('.@$result_ses2['session'].' Session)';}?></h2></td> </tr>
+                        <tr> <td align="center" colspan="12">                    <h3 align="center"  style="color: #000000"><?php if(@$result){echo 'List of '. ' ' .@$result_sch2['school'].' '; if(@$school2 == 11){echo 'for ';} '  ' . '  '; echo @$result['program'].' '.'Applicant(s)'.' ('.@$result_ses2['session'].' Session)';}?></h3>
+                            </td> </tr>
                         <tr>
                             <th>S/N</th>
                             <th>Passport</th>

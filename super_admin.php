@@ -193,9 +193,9 @@ if (isset($_POST['reset3'])) {
                 <button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal3"><i class="fa fa-external-link icon"></i>Set Session</button>
                 <a href="school_logo.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Add School logo</a>
                 <!--<button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal"><a href="qualification.php" style="color: #ffffff"><i class="fa fa-external-link icon"></i>Add Qualification</a></button>-->
-                <a href="admin_applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>SON Applicants</a>
+                <!--<a href="admin_applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>SON Applicants</a>-->
                 <a href="check_pin.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Check Pin</a>
-                <a href="admin_applicants2.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Post Basic <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicants</a>
+                <a href="admin_applicants2.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Applicants</a>
 
                 <a href="pin.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Generate Pin </a>
             </div><br /><br />
@@ -243,7 +243,7 @@ if (isset($_POST['reset3'])) {
                     <!-- <a href="admin_applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>SON Applicants</a>-->
 
                     <a href="check_pin.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Check Pin</a>
-                    <a href="admin_applicants2.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Post Basic <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicants</a>
+                    <a href="admin_applicants2.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Applicants</a>
 
                     <a href="pin.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Generate Pin </a>
                     <!-- <a href="statistics.php" style="color: #ffffff;text-align: left;"  class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i> Statistics</a><br /><br />-->

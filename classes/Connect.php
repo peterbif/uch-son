@@ -1059,6 +1059,15 @@ class Connect
     }
 
 
+    public function selectPinNum222($school,$session, $program)
+    {
+        $query = "SELECT * FROM pin_nos LEFT OUTER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN school ON school.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN gender ON gender.gender_id = bio_data.bgender LEFT OUTER JOIN capture ON capture.applicant_id = bio_data.applicant_id  INNER JOIN program ON program.applicant_id = pin_nos.pin_no_id INNER JOIN programs ON programs.programs_id = program.programs_id  WHERE school.schools_id ='{$school}' AND school.session ='{$session}' AND program.programs_id ='{$program}' ORDER BY school.code ASC";
+        $result = $this->link->query($query);
+        return $result;
+
+    }
+
+
     public function selectStat()
     {
         $query = "SELECT specialty, COUNT(DISTINCT specialty) FROM  department  INNER JOIN residency ON residency.residency_id = department.residency_id  INNER JOIN bio_data ON bio_data.applicant_id = department.applicant_id  INNER JOIN permanent_add ON permanent_add.applicant_id = bio_data.applicant_id INNER JOIN contact_add ON contact_add.applicant_id = bio_data.applicant_id  INNER JOIN education ON education.applicant_id = bio_data.applicant_id  INNER JOIN qualification ON qualification.qualification_id = education.equalification WHERE (qualification.qualification_id = 15 or qualification.qualification_id = 16) GROUP BY specialty ASC";
