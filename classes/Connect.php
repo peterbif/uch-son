@@ -18,9 +18,8 @@ class Connect
             die("Connection failed: " . mysqli_connect_error());
         }
 
-//echo 'ok';
-    }
 
+    }
 
 
     public function close_connection()
