@@ -186,31 +186,6 @@ if(isset($_POST['login'])) {
     </style>
     <style>
 
-        .blink{
-            animation: blinker 1s linear infinite;
-        }
-
-        @keyframes blinker {
-            30% { opacity: 0; }
-        }
-
-        .marquee {
-            width: 400px;
-            line-height: 50px;
-            color: Black;
-            white-space: nowrap;
-            box-sizing: border-box;
-        }
-        .marquee p {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 60s linear infinite;
-            font-size: 20px;
-        }
-        @keyframes marquee {
-            0%   { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
-        }
 
     </style>
 

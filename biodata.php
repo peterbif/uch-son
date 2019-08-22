@@ -1029,7 +1029,7 @@ else{
 
                 <?php if($record_res2['schools_id'] == 11){
                     echo  '<a href="#"style="text-align: left; display:inline;" type="button" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModaladd">Additional Qualification';
-                    if(@$recordset_edu){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>></a>';}
+                    if(@$recordset_edu){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
                     ;}?>
 
                 <?php if($record_res2['schools_id'] == 8 or $record_res2['schools_id'] == 9 or $record_res2['schools_id'] == 3){
