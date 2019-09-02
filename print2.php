@@ -45,7 +45,7 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
     }
 }
 
-if(@$school2 == 11) {
+if(@$school == 11) {
 
 //loop through
 

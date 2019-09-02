@@ -51,15 +51,18 @@ if(isset($_POST['search_button'])) {
 
     @$school = $school2;
 
-    @$session = htmlspecialchars($_POST['session']);
+    @$session = $_POST['session'];
 
-    if(@$school && @$session) {
+    @$program = @$_POST['program'];
 
-        if(@$school2 == 11) {
-            @$query = $db->selectPinNum222(@$school, @$session, @$_POST['program']);
+
+
+    if (@$school && @$session) {
+
+        if (@$school == 11) {
+            @$query = $db->selectPinNum222(@$school, @$session, @$program);
             @$result = mysqli_fetch_assoc($query);
-        }
-        else{
+        } else {
 
             @$query = $db->selectPinNum22(@$school, $session);
             @$result = mysqli_fetch_assoc($query);
@@ -67,51 +70,53 @@ if(isset($_POST['search_button'])) {
 
     }
 
-    if(!@$result) {
+    if (!@$result) {
 
         echo '<script type="text/javascript"> alert("No records for this school") </script>';
     }
-}
 
-if(@$school2 == 11) {
+
+    if (@$school == 11) {
 
 //loop through
 
-    @$query2 = $db->selectPinNum222($school, $session, $_POST['program']);
-    @$result2 = mysqli_fetch_assoc($query2);
+        @$query2 = $db->selectPinNum222($school, $session, $program);
+        @$result2 = mysqli_fetch_assoc($query2);
 
-    if (@$result2) {
-        @$count = 0;
+        if (@$result2) {
+            @$count = 0;
 
-        do {
-            @$result2["surname"];
-            @$count++;
-        } while (@$result2 = mysqli_fetch_assoc($query2));
+            do {
+                @$result2["bsurname"];
+                @$count++;
+            } while (@$result2 = mysqli_fetch_assoc($query2));
 
-        @$total_applicants = $count++;
+            @$total_applicants = $count++;
 
-    } else {
-        @$total_applicants = 0;
-    }
-
-}
-else{
-    @$query2 = $db->selectPinNum22($school, $session);
-    @$result2 = mysqli_fetch_assoc($query2);
-
-    if (@$result2) {
-        @$count = 0;
-
-        do {
-            @$result2["surname"];
-            @$count++;
-        } while (@$result2 = mysqli_fetch_assoc($query2));
-
-        @$total_applicants = $count++;
+        } else {
+            @$total_applicants = 0;
+        }
 
     } else {
-        @$total_applicants = 0;
+        @$query2 = $db->selectPinNum22($school, $session);
+        @$result2 = mysqli_fetch_assoc($query2);
+
+        if (@$result2) {
+            @$count = 0;
+
+            do {
+                @$result2["bsurname"];
+                @$count++;
+            } while (@$result2 = mysqli_fetch_assoc($query2));
+
+            @$total_applicants = $count++;
+
+        } else {
+            @$total_applicants = 0;
+        }
     }
+
+
 }
 ?>
 
@@ -271,7 +276,7 @@ else{
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$gender; ?></td>
                                 <!-- <td><?php echo @$exam_no; ?></td>-->
-                                <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($db->orderDate($date_of_birth)).'yrs)'; ?></td>                                <td><?php echo @$email; ?></td>
+                                <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($db->orderDate($date_of_birth)).'yrs)'; ?></td>
                                 <td><?php echo @$email; ?></td>
                                 <td><?php echo @$phone_no; ?></td>
 

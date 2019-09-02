@@ -3,7 +3,7 @@ require_once("connection.php");
 
 session_start();
 
-//require('time_out.php');
+require('time_out.php');
 
 $_SESSION['user'];
 

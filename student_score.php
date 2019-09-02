@@ -28,6 +28,9 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
 
 
 
+@$query_sch2 = $db->selectSchool22($school2);
+@$result_sch2 = mysqli_fetch_assoc($query_sch2);
+
 
 @$school = $school2;
 
@@ -165,7 +168,7 @@ if(@$school && @$session) {
             </div>
             <div class="row">
                 <div class="col-lg-12 showResult">
-                    <h3 align="center"  style="color: #000000"><?php if(@$result){echo 'List of '. ' ' .@$result_sch2['school'].' '; if(@$school2 == 11){echo 'for ';} '  ' . '  '; echo @$result['program'].' '.'Applicant(s)'.' ('.@$result_ses2['session'].' Session)';}?></h3>
+                    <h3 align="center"  style="color: #000000"><?php if(@$result){echo 'List of '. ' ' .@$result_sch2['school'].' '; if(@$school == 11){echo 'for ';} '  ' . '  '; echo @$result['program'].' '.'Applicant(s)'.' ('.@$result_ses2['session'].' Session)';}?></h3>
 
                     <table class="table table-bordered" id="myTable">
                         <thead>
