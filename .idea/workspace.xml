@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e77293d4-6da5-4cdb-83e0-da597adf679e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin_applicants2.php" afterPath="$PROJECT_DIR$/admin_applicants2.php" />
-      <change beforePath="$PROJECT_DIR$/applicants.php" afterPath="$PROJECT_DIR$/applicants.php" />
       <change beforePath="$PROJECT_DIR$/classes/Connect.php" afterPath="$PROJECT_DIR$/classes/Connect.php" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/print.php" afterPath="$PROJECT_DIR$/print.php" />
-      <change beforePath="$PROJECT_DIR$/print2.php" afterPath="$PROJECT_DIR$/print2.php" />
-      <change beforePath="$PROJECT_DIR$/shim_print.php" afterPath="$PROJECT_DIR$/shim_print.php" />
+      <change beforePath="$PROJECT_DIR$/connection.php" afterPath="$PROJECT_DIR$/connection.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,131 +14,131 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Connect.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Connect.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/Connect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
               <folding>
-                <marker date="1567438888690" expanded="true" signature="3362:3389" ph="SELECT * FRO... credit_passes" />
-                <marker date="1567438888690" expanded="true" signature="3533:3555" ph="SELECT * FRO... programs" />
-                <marker date="1567438888690" expanded="true" signature="3712:3953" ph="SELECT * FRO... additional_qualification" />
-                <marker date="1567438888690" expanded="true" signature="4109:4365" ph="SELECT * FRO... additional_qualification" />
-                <marker date="1567438888690" expanded="true" signature="4711:4827" ph="SELECT * FRO... program" />
-                <marker date="1567438888690" expanded="true" signature="4970:5023" ph="SELECT * FRO... jamb_score" />
-                <marker date="1567438888690" expanded="true" signature="5166:5208" ph="SELECT * FRO... subject" />
-                <marker date="1567438888690" expanded="true" signature="5349:5387" ph="SELECT * FRO... grade" />
-                <marker date="1567438888690" expanded="true" signature="5531:5577" ph="SELECT * FRO... exam_type" />
-                <marker date="1567438888690" expanded="true" signature="5720:5837" ph="SELECT * FRO... applicant_nok" />
-                <marker date="1567438888690" expanded="true" signature="5977:6094" ph="SELECT * FRO... applicant_ref" />
-                <marker date="1567438888690" expanded="true" signature="6429:6470" ph="SELECT * FRO... schools" />
-                <marker date="1567438888690" expanded="true" signature="6620:6671" ph="SELECT * FRO... mode_of_training" />
-                <marker date="1567438888690" expanded="true" signature="6825:6952" ph="SELECT * FRO... sponsor2" />
-                <marker date="1567438888690" expanded="true" signature="7103:7154" ph="SELECT * FRO... school_logo" />
-                <marker date="1567438888690" expanded="true" signature="7297:7341" ph="SELECT * FRO... religion" />
-                <marker date="1567438888690" expanded="true" signature="7486:7596" ph="SELECT * FRO... school" />
-                <marker date="1567438888690" expanded="true" signature="7750:7809" ph="SELECT * FRO... work_experience" />
-                <marker date="1567438888690" expanded="true" signature="7963:8028" ph="SELECT * FRO... work_experience" />
-                <marker date="1567438888690" expanded="true" signature="8170:8191" ph="SELECT * FRO... schools" />
-                <marker date="1567438888690" expanded="true" signature="8338:8386" ph="SELECT * FRO... schools" />
-                <marker date="1567438888690" expanded="true" signature="8820:8839" ph="SELECT * FRO... users" />
-                <marker date="1567438888690" expanded="true" signature="8992:9047" ph="SELECT * FRO... permanent_add" />
-                <marker date="1567438888690" expanded="true" signature="9223:9626" ph="SELECT * FRO... permanent_add" />
-                <marker date="1567438888690" expanded="true" signature="9799:9975" ph="SELECT * FRO... contact_add" />
-                <marker date="1567438888690" expanded="true" signature="10126:10180" ph="SELECT * FRO... qualification" />
-                <marker date="1567438888690" expanded="true" signature="10342:10405" ph="SELECT * FRO... professional_training" />
-                <marker date="1567438888690" expanded="true" signature="10564:10627" ph="SELECT * FRO... professional_training" />
-                <marker date="1567438888690" expanded="true" signature="10790:10851" ph="SELECT * FRO... professional_training" />
-                <marker date="1567438888690" expanded="true" signature="10999:11050" ph="SELECT * FRO... education" />
-                <marker date="1567438888690" expanded="true" signature="11199:11250" ph="SELECT * FRO... education" />
-                <marker date="1567438888690" expanded="true" signature="11399:11451" ph="SELECT * FRO... education" />
-                <marker date="1567438888690" expanded="true" signature="11601:11653" ph="SELECT * FRO... education" />
-                <marker date="1567438888690" expanded="true" signature="11805:11874" ph="SELECT COUNT... education" />
-                <marker date="1567438888690" expanded="true" signature="12018:12066" ph="SELECT * FRO... awards" />
-                <marker date="1567438888690" expanded="true" signature="12209:12252" ph="SELECT * FRO... sittings" />
-                <marker date="1567438888690" expanded="true" signature="12399:12448" ph="SELECT * FRO... sponsor" />
-                <marker date="1567438888690" expanded="true" signature="12593:12641" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="12799:12873" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="13024:13069" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="13215:13531" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="13675:13992" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="14135:14452" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="14596:14913" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="15057:15374" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="15518:15835" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="15979:16296" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="16440:16757" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="16901:17218" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="17363:17679" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="17825:18141" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="18286:18602" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="18747:19063" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="19208:19524" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="19670:19986" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="20132:20448" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="20595:20911" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="21058:21374" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="21531:21853" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="22004:22327" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="22477:22800" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="22951:23274" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="23425:23748" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="23899:24222" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="24373:24696" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="24847:25170" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="25321:25644" ph="SELECT * FRO... olevel" />
-                <marker date="1567438888690" expanded="true" signature="25790:25835" ph="SELECT * FRO... awards" />
-                <marker date="1567438888690" expanded="true" signature="25984:26035" ph="SELECT * FRO... education" />
-                <marker date="1567438888690" expanded="true" signature="26192:26253" ph="SELECT * FRO... present_appointment" />
-                <marker date="1567438888690" expanded="true" signature="26409:26471" ph="SELECT * FRO... previous_appointment" />
-                <marker date="1567438888690" expanded="true" signature="26627:26699" ph="SELECT * FRO... previous_appointment" />
-                <marker date="1567438888690" expanded="true" signature="26848:26901" ph="SELECT * FRO... contact_add" />
-                <marker date="1567438888690" expanded="true" signature="27042:27085" ph="SELECT * FRO... state" />
-                <marker date="1567438888690" expanded="true" signature="27235:27290" ph="SELECT * FRO... senatorial_district" />
-                <marker date="1567438888690" expanded="true" signature="27433:27456" ph="SELECT * FRO... countries" />
-                <marker date="1567438888690" expanded="true" signature="27599:27641" ph="SELECT * FRO... session" />
-                <marker date="1567438888690" expanded="true" signature="27812:27839" ph="SELECT * FRO... session" />
-                <marker date="1567438888690" expanded="true" signature="27812:27872" ph="SELECT * FRO... cut_off_mark" />
-                <marker date="1567438888690" expanded="true" signature="27812:27902" ph="SELECT * FRO... cut_off_mark" />
-                <marker date="1567438888690" expanded="true" signature="28069:28139" ph="SELECT * FRO... cut_off_mark" />
-                <marker date="1567438888690" expanded="true" signature="28309:28531" ph="SELECT pin F... pin" />
-                <marker date="1567438888690" expanded="true" signature="28702:28922" ph="SELECT * FRO... pin" />
-                <marker date="1567438888690" expanded="true" signature="29069:29107" ph="SELECT * FRO... pin" />
-                <marker date="1567438888690" expanded="true" signature="29257:29440" ph="SELECT * FRO... set_session" />
-                <marker date="1567438888690" expanded="true" signature="29592:29642" ph="SELECT * FRO... session" />
-                <marker date="1567438888690" expanded="true" signature="29789:29838" ph="SELECT * FRO... session" />
-                <marker date="1567438888690" expanded="true" signature="30001:30069" ph="SELECT * FRO... qualification" />
-                <marker date="1567438888690" expanded="true" signature="30221:30248" ph="SELECT * FRO... qualification" />
-                <marker date="1567438888690" expanded="true" signature="30390:30410" ph="SELECT * FRO... gender" />
-                <marker date="1567438888690" expanded="true" signature="30551:30571" ph="SELECT * FRO... gender" />
-                <marker date="1567438888690" expanded="true" signature="30712:30732" ph="SELECT * FRO... gender" />
-                <marker date="1567438888690" expanded="true" signature="30878:30906" ph="SELECT * FRO... marital_status" />
-                <marker date="1567438888690" expanded="true" signature="31064:31320" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="31479:31867" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="32037:32329" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="32037:32683" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="32037:32747" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="32822:33448" ph="SELECT speci... department" />
-                <marker date="1567438888690" expanded="true" signature="33590:34181" ph="SELECT COUNT... department" />
-                <marker date="1567438888690" expanded="true" signature="34340:34414" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="34561:34607" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="34754:34795" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="34947:34993" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="35147:35235" ph="SELECT * FRO... set_session" />
-                <marker date="1567438888690" expanded="true" signature="35401:35518" ph="SELECT * FRO... cut_off_mark" />
-                <marker date="1567438888690" expanded="true" signature="35682:35765" ph="SELECT * FRO... set_session" />
-                <marker date="1567438888690" expanded="true" signature="35920:35973" ph="SELECT * FRO... set_time" />
-                <marker date="1567438888690" expanded="true" signature="36119:36142" ph="SELECT * FRO... positions" />
-                <marker date="1567438888690" expanded="true" signature="36291:36393" ph="SELECT * FRO... users" />
-                <marker date="1567438888690" expanded="true" signature="36542:36585" ph="SELECT * FRO... users" />
-                <marker date="1567438888690" expanded="true" signature="36869:36919" ph="SELECT * FRO... capture" />
-                <marker date="1567438888690" expanded="true" signature="37062:37111" ph="SELECT * FRO... capture" />
-                <marker date="1567438888690" expanded="true" signature="37262:37304" ph="SELECT * FRO... questions" />
-                <marker date="1567438888690" expanded="true" signature="37598:37864" ph="SELECT * FRO... bio_data" />
-                <marker date="1567438888690" expanded="true" signature="38009:38060" ph="SELECT * FRO... bio_data" />
-                <marker date="1567438888690" expanded="true" signature="38207:38254" ph="SELECT * FRO... bio_data" />
-                <marker date="1567438888690" expanded="true" signature="38407:38454" ph="SELECT * FRO... pin_nos" />
-                <marker date="1567438888690" expanded="true" signature="38604:38652" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="3374:3401" ph="SELECT * FRO... credit_passes" />
+                <marker date="1567440366802" expanded="true" signature="3545:3567" ph="SELECT * FRO... programs" />
+                <marker date="1567440366802" expanded="true" signature="3724:3965" ph="SELECT * FRO... additional_qualification" />
+                <marker date="1567440366802" expanded="true" signature="4121:4377" ph="SELECT * FRO... additional_qualification" />
+                <marker date="1567440366802" expanded="true" signature="4723:4839" ph="SELECT * FRO... program" />
+                <marker date="1567440366802" expanded="true" signature="4982:5035" ph="SELECT * FRO... jamb_score" />
+                <marker date="1567440366802" expanded="true" signature="5178:5220" ph="SELECT * FRO... subject" />
+                <marker date="1567440366802" expanded="true" signature="5361:5399" ph="SELECT * FRO... grade" />
+                <marker date="1567440366802" expanded="true" signature="5543:5589" ph="SELECT * FRO... exam_type" />
+                <marker date="1567440366802" expanded="true" signature="5732:5849" ph="SELECT * FRO... applicant_nok" />
+                <marker date="1567440366802" expanded="true" signature="5989:6106" ph="SELECT * FRO... applicant_ref" />
+                <marker date="1567440366802" expanded="true" signature="6441:6482" ph="SELECT * FRO... schools" />
+                <marker date="1567440366802" expanded="true" signature="6632:6683" ph="SELECT * FRO... mode_of_training" />
+                <marker date="1567440366802" expanded="true" signature="6837:6964" ph="SELECT * FRO... sponsor2" />
+                <marker date="1567440366802" expanded="true" signature="7115:7166" ph="SELECT * FRO... school_logo" />
+                <marker date="1567440366802" expanded="true" signature="7309:7353" ph="SELECT * FRO... religion" />
+                <marker date="1567440366802" expanded="true" signature="7498:7608" ph="SELECT * FRO... school" />
+                <marker date="1567440366802" expanded="true" signature="7762:7821" ph="SELECT * FRO... work_experience" />
+                <marker date="1567440366802" expanded="true" signature="7975:8040" ph="SELECT * FRO... work_experience" />
+                <marker date="1567440366802" expanded="true" signature="8182:8203" ph="SELECT * FRO... schools" />
+                <marker date="1567440366802" expanded="true" signature="8350:8398" ph="SELECT * FRO... schools" />
+                <marker date="1567440366802" expanded="true" signature="8832:8851" ph="SELECT * FRO... users" />
+                <marker date="1567440366802" expanded="true" signature="9004:9059" ph="SELECT * FRO... permanent_add" />
+                <marker date="1567440366802" expanded="true" signature="9235:9638" ph="SELECT * FRO... permanent_add" />
+                <marker date="1567440366802" expanded="true" signature="9811:9987" ph="SELECT * FRO... contact_add" />
+                <marker date="1567440366802" expanded="true" signature="10138:10192" ph="SELECT * FRO... qualification" />
+                <marker date="1567440366802" expanded="true" signature="10354:10417" ph="SELECT * FRO... professional_training" />
+                <marker date="1567440366802" expanded="true" signature="10576:10639" ph="SELECT * FRO... professional_training" />
+                <marker date="1567440366802" expanded="true" signature="10802:10863" ph="SELECT * FRO... professional_training" />
+                <marker date="1567440366802" expanded="true" signature="11011:11062" ph="SELECT * FRO... education" />
+                <marker date="1567440366802" expanded="true" signature="11211:11262" ph="SELECT * FRO... education" />
+                <marker date="1567440366802" expanded="true" signature="11411:11463" ph="SELECT * FRO... education" />
+                <marker date="1567440366802" expanded="true" signature="11613:11665" ph="SELECT * FRO... education" />
+                <marker date="1567440366802" expanded="true" signature="11817:11886" ph="SELECT COUNT... education" />
+                <marker date="1567440366802" expanded="true" signature="12030:12078" ph="SELECT * FRO... awards" />
+                <marker date="1567440366802" expanded="true" signature="12221:12264" ph="SELECT * FRO... sittings" />
+                <marker date="1567440366802" expanded="true" signature="12411:12460" ph="SELECT * FRO... sponsor" />
+                <marker date="1567440366802" expanded="true" signature="12605:12653" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="12811:12885" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="13036:13081" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="13227:13543" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="13687:14004" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="14147:14464" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="14608:14925" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="15069:15386" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="15530:15847" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="15991:16308" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="16452:16769" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="16913:17230" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="17375:17691" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="17837:18153" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="18298:18614" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="18759:19075" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="19220:19536" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="19682:19998" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="20144:20460" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="20607:20923" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="21070:21386" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="21543:21865" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="22016:22339" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="22489:22812" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="22963:23286" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="23437:23760" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="23911:24234" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="24385:24708" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="24859:25182" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="25333:25656" ph="SELECT * FRO... olevel" />
+                <marker date="1567440366802" expanded="true" signature="25802:25847" ph="SELECT * FRO... awards" />
+                <marker date="1567440366802" expanded="true" signature="25996:26047" ph="SELECT * FRO... education" />
+                <marker date="1567440366802" expanded="true" signature="26204:26265" ph="SELECT * FRO... present_appointment" />
+                <marker date="1567440366802" expanded="true" signature="26421:26483" ph="SELECT * FRO... previous_appointment" />
+                <marker date="1567440366802" expanded="true" signature="26639:26711" ph="SELECT * FRO... previous_appointment" />
+                <marker date="1567440366802" expanded="true" signature="26860:26913" ph="SELECT * FRO... contact_add" />
+                <marker date="1567440366802" expanded="true" signature="27054:27097" ph="SELECT * FRO... state" />
+                <marker date="1567440366802" expanded="true" signature="27247:27302" ph="SELECT * FRO... senatorial_district" />
+                <marker date="1567440366802" expanded="true" signature="27445:27468" ph="SELECT * FRO... countries" />
+                <marker date="1567440366802" expanded="true" signature="27611:27653" ph="SELECT * FRO... session" />
+                <marker date="1567440366802" expanded="true" signature="27824:27851" ph="SELECT * FRO... session" />
+                <marker date="1567440366802" expanded="true" signature="27824:27884" ph="SELECT * FRO... cut_off_mark" />
+                <marker date="1567440366802" expanded="true" signature="27824:27914" ph="SELECT * FRO... cut_off_mark" />
+                <marker date="1567440366802" expanded="true" signature="28081:28151" ph="SELECT * FRO... cut_off_mark" />
+                <marker date="1567440366802" expanded="true" signature="28321:28543" ph="SELECT pin F... pin" />
+                <marker date="1567440366802" expanded="true" signature="28714:28934" ph="SELECT * FRO... pin" />
+                <marker date="1567440366802" expanded="true" signature="29081:29119" ph="SELECT * FRO... pin" />
+                <marker date="1567440366802" expanded="true" signature="29269:29452" ph="SELECT * FRO... set_session" />
+                <marker date="1567440366802" expanded="true" signature="29604:29654" ph="SELECT * FRO... session" />
+                <marker date="1567440366802" expanded="true" signature="29801:29850" ph="SELECT * FRO... session" />
+                <marker date="1567440366802" expanded="true" signature="30013:30081" ph="SELECT * FRO... qualification" />
+                <marker date="1567440366802" expanded="true" signature="30233:30260" ph="SELECT * FRO... qualification" />
+                <marker date="1567440366802" expanded="true" signature="30402:30422" ph="SELECT * FRO... gender" />
+                <marker date="1567440366802" expanded="true" signature="30563:30583" ph="SELECT * FRO... gender" />
+                <marker date="1567440366802" expanded="true" signature="30724:30744" ph="SELECT * FRO... gender" />
+                <marker date="1567440366802" expanded="true" signature="30890:30918" ph="SELECT * FRO... marital_status" />
+                <marker date="1567440366802" expanded="true" signature="31076:31332" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="31491:31879" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="32049:32341" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="32049:32695" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="32049:32759" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="32834:33460" ph="SELECT speci... department" />
+                <marker date="1567440366802" expanded="true" signature="33602:34193" ph="SELECT COUNT... department" />
+                <marker date="1567440366802" expanded="true" signature="34352:34426" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="34573:34619" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="34766:34807" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="34959:35005" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="35159:35247" ph="SELECT * FRO... set_session" />
+                <marker date="1567440366802" expanded="true" signature="35413:35530" ph="SELECT * FRO... cut_off_mark" />
+                <marker date="1567440366802" expanded="true" signature="35694:35777" ph="SELECT * FRO... set_session" />
+                <marker date="1567440366802" expanded="true" signature="35932:35985" ph="SELECT * FRO... set_time" />
+                <marker date="1567440366802" expanded="true" signature="36131:36154" ph="SELECT * FRO... positions" />
+                <marker date="1567440366802" expanded="true" signature="36303:36405" ph="SELECT * FRO... users" />
+                <marker date="1567440366802" expanded="true" signature="36554:36597" ph="SELECT * FRO... users" />
+                <marker date="1567440366802" expanded="true" signature="36881:36931" ph="SELECT * FRO... capture" />
+                <marker date="1567440366802" expanded="true" signature="37074:37123" ph="SELECT * FRO... capture" />
+                <marker date="1567440366802" expanded="true" signature="37274:37316" ph="SELECT * FRO... questions" />
+                <marker date="1567440366802" expanded="true" signature="37610:37876" ph="SELECT * FRO... bio_data" />
+                <marker date="1567440366802" expanded="true" signature="38021:38072" ph="SELECT * FRO... bio_data" />
+                <marker date="1567440366802" expanded="true" signature="38219:38266" ph="SELECT * FRO... bio_data" />
+                <marker date="1567440366802" expanded="true" signature="38419:38466" ph="SELECT * FRO... pin_nos" />
+                <marker date="1567440366802" expanded="true" signature="38616:38664" ph="SELECT * FRO... pin_nos" />
               </folding>
             </state>
           </provider>
@@ -155,6 +149,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
               <caret line="287" column="133" lean-forward="false" selection-start-line="287" selection-start-column="133" selection-end-line="287" selection-end-column="133" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -570,7 +574,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
@@ -643,7 +647,6 @@
         <option value="$PROJECT_DIR$/gitignore" />
         <option value="$PROJECT_DIR$/applicants2.php" />
         <option value="$PROJECT_DIR$/super_admin.php" />
-        <option value="$PROJECT_DIR$/connection.php" />
         <option value="$PROJECT_DIR$/student_exam_ecore.php" />
         <option value="$PROJECT_DIR$/student_exam_score.php" />
         <option value="$PROJECT_DIR$/student_score.php" />
@@ -652,13 +655,14 @@
         <option value="$PROJECT_DIR$/admin.php" />
         <option value="$PROJECT_DIR$/admission_letter.php" />
         <option value="$PROJECT_DIR$/biodata.php" />
-        <option value="$PROJECT_DIR$/classes/Connect.php" />
         <option value="$PROJECT_DIR$/print2.php" />
         <option value="$PROJECT_DIR$/shim_print.php" />
         <option value="$PROJECT_DIR$/applicants.php" />
         <option value="$PROJECT_DIR$/print.php" />
         <option value="$PROJECT_DIR$/admin_applicants2.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/connection.php" />
+        <option value="$PROJECT_DIR$/classes/Connect.php" />
       </list>
     </option>
   </component>
@@ -771,12 +775,12 @@
       <workItem from="1566744768028" duration="3218000" />
       <workItem from="1566897244535" duration="594000" />
       <workItem from="1567369640530" duration="12587000" />
-      <workItem from="1567410842547" duration="17928000" />
+      <workItem from="1567410842547" duration="18053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71538000" />
+    <option name="totallyTimeSpent" value="71663000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -854,6 +858,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -862,125 +867,125 @@
         <state relative-caret-position="17731">
           <caret line="1043" column="32" lean-forward="false" selection-start-line="1043" selection-start-column="26" selection-end-line="1043" selection-end-column="32" />
           <folding>
-            <marker date="1567438888690" expanded="true" signature="3362:3389" ph="SELECT * FRO... credit_passes" />
-            <marker date="1567438888690" expanded="true" signature="3533:3555" ph="SELECT * FRO... programs" />
-            <marker date="1567438888690" expanded="true" signature="3712:3953" ph="SELECT * FRO... additional_qualification" />
-            <marker date="1567438888690" expanded="true" signature="4109:4365" ph="SELECT * FRO... additional_qualification" />
-            <marker date="1567438888690" expanded="true" signature="4711:4827" ph="SELECT * FRO... program" />
-            <marker date="1567438888690" expanded="true" signature="4970:5023" ph="SELECT * FRO... jamb_score" />
-            <marker date="1567438888690" expanded="true" signature="5166:5208" ph="SELECT * FRO... subject" />
-            <marker date="1567438888690" expanded="true" signature="5349:5387" ph="SELECT * FRO... grade" />
-            <marker date="1567438888690" expanded="true" signature="5531:5577" ph="SELECT * FRO... exam_type" />
-            <marker date="1567438888690" expanded="true" signature="5720:5837" ph="SELECT * FRO... applicant_nok" />
-            <marker date="1567438888690" expanded="true" signature="5977:6094" ph="SELECT * FRO... applicant_ref" />
-            <marker date="1567438888690" expanded="true" signature="6429:6470" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="6620:6671" ph="SELECT * FRO... mode_of_training" />
-            <marker date="1567438888690" expanded="true" signature="6825:6952" ph="SELECT * FRO... sponsor2" />
-            <marker date="1567438888690" expanded="true" signature="7103:7154" ph="SELECT * FRO... school_logo" />
-            <marker date="1567438888690" expanded="true" signature="7297:7341" ph="SELECT * FRO... religion" />
-            <marker date="1567438888690" expanded="true" signature="7486:7596" ph="SELECT * FRO... school" />
-            <marker date="1567438888690" expanded="true" signature="7750:7809" ph="SELECT * FRO... work_experience" />
-            <marker date="1567438888690" expanded="true" signature="7963:8028" ph="SELECT * FRO... work_experience" />
-            <marker date="1567438888690" expanded="true" signature="8170:8191" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="8338:8386" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="8820:8839" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="8992:9047" ph="SELECT * FRO... permanent_add" />
-            <marker date="1567438888690" expanded="true" signature="9223:9626" ph="SELECT * FRO... permanent_add" />
-            <marker date="1567438888690" expanded="true" signature="9799:9975" ph="SELECT * FRO... contact_add" />
-            <marker date="1567438888690" expanded="true" signature="10126:10180" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="10342:10405" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10564:10627" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10790:10851" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10999:11050" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11199:11250" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11399:11451" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11601:11653" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11805:11874" ph="SELECT COUNT... education" />
-            <marker date="1567438888690" expanded="true" signature="12018:12066" ph="SELECT * FRO... awards" />
-            <marker date="1567438888690" expanded="true" signature="12209:12252" ph="SELECT * FRO... sittings" />
-            <marker date="1567438888690" expanded="true" signature="12399:12448" ph="SELECT * FRO... sponsor" />
-            <marker date="1567438888690" expanded="true" signature="12593:12641" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="12799:12873" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13024:13069" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13215:13531" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13675:13992" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="14135:14452" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="14596:14913" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15057:15374" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15518:15835" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15979:16296" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="16440:16757" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="16901:17218" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="17363:17679" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="17825:18141" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="18286:18602" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="18747:19063" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="19208:19524" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="19670:19986" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="20132:20448" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="20595:20911" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="21058:21374" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="21531:21853" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22004:22327" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22477:22800" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22951:23274" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="23425:23748" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="23899:24222" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="24373:24696" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="24847:25170" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="25321:25644" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="25790:25835" ph="SELECT * FRO... awards" />
-            <marker date="1567438888690" expanded="true" signature="25984:26035" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="26192:26253" ph="SELECT * FRO... present_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26409:26471" ph="SELECT * FRO... previous_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26627:26699" ph="SELECT * FRO... previous_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26848:26901" ph="SELECT * FRO... contact_add" />
-            <marker date="1567438888690" expanded="true" signature="27042:27085" ph="SELECT * FRO... state" />
-            <marker date="1567438888690" expanded="true" signature="27235:27290" ph="SELECT * FRO... senatorial_district" />
-            <marker date="1567438888690" expanded="true" signature="27433:27456" ph="SELECT * FRO... countries" />
-            <marker date="1567438888690" expanded="true" signature="27599:27641" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="27812:27839" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="27812:27872" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="27812:27902" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="28069:28139" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="28309:28531" ph="SELECT pin F... pin" />
-            <marker date="1567438888690" expanded="true" signature="28702:28922" ph="SELECT * FRO... pin" />
-            <marker date="1567438888690" expanded="true" signature="29069:29107" ph="SELECT * FRO... pin" />
-            <marker date="1567438888690" expanded="true" signature="29257:29440" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="29592:29642" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="29789:29838" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="30001:30069" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="30221:30248" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="30390:30410" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30551:30571" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30712:30732" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30878:30906" ph="SELECT * FRO... marital_status" />
-            <marker date="1567438888690" expanded="true" signature="31064:31320" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="31479:31867" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32329" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32683" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32747" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32822:33448" ph="SELECT speci... department" />
-            <marker date="1567438888690" expanded="true" signature="33590:34181" ph="SELECT COUNT... department" />
-            <marker date="1567438888690" expanded="true" signature="34340:34414" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34561:34607" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34754:34795" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34947:34993" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="35147:35235" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="35401:35518" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="35682:35765" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="35920:35973" ph="SELECT * FRO... set_time" />
-            <marker date="1567438888690" expanded="true" signature="36119:36142" ph="SELECT * FRO... positions" />
-            <marker date="1567438888690" expanded="true" signature="36291:36393" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="36542:36585" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="36869:36919" ph="SELECT * FRO... capture" />
-            <marker date="1567438888690" expanded="true" signature="37062:37111" ph="SELECT * FRO... capture" />
-            <marker date="1567438888690" expanded="true" signature="37262:37304" ph="SELECT * FRO... questions" />
-            <marker date="1567438888690" expanded="true" signature="37598:37864" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38009:38060" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38207:38254" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38407:38454" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="38604:38652" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="3374:3401" ph="SELECT * FRO... credit_passes" />
+            <marker date="1567440366802" expanded="true" signature="3545:3567" ph="SELECT * FRO... programs" />
+            <marker date="1567440366802" expanded="true" signature="3724:3965" ph="SELECT * FRO... additional_qualification" />
+            <marker date="1567440366802" expanded="true" signature="4121:4377" ph="SELECT * FRO... additional_qualification" />
+            <marker date="1567440366802" expanded="true" signature="4723:4839" ph="SELECT * FRO... program" />
+            <marker date="1567440366802" expanded="true" signature="4982:5035" ph="SELECT * FRO... jamb_score" />
+            <marker date="1567440366802" expanded="true" signature="5178:5220" ph="SELECT * FRO... subject" />
+            <marker date="1567440366802" expanded="true" signature="5361:5399" ph="SELECT * FRO... grade" />
+            <marker date="1567440366802" expanded="true" signature="5543:5589" ph="SELECT * FRO... exam_type" />
+            <marker date="1567440366802" expanded="true" signature="5732:5849" ph="SELECT * FRO... applicant_nok" />
+            <marker date="1567440366802" expanded="true" signature="5989:6106" ph="SELECT * FRO... applicant_ref" />
+            <marker date="1567440366802" expanded="true" signature="6441:6482" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="6632:6683" ph="SELECT * FRO... mode_of_training" />
+            <marker date="1567440366802" expanded="true" signature="6837:6964" ph="SELECT * FRO... sponsor2" />
+            <marker date="1567440366802" expanded="true" signature="7115:7166" ph="SELECT * FRO... school_logo" />
+            <marker date="1567440366802" expanded="true" signature="7309:7353" ph="SELECT * FRO... religion" />
+            <marker date="1567440366802" expanded="true" signature="7498:7608" ph="SELECT * FRO... school" />
+            <marker date="1567440366802" expanded="true" signature="7762:7821" ph="SELECT * FRO... work_experience" />
+            <marker date="1567440366802" expanded="true" signature="7975:8040" ph="SELECT * FRO... work_experience" />
+            <marker date="1567440366802" expanded="true" signature="8182:8203" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="8350:8398" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="8832:8851" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="9004:9059" ph="SELECT * FRO... permanent_add" />
+            <marker date="1567440366802" expanded="true" signature="9235:9638" ph="SELECT * FRO... permanent_add" />
+            <marker date="1567440366802" expanded="true" signature="9811:9987" ph="SELECT * FRO... contact_add" />
+            <marker date="1567440366802" expanded="true" signature="10138:10192" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="10354:10417" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="10576:10639" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="10802:10863" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="11011:11062" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11211:11262" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11411:11463" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11613:11665" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11817:11886" ph="SELECT COUNT... education" />
+            <marker date="1567440366802" expanded="true" signature="12030:12078" ph="SELECT * FRO... awards" />
+            <marker date="1567440366802" expanded="true" signature="12221:12264" ph="SELECT * FRO... sittings" />
+            <marker date="1567440366802" expanded="true" signature="12411:12460" ph="SELECT * FRO... sponsor" />
+            <marker date="1567440366802" expanded="true" signature="12605:12653" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="12811:12885" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13036:13081" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13227:13543" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13687:14004" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="14147:14464" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="14608:14925" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15069:15386" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15530:15847" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15991:16308" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="16452:16769" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="16913:17230" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="17375:17691" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="17837:18153" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="18298:18614" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="18759:19075" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="19220:19536" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="19682:19998" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="20144:20460" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="20607:20923" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="21070:21386" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="21543:21865" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22016:22339" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22489:22812" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22963:23286" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="23437:23760" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="23911:24234" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="24385:24708" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="24859:25182" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="25333:25656" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="25802:25847" ph="SELECT * FRO... awards" />
+            <marker date="1567440366802" expanded="true" signature="25996:26047" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="26204:26265" ph="SELECT * FRO... present_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26421:26483" ph="SELECT * FRO... previous_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26639:26711" ph="SELECT * FRO... previous_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26860:26913" ph="SELECT * FRO... contact_add" />
+            <marker date="1567440366802" expanded="true" signature="27054:27097" ph="SELECT * FRO... state" />
+            <marker date="1567440366802" expanded="true" signature="27247:27302" ph="SELECT * FRO... senatorial_district" />
+            <marker date="1567440366802" expanded="true" signature="27445:27468" ph="SELECT * FRO... countries" />
+            <marker date="1567440366802" expanded="true" signature="27611:27653" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="27824:27851" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="27824:27884" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="27824:27914" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="28081:28151" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="28321:28543" ph="SELECT pin F... pin" />
+            <marker date="1567440366802" expanded="true" signature="28714:28934" ph="SELECT * FRO... pin" />
+            <marker date="1567440366802" expanded="true" signature="29081:29119" ph="SELECT * FRO... pin" />
+            <marker date="1567440366802" expanded="true" signature="29269:29452" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="29604:29654" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="29801:29850" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="30013:30081" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="30233:30260" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="30402:30422" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30563:30583" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30724:30744" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30890:30918" ph="SELECT * FRO... marital_status" />
+            <marker date="1567440366802" expanded="true" signature="31076:31332" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="31491:31879" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32341" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32695" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32759" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32834:33460" ph="SELECT speci... department" />
+            <marker date="1567440366802" expanded="true" signature="33602:34193" ph="SELECT COUNT... department" />
+            <marker date="1567440366802" expanded="true" signature="34352:34426" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34573:34619" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34766:34807" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34959:35005" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="35159:35247" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="35413:35530" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="35694:35777" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="35932:35985" ph="SELECT * FRO... set_time" />
+            <marker date="1567440366802" expanded="true" signature="36131:36154" ph="SELECT * FRO... positions" />
+            <marker date="1567440366802" expanded="true" signature="36303:36405" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="36554:36597" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="36881:36931" ph="SELECT * FRO... capture" />
+            <marker date="1567440366802" expanded="true" signature="37074:37123" ph="SELECT * FRO... capture" />
+            <marker date="1567440366802" expanded="true" signature="37274:37316" ph="SELECT * FRO... questions" />
+            <marker date="1567440366802" expanded="true" signature="37610:37876" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38021:38072" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38219:38266" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38419:38466" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="38616:38664" ph="SELECT * FRO... pin_nos" />
           </folding>
         </state>
       </provider>
@@ -1017,6 +1022,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,125 +1031,125 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1567438888690" expanded="true" signature="3362:3389" ph="SELECT * FRO... credit_passes" />
-            <marker date="1567438888690" expanded="true" signature="3533:3555" ph="SELECT * FRO... programs" />
-            <marker date="1567438888690" expanded="true" signature="3712:3953" ph="SELECT * FRO... additional_qualification" />
-            <marker date="1567438888690" expanded="true" signature="4109:4365" ph="SELECT * FRO... additional_qualification" />
-            <marker date="1567438888690" expanded="true" signature="4711:4827" ph="SELECT * FRO... program" />
-            <marker date="1567438888690" expanded="true" signature="4970:5023" ph="SELECT * FRO... jamb_score" />
-            <marker date="1567438888690" expanded="true" signature="5166:5208" ph="SELECT * FRO... subject" />
-            <marker date="1567438888690" expanded="true" signature="5349:5387" ph="SELECT * FRO... grade" />
-            <marker date="1567438888690" expanded="true" signature="5531:5577" ph="SELECT * FRO... exam_type" />
-            <marker date="1567438888690" expanded="true" signature="5720:5837" ph="SELECT * FRO... applicant_nok" />
-            <marker date="1567438888690" expanded="true" signature="5977:6094" ph="SELECT * FRO... applicant_ref" />
-            <marker date="1567438888690" expanded="true" signature="6429:6470" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="6620:6671" ph="SELECT * FRO... mode_of_training" />
-            <marker date="1567438888690" expanded="true" signature="6825:6952" ph="SELECT * FRO... sponsor2" />
-            <marker date="1567438888690" expanded="true" signature="7103:7154" ph="SELECT * FRO... school_logo" />
-            <marker date="1567438888690" expanded="true" signature="7297:7341" ph="SELECT * FRO... religion" />
-            <marker date="1567438888690" expanded="true" signature="7486:7596" ph="SELECT * FRO... school" />
-            <marker date="1567438888690" expanded="true" signature="7750:7809" ph="SELECT * FRO... work_experience" />
-            <marker date="1567438888690" expanded="true" signature="7963:8028" ph="SELECT * FRO... work_experience" />
-            <marker date="1567438888690" expanded="true" signature="8170:8191" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="8338:8386" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="8820:8839" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="8992:9047" ph="SELECT * FRO... permanent_add" />
-            <marker date="1567438888690" expanded="true" signature="9223:9626" ph="SELECT * FRO... permanent_add" />
-            <marker date="1567438888690" expanded="true" signature="9799:9975" ph="SELECT * FRO... contact_add" />
-            <marker date="1567438888690" expanded="true" signature="10126:10180" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="10342:10405" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10564:10627" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10790:10851" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10999:11050" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11199:11250" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11399:11451" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11601:11653" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11805:11874" ph="SELECT COUNT... education" />
-            <marker date="1567438888690" expanded="true" signature="12018:12066" ph="SELECT * FRO... awards" />
-            <marker date="1567438888690" expanded="true" signature="12209:12252" ph="SELECT * FRO... sittings" />
-            <marker date="1567438888690" expanded="true" signature="12399:12448" ph="SELECT * FRO... sponsor" />
-            <marker date="1567438888690" expanded="true" signature="12593:12641" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="12799:12873" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13024:13069" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13215:13531" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13675:13992" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="14135:14452" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="14596:14913" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15057:15374" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15518:15835" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15979:16296" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="16440:16757" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="16901:17218" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="17363:17679" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="17825:18141" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="18286:18602" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="18747:19063" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="19208:19524" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="19670:19986" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="20132:20448" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="20595:20911" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="21058:21374" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="21531:21853" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22004:22327" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22477:22800" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22951:23274" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="23425:23748" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="23899:24222" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="24373:24696" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="24847:25170" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="25321:25644" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="25790:25835" ph="SELECT * FRO... awards" />
-            <marker date="1567438888690" expanded="true" signature="25984:26035" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="26192:26253" ph="SELECT * FRO... present_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26409:26471" ph="SELECT * FRO... previous_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26627:26699" ph="SELECT * FRO... previous_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26848:26901" ph="SELECT * FRO... contact_add" />
-            <marker date="1567438888690" expanded="true" signature="27042:27085" ph="SELECT * FRO... state" />
-            <marker date="1567438888690" expanded="true" signature="27235:27290" ph="SELECT * FRO... senatorial_district" />
-            <marker date="1567438888690" expanded="true" signature="27433:27456" ph="SELECT * FRO... countries" />
-            <marker date="1567438888690" expanded="true" signature="27599:27641" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="27812:27839" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="27812:27872" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="27812:27902" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="28069:28139" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="28309:28531" ph="SELECT pin F... pin" />
-            <marker date="1567438888690" expanded="true" signature="28702:28922" ph="SELECT * FRO... pin" />
-            <marker date="1567438888690" expanded="true" signature="29069:29107" ph="SELECT * FRO... pin" />
-            <marker date="1567438888690" expanded="true" signature="29257:29440" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="29592:29642" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="29789:29838" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="30001:30069" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="30221:30248" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="30390:30410" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30551:30571" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30712:30732" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30878:30906" ph="SELECT * FRO... marital_status" />
-            <marker date="1567438888690" expanded="true" signature="31064:31320" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="31479:31867" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32329" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32683" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32747" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32822:33448" ph="SELECT speci... department" />
-            <marker date="1567438888690" expanded="true" signature="33590:34181" ph="SELECT COUNT... department" />
-            <marker date="1567438888690" expanded="true" signature="34340:34414" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34561:34607" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34754:34795" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34947:34993" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="35147:35235" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="35401:35518" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="35682:35765" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="35920:35973" ph="SELECT * FRO... set_time" />
-            <marker date="1567438888690" expanded="true" signature="36119:36142" ph="SELECT * FRO... positions" />
-            <marker date="1567438888690" expanded="true" signature="36291:36393" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="36542:36585" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="36869:36919" ph="SELECT * FRO... capture" />
-            <marker date="1567438888690" expanded="true" signature="37062:37111" ph="SELECT * FRO... capture" />
-            <marker date="1567438888690" expanded="true" signature="37262:37304" ph="SELECT * FRO... questions" />
-            <marker date="1567438888690" expanded="true" signature="37598:37864" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38009:38060" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38207:38254" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38407:38454" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="38604:38652" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="3374:3401" ph="SELECT * FRO... credit_passes" />
+            <marker date="1567440366802" expanded="true" signature="3545:3567" ph="SELECT * FRO... programs" />
+            <marker date="1567440366802" expanded="true" signature="3724:3965" ph="SELECT * FRO... additional_qualification" />
+            <marker date="1567440366802" expanded="true" signature="4121:4377" ph="SELECT * FRO... additional_qualification" />
+            <marker date="1567440366802" expanded="true" signature="4723:4839" ph="SELECT * FRO... program" />
+            <marker date="1567440366802" expanded="true" signature="4982:5035" ph="SELECT * FRO... jamb_score" />
+            <marker date="1567440366802" expanded="true" signature="5178:5220" ph="SELECT * FRO... subject" />
+            <marker date="1567440366802" expanded="true" signature="5361:5399" ph="SELECT * FRO... grade" />
+            <marker date="1567440366802" expanded="true" signature="5543:5589" ph="SELECT * FRO... exam_type" />
+            <marker date="1567440366802" expanded="true" signature="5732:5849" ph="SELECT * FRO... applicant_nok" />
+            <marker date="1567440366802" expanded="true" signature="5989:6106" ph="SELECT * FRO... applicant_ref" />
+            <marker date="1567440366802" expanded="true" signature="6441:6482" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="6632:6683" ph="SELECT * FRO... mode_of_training" />
+            <marker date="1567440366802" expanded="true" signature="6837:6964" ph="SELECT * FRO... sponsor2" />
+            <marker date="1567440366802" expanded="true" signature="7115:7166" ph="SELECT * FRO... school_logo" />
+            <marker date="1567440366802" expanded="true" signature="7309:7353" ph="SELECT * FRO... religion" />
+            <marker date="1567440366802" expanded="true" signature="7498:7608" ph="SELECT * FRO... school" />
+            <marker date="1567440366802" expanded="true" signature="7762:7821" ph="SELECT * FRO... work_experience" />
+            <marker date="1567440366802" expanded="true" signature="7975:8040" ph="SELECT * FRO... work_experience" />
+            <marker date="1567440366802" expanded="true" signature="8182:8203" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="8350:8398" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="8832:8851" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="9004:9059" ph="SELECT * FRO... permanent_add" />
+            <marker date="1567440366802" expanded="true" signature="9235:9638" ph="SELECT * FRO... permanent_add" />
+            <marker date="1567440366802" expanded="true" signature="9811:9987" ph="SELECT * FRO... contact_add" />
+            <marker date="1567440366802" expanded="true" signature="10138:10192" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="10354:10417" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="10576:10639" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="10802:10863" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="11011:11062" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11211:11262" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11411:11463" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11613:11665" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11817:11886" ph="SELECT COUNT... education" />
+            <marker date="1567440366802" expanded="true" signature="12030:12078" ph="SELECT * FRO... awards" />
+            <marker date="1567440366802" expanded="true" signature="12221:12264" ph="SELECT * FRO... sittings" />
+            <marker date="1567440366802" expanded="true" signature="12411:12460" ph="SELECT * FRO... sponsor" />
+            <marker date="1567440366802" expanded="true" signature="12605:12653" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="12811:12885" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13036:13081" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13227:13543" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13687:14004" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="14147:14464" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="14608:14925" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15069:15386" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15530:15847" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15991:16308" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="16452:16769" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="16913:17230" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="17375:17691" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="17837:18153" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="18298:18614" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="18759:19075" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="19220:19536" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="19682:19998" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="20144:20460" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="20607:20923" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="21070:21386" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="21543:21865" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22016:22339" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22489:22812" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22963:23286" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="23437:23760" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="23911:24234" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="24385:24708" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="24859:25182" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="25333:25656" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="25802:25847" ph="SELECT * FRO... awards" />
+            <marker date="1567440366802" expanded="true" signature="25996:26047" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="26204:26265" ph="SELECT * FRO... present_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26421:26483" ph="SELECT * FRO... previous_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26639:26711" ph="SELECT * FRO... previous_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26860:26913" ph="SELECT * FRO... contact_add" />
+            <marker date="1567440366802" expanded="true" signature="27054:27097" ph="SELECT * FRO... state" />
+            <marker date="1567440366802" expanded="true" signature="27247:27302" ph="SELECT * FRO... senatorial_district" />
+            <marker date="1567440366802" expanded="true" signature="27445:27468" ph="SELECT * FRO... countries" />
+            <marker date="1567440366802" expanded="true" signature="27611:27653" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="27824:27851" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="27824:27884" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="27824:27914" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="28081:28151" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="28321:28543" ph="SELECT pin F... pin" />
+            <marker date="1567440366802" expanded="true" signature="28714:28934" ph="SELECT * FRO... pin" />
+            <marker date="1567440366802" expanded="true" signature="29081:29119" ph="SELECT * FRO... pin" />
+            <marker date="1567440366802" expanded="true" signature="29269:29452" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="29604:29654" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="29801:29850" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="30013:30081" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="30233:30260" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="30402:30422" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30563:30583" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30724:30744" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30890:30918" ph="SELECT * FRO... marital_status" />
+            <marker date="1567440366802" expanded="true" signature="31076:31332" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="31491:31879" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32341" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32695" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32759" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32834:33460" ph="SELECT speci... department" />
+            <marker date="1567440366802" expanded="true" signature="33602:34193" ph="SELECT COUNT... department" />
+            <marker date="1567440366802" expanded="true" signature="34352:34426" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34573:34619" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34766:34807" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34959:35005" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="35159:35247" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="35413:35530" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="35694:35777" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="35932:35985" ph="SELECT * FRO... set_time" />
+            <marker date="1567440366802" expanded="true" signature="36131:36154" ph="SELECT * FRO... positions" />
+            <marker date="1567440366802" expanded="true" signature="36303:36405" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="36554:36597" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="36881:36931" ph="SELECT * FRO... capture" />
+            <marker date="1567440366802" expanded="true" signature="37074:37123" ph="SELECT * FRO... capture" />
+            <marker date="1567440366802" expanded="true" signature="37274:37316" ph="SELECT * FRO... questions" />
+            <marker date="1567440366802" expanded="true" signature="37610:37876" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38021:38072" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38219:38266" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38419:38466" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="38616:38664" ph="SELECT * FRO... pin_nos" />
           </folding>
         </state>
       </provider>
@@ -1159,6 +1165,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,125 +1195,125 @@
         <state relative-caret-position="136">
           <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
           <folding>
-            <marker date="1567438888690" expanded="true" signature="3362:3389" ph="SELECT * FRO... credit_passes" />
-            <marker date="1567438888690" expanded="true" signature="3533:3555" ph="SELECT * FRO... programs" />
-            <marker date="1567438888690" expanded="true" signature="3712:3953" ph="SELECT * FRO... additional_qualification" />
-            <marker date="1567438888690" expanded="true" signature="4109:4365" ph="SELECT * FRO... additional_qualification" />
-            <marker date="1567438888690" expanded="true" signature="4711:4827" ph="SELECT * FRO... program" />
-            <marker date="1567438888690" expanded="true" signature="4970:5023" ph="SELECT * FRO... jamb_score" />
-            <marker date="1567438888690" expanded="true" signature="5166:5208" ph="SELECT * FRO... subject" />
-            <marker date="1567438888690" expanded="true" signature="5349:5387" ph="SELECT * FRO... grade" />
-            <marker date="1567438888690" expanded="true" signature="5531:5577" ph="SELECT * FRO... exam_type" />
-            <marker date="1567438888690" expanded="true" signature="5720:5837" ph="SELECT * FRO... applicant_nok" />
-            <marker date="1567438888690" expanded="true" signature="5977:6094" ph="SELECT * FRO... applicant_ref" />
-            <marker date="1567438888690" expanded="true" signature="6429:6470" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="6620:6671" ph="SELECT * FRO... mode_of_training" />
-            <marker date="1567438888690" expanded="true" signature="6825:6952" ph="SELECT * FRO... sponsor2" />
-            <marker date="1567438888690" expanded="true" signature="7103:7154" ph="SELECT * FRO... school_logo" />
-            <marker date="1567438888690" expanded="true" signature="7297:7341" ph="SELECT * FRO... religion" />
-            <marker date="1567438888690" expanded="true" signature="7486:7596" ph="SELECT * FRO... school" />
-            <marker date="1567438888690" expanded="true" signature="7750:7809" ph="SELECT * FRO... work_experience" />
-            <marker date="1567438888690" expanded="true" signature="7963:8028" ph="SELECT * FRO... work_experience" />
-            <marker date="1567438888690" expanded="true" signature="8170:8191" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="8338:8386" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="8820:8839" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="8992:9047" ph="SELECT * FRO... permanent_add" />
-            <marker date="1567438888690" expanded="true" signature="9223:9626" ph="SELECT * FRO... permanent_add" />
-            <marker date="1567438888690" expanded="true" signature="9799:9975" ph="SELECT * FRO... contact_add" />
-            <marker date="1567438888690" expanded="true" signature="10126:10180" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="10342:10405" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10564:10627" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10790:10851" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10999:11050" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11199:11250" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11399:11451" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11601:11653" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11805:11874" ph="SELECT COUNT... education" />
-            <marker date="1567438888690" expanded="true" signature="12018:12066" ph="SELECT * FRO... awards" />
-            <marker date="1567438888690" expanded="true" signature="12209:12252" ph="SELECT * FRO... sittings" />
-            <marker date="1567438888690" expanded="true" signature="12399:12448" ph="SELECT * FRO... sponsor" />
-            <marker date="1567438888690" expanded="true" signature="12593:12641" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="12799:12873" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13024:13069" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13215:13531" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13675:13992" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="14135:14452" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="14596:14913" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15057:15374" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15518:15835" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15979:16296" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="16440:16757" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="16901:17218" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="17363:17679" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="17825:18141" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="18286:18602" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="18747:19063" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="19208:19524" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="19670:19986" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="20132:20448" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="20595:20911" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="21058:21374" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="21531:21853" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22004:22327" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22477:22800" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22951:23274" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="23425:23748" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="23899:24222" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="24373:24696" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="24847:25170" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="25321:25644" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="25790:25835" ph="SELECT * FRO... awards" />
-            <marker date="1567438888690" expanded="true" signature="25984:26035" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="26192:26253" ph="SELECT * FRO... present_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26409:26471" ph="SELECT * FRO... previous_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26627:26699" ph="SELECT * FRO... previous_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26848:26901" ph="SELECT * FRO... contact_add" />
-            <marker date="1567438888690" expanded="true" signature="27042:27085" ph="SELECT * FRO... state" />
-            <marker date="1567438888690" expanded="true" signature="27235:27290" ph="SELECT * FRO... senatorial_district" />
-            <marker date="1567438888690" expanded="true" signature="27433:27456" ph="SELECT * FRO... countries" />
-            <marker date="1567438888690" expanded="true" signature="27599:27641" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="27812:27839" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="27812:27872" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="27812:27902" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="28069:28139" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="28309:28531" ph="SELECT pin F... pin" />
-            <marker date="1567438888690" expanded="true" signature="28702:28922" ph="SELECT * FRO... pin" />
-            <marker date="1567438888690" expanded="true" signature="29069:29107" ph="SELECT * FRO... pin" />
-            <marker date="1567438888690" expanded="true" signature="29257:29440" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="29592:29642" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="29789:29838" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="30001:30069" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="30221:30248" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="30390:30410" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30551:30571" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30712:30732" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30878:30906" ph="SELECT * FRO... marital_status" />
-            <marker date="1567438888690" expanded="true" signature="31064:31320" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="31479:31867" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32329" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32683" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32747" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32822:33448" ph="SELECT speci... department" />
-            <marker date="1567438888690" expanded="true" signature="33590:34181" ph="SELECT COUNT... department" />
-            <marker date="1567438888690" expanded="true" signature="34340:34414" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34561:34607" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34754:34795" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34947:34993" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="35147:35235" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="35401:35518" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="35682:35765" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="35920:35973" ph="SELECT * FRO... set_time" />
-            <marker date="1567438888690" expanded="true" signature="36119:36142" ph="SELECT * FRO... positions" />
-            <marker date="1567438888690" expanded="true" signature="36291:36393" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="36542:36585" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="36869:36919" ph="SELECT * FRO... capture" />
-            <marker date="1567438888690" expanded="true" signature="37062:37111" ph="SELECT * FRO... capture" />
-            <marker date="1567438888690" expanded="true" signature="37262:37304" ph="SELECT * FRO... questions" />
-            <marker date="1567438888690" expanded="true" signature="37598:37864" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38009:38060" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38207:38254" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38407:38454" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="38604:38652" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="3374:3401" ph="SELECT * FRO... credit_passes" />
+            <marker date="1567440366802" expanded="true" signature="3545:3567" ph="SELECT * FRO... programs" />
+            <marker date="1567440366802" expanded="true" signature="3724:3965" ph="SELECT * FRO... additional_qualification" />
+            <marker date="1567440366802" expanded="true" signature="4121:4377" ph="SELECT * FRO... additional_qualification" />
+            <marker date="1567440366802" expanded="true" signature="4723:4839" ph="SELECT * FRO... program" />
+            <marker date="1567440366802" expanded="true" signature="4982:5035" ph="SELECT * FRO... jamb_score" />
+            <marker date="1567440366802" expanded="true" signature="5178:5220" ph="SELECT * FRO... subject" />
+            <marker date="1567440366802" expanded="true" signature="5361:5399" ph="SELECT * FRO... grade" />
+            <marker date="1567440366802" expanded="true" signature="5543:5589" ph="SELECT * FRO... exam_type" />
+            <marker date="1567440366802" expanded="true" signature="5732:5849" ph="SELECT * FRO... applicant_nok" />
+            <marker date="1567440366802" expanded="true" signature="5989:6106" ph="SELECT * FRO... applicant_ref" />
+            <marker date="1567440366802" expanded="true" signature="6441:6482" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="6632:6683" ph="SELECT * FRO... mode_of_training" />
+            <marker date="1567440366802" expanded="true" signature="6837:6964" ph="SELECT * FRO... sponsor2" />
+            <marker date="1567440366802" expanded="true" signature="7115:7166" ph="SELECT * FRO... school_logo" />
+            <marker date="1567440366802" expanded="true" signature="7309:7353" ph="SELECT * FRO... religion" />
+            <marker date="1567440366802" expanded="true" signature="7498:7608" ph="SELECT * FRO... school" />
+            <marker date="1567440366802" expanded="true" signature="7762:7821" ph="SELECT * FRO... work_experience" />
+            <marker date="1567440366802" expanded="true" signature="7975:8040" ph="SELECT * FRO... work_experience" />
+            <marker date="1567440366802" expanded="true" signature="8182:8203" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="8350:8398" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="8832:8851" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="9004:9059" ph="SELECT * FRO... permanent_add" />
+            <marker date="1567440366802" expanded="true" signature="9235:9638" ph="SELECT * FRO... permanent_add" />
+            <marker date="1567440366802" expanded="true" signature="9811:9987" ph="SELECT * FRO... contact_add" />
+            <marker date="1567440366802" expanded="true" signature="10138:10192" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="10354:10417" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="10576:10639" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="10802:10863" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="11011:11062" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11211:11262" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11411:11463" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11613:11665" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11817:11886" ph="SELECT COUNT... education" />
+            <marker date="1567440366802" expanded="true" signature="12030:12078" ph="SELECT * FRO... awards" />
+            <marker date="1567440366802" expanded="true" signature="12221:12264" ph="SELECT * FRO... sittings" />
+            <marker date="1567440366802" expanded="true" signature="12411:12460" ph="SELECT * FRO... sponsor" />
+            <marker date="1567440366802" expanded="true" signature="12605:12653" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="12811:12885" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13036:13081" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13227:13543" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13687:14004" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="14147:14464" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="14608:14925" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15069:15386" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15530:15847" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15991:16308" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="16452:16769" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="16913:17230" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="17375:17691" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="17837:18153" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="18298:18614" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="18759:19075" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="19220:19536" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="19682:19998" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="20144:20460" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="20607:20923" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="21070:21386" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="21543:21865" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22016:22339" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22489:22812" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22963:23286" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="23437:23760" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="23911:24234" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="24385:24708" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="24859:25182" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="25333:25656" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="25802:25847" ph="SELECT * FRO... awards" />
+            <marker date="1567440366802" expanded="true" signature="25996:26047" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="26204:26265" ph="SELECT * FRO... present_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26421:26483" ph="SELECT * FRO... previous_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26639:26711" ph="SELECT * FRO... previous_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26860:26913" ph="SELECT * FRO... contact_add" />
+            <marker date="1567440366802" expanded="true" signature="27054:27097" ph="SELECT * FRO... state" />
+            <marker date="1567440366802" expanded="true" signature="27247:27302" ph="SELECT * FRO... senatorial_district" />
+            <marker date="1567440366802" expanded="true" signature="27445:27468" ph="SELECT * FRO... countries" />
+            <marker date="1567440366802" expanded="true" signature="27611:27653" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="27824:27851" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="27824:27884" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="27824:27914" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="28081:28151" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="28321:28543" ph="SELECT pin F... pin" />
+            <marker date="1567440366802" expanded="true" signature="28714:28934" ph="SELECT * FRO... pin" />
+            <marker date="1567440366802" expanded="true" signature="29081:29119" ph="SELECT * FRO... pin" />
+            <marker date="1567440366802" expanded="true" signature="29269:29452" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="29604:29654" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="29801:29850" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="30013:30081" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="30233:30260" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="30402:30422" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30563:30583" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30724:30744" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30890:30918" ph="SELECT * FRO... marital_status" />
+            <marker date="1567440366802" expanded="true" signature="31076:31332" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="31491:31879" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32341" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32695" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32759" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32834:33460" ph="SELECT speci... department" />
+            <marker date="1567440366802" expanded="true" signature="33602:34193" ph="SELECT COUNT... department" />
+            <marker date="1567440366802" expanded="true" signature="34352:34426" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34573:34619" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34766:34807" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34959:35005" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="35159:35247" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="35413:35530" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="35694:35777" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="35932:35985" ph="SELECT * FRO... set_time" />
+            <marker date="1567440366802" expanded="true" signature="36131:36154" ph="SELECT * FRO... positions" />
+            <marker date="1567440366802" expanded="true" signature="36303:36405" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="36554:36597" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="36881:36931" ph="SELECT * FRO... capture" />
+            <marker date="1567440366802" expanded="true" signature="37074:37123" ph="SELECT * FRO... capture" />
+            <marker date="1567440366802" expanded="true" signature="37274:37316" ph="SELECT * FRO... questions" />
+            <marker date="1567440366802" expanded="true" signature="37610:37876" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38021:38072" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38219:38266" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38419:38466" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="38616:38664" ph="SELECT * FRO... pin_nos" />
           </folding>
         </state>
       </provider>
@@ -1343,6 +1350,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,13 +1394,6 @@
         <state relative-caret-position="2652">
           <caret line="156" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1938,134 +1939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
-          <folding>
-            <marker date="1567438888690" expanded="true" signature="3362:3389" ph="SELECT * FRO... credit_passes" />
-            <marker date="1567438888690" expanded="true" signature="3533:3555" ph="SELECT * FRO... programs" />
-            <marker date="1567438888690" expanded="true" signature="3712:3953" ph="SELECT * FRO... additional_qualification" />
-            <marker date="1567438888690" expanded="true" signature="4109:4365" ph="SELECT * FRO... additional_qualification" />
-            <marker date="1567438888690" expanded="true" signature="4711:4827" ph="SELECT * FRO... program" />
-            <marker date="1567438888690" expanded="true" signature="4970:5023" ph="SELECT * FRO... jamb_score" />
-            <marker date="1567438888690" expanded="true" signature="5166:5208" ph="SELECT * FRO... subject" />
-            <marker date="1567438888690" expanded="true" signature="5349:5387" ph="SELECT * FRO... grade" />
-            <marker date="1567438888690" expanded="true" signature="5531:5577" ph="SELECT * FRO... exam_type" />
-            <marker date="1567438888690" expanded="true" signature="5720:5837" ph="SELECT * FRO... applicant_nok" />
-            <marker date="1567438888690" expanded="true" signature="5977:6094" ph="SELECT * FRO... applicant_ref" />
-            <marker date="1567438888690" expanded="true" signature="6429:6470" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="6620:6671" ph="SELECT * FRO... mode_of_training" />
-            <marker date="1567438888690" expanded="true" signature="6825:6952" ph="SELECT * FRO... sponsor2" />
-            <marker date="1567438888690" expanded="true" signature="7103:7154" ph="SELECT * FRO... school_logo" />
-            <marker date="1567438888690" expanded="true" signature="7297:7341" ph="SELECT * FRO... religion" />
-            <marker date="1567438888690" expanded="true" signature="7486:7596" ph="SELECT * FRO... school" />
-            <marker date="1567438888690" expanded="true" signature="7750:7809" ph="SELECT * FRO... work_experience" />
-            <marker date="1567438888690" expanded="true" signature="7963:8028" ph="SELECT * FRO... work_experience" />
-            <marker date="1567438888690" expanded="true" signature="8170:8191" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="8338:8386" ph="SELECT * FRO... schools" />
-            <marker date="1567438888690" expanded="true" signature="8820:8839" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="8992:9047" ph="SELECT * FRO... permanent_add" />
-            <marker date="1567438888690" expanded="true" signature="9223:9626" ph="SELECT * FRO... permanent_add" />
-            <marker date="1567438888690" expanded="true" signature="9799:9975" ph="SELECT * FRO... contact_add" />
-            <marker date="1567438888690" expanded="true" signature="10126:10180" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="10342:10405" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10564:10627" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10790:10851" ph="SELECT * FRO... professional_training" />
-            <marker date="1567438888690" expanded="true" signature="10999:11050" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11199:11250" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11399:11451" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11601:11653" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="11805:11874" ph="SELECT COUNT... education" />
-            <marker date="1567438888690" expanded="true" signature="12018:12066" ph="SELECT * FRO... awards" />
-            <marker date="1567438888690" expanded="true" signature="12209:12252" ph="SELECT * FRO... sittings" />
-            <marker date="1567438888690" expanded="true" signature="12399:12448" ph="SELECT * FRO... sponsor" />
-            <marker date="1567438888690" expanded="true" signature="12593:12641" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="12799:12873" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13024:13069" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13215:13531" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="13675:13992" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="14135:14452" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="14596:14913" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15057:15374" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15518:15835" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="15979:16296" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="16440:16757" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="16901:17218" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="17363:17679" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="17825:18141" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="18286:18602" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="18747:19063" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="19208:19524" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="19670:19986" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="20132:20448" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="20595:20911" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="21058:21374" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="21531:21853" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22004:22327" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22477:22800" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="22951:23274" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="23425:23748" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="23899:24222" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="24373:24696" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="24847:25170" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="25321:25644" ph="SELECT * FRO... olevel" />
-            <marker date="1567438888690" expanded="true" signature="25790:25835" ph="SELECT * FRO... awards" />
-            <marker date="1567438888690" expanded="true" signature="25984:26035" ph="SELECT * FRO... education" />
-            <marker date="1567438888690" expanded="true" signature="26192:26253" ph="SELECT * FRO... present_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26409:26471" ph="SELECT * FRO... previous_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26627:26699" ph="SELECT * FRO... previous_appointment" />
-            <marker date="1567438888690" expanded="true" signature="26848:26901" ph="SELECT * FRO... contact_add" />
-            <marker date="1567438888690" expanded="true" signature="27042:27085" ph="SELECT * FRO... state" />
-            <marker date="1567438888690" expanded="true" signature="27235:27290" ph="SELECT * FRO... senatorial_district" />
-            <marker date="1567438888690" expanded="true" signature="27433:27456" ph="SELECT * FRO... countries" />
-            <marker date="1567438888690" expanded="true" signature="27599:27641" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="27812:27839" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="27812:27872" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="27812:27902" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="28069:28139" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="28309:28531" ph="SELECT pin F... pin" />
-            <marker date="1567438888690" expanded="true" signature="28702:28922" ph="SELECT * FRO... pin" />
-            <marker date="1567438888690" expanded="true" signature="29069:29107" ph="SELECT * FRO... pin" />
-            <marker date="1567438888690" expanded="true" signature="29257:29440" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="29592:29642" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="29789:29838" ph="SELECT * FRO... session" />
-            <marker date="1567438888690" expanded="true" signature="30001:30069" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="30221:30248" ph="SELECT * FRO... qualification" />
-            <marker date="1567438888690" expanded="true" signature="30390:30410" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30551:30571" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30712:30732" ph="SELECT * FRO... gender" />
-            <marker date="1567438888690" expanded="true" signature="30878:30906" ph="SELECT * FRO... marital_status" />
-            <marker date="1567438888690" expanded="true" signature="31064:31320" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="31479:31867" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32329" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32683" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32037:32747" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="32822:33448" ph="SELECT speci... department" />
-            <marker date="1567438888690" expanded="true" signature="33590:34181" ph="SELECT COUNT... department" />
-            <marker date="1567438888690" expanded="true" signature="34340:34414" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34561:34607" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34754:34795" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="34947:34993" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="35147:35235" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="35401:35518" ph="SELECT * FRO... cut_off_mark" />
-            <marker date="1567438888690" expanded="true" signature="35682:35765" ph="SELECT * FRO... set_session" />
-            <marker date="1567438888690" expanded="true" signature="35920:35973" ph="SELECT * FRO... set_time" />
-            <marker date="1567438888690" expanded="true" signature="36119:36142" ph="SELECT * FRO... positions" />
-            <marker date="1567438888690" expanded="true" signature="36291:36393" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="36542:36585" ph="SELECT * FRO... users" />
-            <marker date="1567438888690" expanded="true" signature="36869:36919" ph="SELECT * FRO... capture" />
-            <marker date="1567438888690" expanded="true" signature="37062:37111" ph="SELECT * FRO... capture" />
-            <marker date="1567438888690" expanded="true" signature="37262:37304" ph="SELECT * FRO... questions" />
-            <marker date="1567438888690" expanded="true" signature="37598:37864" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38009:38060" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38207:38254" ph="SELECT * FRO... bio_data" />
-            <marker date="1567438888690" expanded="true" signature="38407:38454" ph="SELECT * FRO... pin_nos" />
-            <marker date="1567438888690" expanded="true" signature="38604:38652" ph="SELECT * FRO... pin_nos" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_applicants2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -2152,6 +2025,142 @@
             <element signature="e#4826#4832#0#HTML" expanded="true" />
             <element signature="e#4832#4838#0#HTML" expanded="true" />
             <element signature="e#6343#6349#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <marker date="1567440366802" expanded="true" signature="3374:3401" ph="SELECT * FRO... credit_passes" />
+            <marker date="1567440366802" expanded="true" signature="3545:3567" ph="SELECT * FRO... programs" />
+            <marker date="1567440366802" expanded="true" signature="3724:3965" ph="SELECT * FRO... additional_qualification" />
+            <marker date="1567440366802" expanded="true" signature="4121:4377" ph="SELECT * FRO... additional_qualification" />
+            <marker date="1567440366802" expanded="true" signature="4723:4839" ph="SELECT * FRO... program" />
+            <marker date="1567440366802" expanded="true" signature="4982:5035" ph="SELECT * FRO... jamb_score" />
+            <marker date="1567440366802" expanded="true" signature="5178:5220" ph="SELECT * FRO... subject" />
+            <marker date="1567440366802" expanded="true" signature="5361:5399" ph="SELECT * FRO... grade" />
+            <marker date="1567440366802" expanded="true" signature="5543:5589" ph="SELECT * FRO... exam_type" />
+            <marker date="1567440366802" expanded="true" signature="5732:5849" ph="SELECT * FRO... applicant_nok" />
+            <marker date="1567440366802" expanded="true" signature="5989:6106" ph="SELECT * FRO... applicant_ref" />
+            <marker date="1567440366802" expanded="true" signature="6441:6482" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="6632:6683" ph="SELECT * FRO... mode_of_training" />
+            <marker date="1567440366802" expanded="true" signature="6837:6964" ph="SELECT * FRO... sponsor2" />
+            <marker date="1567440366802" expanded="true" signature="7115:7166" ph="SELECT * FRO... school_logo" />
+            <marker date="1567440366802" expanded="true" signature="7309:7353" ph="SELECT * FRO... religion" />
+            <marker date="1567440366802" expanded="true" signature="7498:7608" ph="SELECT * FRO... school" />
+            <marker date="1567440366802" expanded="true" signature="7762:7821" ph="SELECT * FRO... work_experience" />
+            <marker date="1567440366802" expanded="true" signature="7975:8040" ph="SELECT * FRO... work_experience" />
+            <marker date="1567440366802" expanded="true" signature="8182:8203" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="8350:8398" ph="SELECT * FRO... schools" />
+            <marker date="1567440366802" expanded="true" signature="8832:8851" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="9004:9059" ph="SELECT * FRO... permanent_add" />
+            <marker date="1567440366802" expanded="true" signature="9235:9638" ph="SELECT * FRO... permanent_add" />
+            <marker date="1567440366802" expanded="true" signature="9811:9987" ph="SELECT * FRO... contact_add" />
+            <marker date="1567440366802" expanded="true" signature="10138:10192" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="10354:10417" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="10576:10639" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="10802:10863" ph="SELECT * FRO... professional_training" />
+            <marker date="1567440366802" expanded="true" signature="11011:11062" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11211:11262" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11411:11463" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11613:11665" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="11817:11886" ph="SELECT COUNT... education" />
+            <marker date="1567440366802" expanded="true" signature="12030:12078" ph="SELECT * FRO... awards" />
+            <marker date="1567440366802" expanded="true" signature="12221:12264" ph="SELECT * FRO... sittings" />
+            <marker date="1567440366802" expanded="true" signature="12411:12460" ph="SELECT * FRO... sponsor" />
+            <marker date="1567440366802" expanded="true" signature="12605:12653" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="12811:12885" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13036:13081" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13227:13543" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="13687:14004" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="14147:14464" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="14608:14925" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15069:15386" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15530:15847" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="15991:16308" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="16452:16769" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="16913:17230" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="17375:17691" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="17837:18153" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="18298:18614" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="18759:19075" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="19220:19536" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="19682:19998" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="20144:20460" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="20607:20923" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="21070:21386" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="21543:21865" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22016:22339" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22489:22812" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="22963:23286" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="23437:23760" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="23911:24234" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="24385:24708" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="24859:25182" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="25333:25656" ph="SELECT * FRO... olevel" />
+            <marker date="1567440366802" expanded="true" signature="25802:25847" ph="SELECT * FRO... awards" />
+            <marker date="1567440366802" expanded="true" signature="25996:26047" ph="SELECT * FRO... education" />
+            <marker date="1567440366802" expanded="true" signature="26204:26265" ph="SELECT * FRO... present_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26421:26483" ph="SELECT * FRO... previous_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26639:26711" ph="SELECT * FRO... previous_appointment" />
+            <marker date="1567440366802" expanded="true" signature="26860:26913" ph="SELECT * FRO... contact_add" />
+            <marker date="1567440366802" expanded="true" signature="27054:27097" ph="SELECT * FRO... state" />
+            <marker date="1567440366802" expanded="true" signature="27247:27302" ph="SELECT * FRO... senatorial_district" />
+            <marker date="1567440366802" expanded="true" signature="27445:27468" ph="SELECT * FRO... countries" />
+            <marker date="1567440366802" expanded="true" signature="27611:27653" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="27824:27851" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="27824:27884" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="27824:27914" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="28081:28151" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="28321:28543" ph="SELECT pin F... pin" />
+            <marker date="1567440366802" expanded="true" signature="28714:28934" ph="SELECT * FRO... pin" />
+            <marker date="1567440366802" expanded="true" signature="29081:29119" ph="SELECT * FRO... pin" />
+            <marker date="1567440366802" expanded="true" signature="29269:29452" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="29604:29654" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="29801:29850" ph="SELECT * FRO... session" />
+            <marker date="1567440366802" expanded="true" signature="30013:30081" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="30233:30260" ph="SELECT * FRO... qualification" />
+            <marker date="1567440366802" expanded="true" signature="30402:30422" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30563:30583" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30724:30744" ph="SELECT * FRO... gender" />
+            <marker date="1567440366802" expanded="true" signature="30890:30918" ph="SELECT * FRO... marital_status" />
+            <marker date="1567440366802" expanded="true" signature="31076:31332" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="31491:31879" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32341" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32695" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32049:32759" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="32834:33460" ph="SELECT speci... department" />
+            <marker date="1567440366802" expanded="true" signature="33602:34193" ph="SELECT COUNT... department" />
+            <marker date="1567440366802" expanded="true" signature="34352:34426" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34573:34619" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34766:34807" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="34959:35005" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="35159:35247" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="35413:35530" ph="SELECT * FRO... cut_off_mark" />
+            <marker date="1567440366802" expanded="true" signature="35694:35777" ph="SELECT * FRO... set_session" />
+            <marker date="1567440366802" expanded="true" signature="35932:35985" ph="SELECT * FRO... set_time" />
+            <marker date="1567440366802" expanded="true" signature="36131:36154" ph="SELECT * FRO... positions" />
+            <marker date="1567440366802" expanded="true" signature="36303:36405" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="36554:36597" ph="SELECT * FRO... users" />
+            <marker date="1567440366802" expanded="true" signature="36881:36931" ph="SELECT * FRO... capture" />
+            <marker date="1567440366802" expanded="true" signature="37074:37123" ph="SELECT * FRO... capture" />
+            <marker date="1567440366802" expanded="true" signature="37274:37316" ph="SELECT * FRO... questions" />
+            <marker date="1567440366802" expanded="true" signature="37610:37876" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38021:38072" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38219:38266" ph="SELECT * FRO... bio_data" />
+            <marker date="1567440366802" expanded="true" signature="38419:38466" ph="SELECT * FRO... pin_nos" />
+            <marker date="1567440366802" expanded="true" signature="38616:38664" ph="SELECT * FRO... pin_nos" />
           </folding>
         </state>
       </provider>
