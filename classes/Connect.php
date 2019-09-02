@@ -6,7 +6,7 @@ class Connect
     private $hostname = "localhost";
     private $db_name = "son";
     private $username = "root";
-    private $password = "Password@234";
+    private $password = "";
 
     public $link;
 
@@ -921,6 +921,27 @@ class Connect
 
 
 
+    public function selectCutOffMark($session_id, $school_id)
+    {
+        $query = "SELECT * FROM cut_off_mark WHERE session_id ='{$session_id}' AND school_id ='{$school_id}'";
+        $result = $this->link->query($query);
+        return $result;
+
+
+    }
+
+
+
+
+    public function selectStudentExamScore($applicant_id)
+    {
+        $query = "SELECT * FROM student_exam_score WHERE applicant_id ='{$applicant_id}'";
+        $result = $this->link->query($query);
+        return $result;
+
+
+    }
+
 
 
     public function selectPinSessionSchool($school, $session)
@@ -1060,7 +1081,7 @@ class Connect
 
     public function selectPinNum222($school,$session, $program)
     {
-        $query = "SELECT * FROM pin_nos LEFT OUTER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN school ON school.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN gender ON gender.gender_id = bio_data.bgender LEFT OUTER JOIN capture ON capture.applicant_id = bio_data.applicant_id  INNER JOIN program ON program.applicant_id = pin_nos.pin_no_id INNER JOIN programs ON programs.programs_id = program.programs_id  WHERE school.schools_id ='{$school}' AND school.session ='{$session}' AND program.programs_id ='{$program}' ORDER BY school.code ASC";
+        $query = "SELECT * FROM pin_nos LEFT OUTER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN school ON school.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN gender ON gender.gender_id = bio_data.bgender LEFT OUTER JOIN capture ON capture.applicant_id = bio_data.applicant_id LEFT OUTER JOIN student_exam_score ON student_exam_score.applicant_id =  pin_nos.pin_no_id  INNER JOIN program ON program.applicant_id = pin_nos.pin_no_id INNER JOIN programs ON programs.programs_id = program.programs_id  WHERE school.schools_id ='{$school}' AND school.session ='{$session}' AND program.programs_id ='{$program}' ORDER BY school.code ASC";
         $result = $this->link->query($query);
         return $result;
 
@@ -1137,6 +1158,16 @@ class Connect
     }
 
 
+
+
+
+    public function selectCutOffMarks($school, $session)
+    {
+        $query = "SELECT * FROM cut_off_mark WHERE school_id ='{$school}' AND  session_id ='{$session}'ORDER BY cut_off_id DESC LIMIT 1";
+        $result = $this->link->query($query);
+        return $result;
+
+    }
 
 
 

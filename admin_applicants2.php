@@ -242,7 +242,7 @@ else{
                             <th>Firstname</th>
                             <th>Othername</th>
                             <th>Gender</th>
-                            <th>Exam NO</th>
+                            <th>Image</th>
                             <th>DOB/Age</th>
                             <th>Email</th>
                             <th>Phone NO</th>
@@ -260,7 +260,7 @@ else{
                                 $othername = $result['bothername'];
                                 $gender = $result['gender'];
 
-                                $exam_no = substr($result['capture'],  0, strlen($result['capture']) - 4);
+                                //$exam_no = substr($result['capture'],  0, strlen($result['capture']) - 4);
 
                                 $date_of_birth = date('d-m-Y', strtotime($result['date_of_birth']));
                                 $email = $result['email'];
@@ -284,7 +284,7 @@ else{
                                 <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$gender; ?></td>
-                                <td><?php echo @$exam_no; ?></td>
+                                <td><?php echo @$image; ?></td>
                                 <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($date_of_birth).'yrs)'; ?></td>
                                 <td><?php echo @$email; ?></td>
                                 <td><?php echo @$phone_no; ?></td>

@@ -3,7 +3,7 @@ require_once("connection.php");
 
 session_start();
 
-require('time_out.php');
+//require('time_out.php');
 
 $_SESSION['user'];
 
@@ -13,6 +13,8 @@ spl_autoload_register(function ($class) {
 });
 
 $db = new Connect();
+
+
 
 //query gender table
 @$result_ge = $db->selectGender();
@@ -31,6 +33,14 @@ if($_SESSION['user']) {
 //query pin no table
     @$result_pin = $db->selectPinNO2($_SESSION['user']);
     @$record_pin = mysqli_fetch_assoc($result_pin);
+
+
+    //query student exam score table
+    @$query_score = $db->selectStudentExamScore($record_pin['pin_no_id']);
+    @$result_score = mysqli_fetch_assoc($query_score);
+
+
+    //
 
 
     //query capture table
@@ -80,13 +90,20 @@ if($_SESSION['user']) {
     @$record_pin2 = mysqli_fetch_assoc($result_pin2);
 
 
-    @$school = @$record_pin2['school_id'];
+   @$school = @$record_pin2['school_id'];
 
     @$result_set_ses = $db->selectSetSession3($school);
     @$record_set_ses = mysqli_fetch_assoc($result_set_ses);
 
 
-    $session = @$record_set_ses['set_session'];
+   @$session = @$record_set_ses['set_session'];
+
+
+    //query cut_off_mark table
+    @$query_cutoff = $db->selectCutOffMarks(@$school, $session);
+    @$result_cutoff = mysqli_fetch_assoc($query_cutoff);
+
+
 
     if(!($record_res2)) {
         if (@$record_pin) {
@@ -1010,6 +1027,11 @@ else{
                     echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModalexams">Exam NO';
                     if(@$record_caps){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
                     ;}?>
+                <?php if($record_res2['schools_id'] == 11){
+                    echo '<a href="#" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModaladm">Admission Status';
+                    if(@$result_score){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i></a>';}
+                    ;}?>
+
                 <a href="#"  style="text-align: left; display:inline;" class="btn btn-success btn-md link" data-toggle="modal" data-target="#myModalr">School <?php  if(@$record_res2){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
                 <a href="capture.php" style="text-align: left; display:inline;"  class="btn btn-success  btn-md link">Passport Photo <?php if(@$record_pass){echo'<i class="fa fa-check icon link" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
                 <a href="#" style="text-align: left; display:inline;" class="btn btn-success  btn-md link" data-toggle="modal" data-target="#myModal">Permanent Address <?php if(@$recordset_per){echo'<i class="fa fa-check icon" style="font-size: 20px;"></i>';} else{echo '<i class="fa fa-remove icon" style="color: #bf1208; font-size: 20px;"></i>';}?></a>
@@ -1411,6 +1433,56 @@ else{
                                                             <?php if(!@$recordset_jamb){ echo '<input type="submit" name="submit_jamb" class="button btn btn-lg" value="Submit">';}?>
                                                             <?php if(@$recordset_jamb){ echo '<input type="submit" style="background-color: #c9302c" name="update_jamb" class="button2 btn btn-lg" value="Update">';}?>
                                                         </div>
+                                                    </form>
+                                                </div>
+
+
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--Admission letter-->
+<div class="main-content">
+    <div class="fluid-container">
+
+        <div class="content-wrapper">
+
+            <div class="page-section" id="about">
+                <div class="container-fluid">
+
+                    <div class="modal fade" id="myModaladm" role="dialog">
+                        <div class="modal-dialog modal-lg">
+
+                            <!-- Modal content-->
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="panel panel-danger">
+                                        <?php require ('header.php')?>
+                                        <div class="panel-body" style="margin-left: 80px">
+                                            <button type="button" class="close" data-dismiss="modal" style="font-size: 30px; font-weight: 100; color: #000000;"><i class="fa fa-close"><span style="color: forestgreen">&nbsp;Close</span></i></button>
+                                            <h4 class="modal-title" align="center" style="color:#000000; font-size: 20px ;">Admission Status</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
+                                                        <h3>Score: <?php if(@$result_score){ echo @$result_score['student_score'];} else{ echo 'N/A';}?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Admission Status: <?php if(@$result_score['student_score'] >= @$result_cutoff['score']) {echo  ' ' .'<a href="admission_letter.php"><span style="color: forestgreen">Print Admission Letter</span></a>' ;} else{ echo '<span style="color: red">NOT Admitted YET!</span>';}?> </h3>
                                                     </form>
                                                 </div>
 

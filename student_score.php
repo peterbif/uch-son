@@ -10,110 +10,91 @@ spl_autoload_register(function ($class) {
 
 $db = new Connect();
 
+
 @$_SESSION['user'];
-
-
-@$_SESSION['session'] = $_POST['session'];
-@$_SESSION['program'] = $_POST['program'];
-
-
-
-//query users table
 
 @$query_sch = $db->selectAllUsers(@$_SESSION['user']);
 @$result_sch = mysqli_fetch_assoc($query_sch);
 
+$school_name = @$result_sch['school'];
+
 @$school2 = @$result_sch['school_id'];
 
-//query session table
-@$query_ses = $db->selectSession();
-$result_ses = mysqli_fetch_assoc($query_ses);
+@$school = @$school2 ;
+@$session = $_SESSION['session'];
 
-
-//query program table
-@$query_pro = $db->selectPrograms();
-$result_pro = mysqli_fetch_assoc($query_pro);
-
-
-@$query_ses2 = $db->selectSession3(@$_SESSION['session']);
-@$result_ses2 = mysqli_fetch_assoc($query_ses2);
-
-
-
-@$query_sch2 = $db->selectSchool22($school2);
-@$result_sch2 = mysqli_fetch_assoc($query_sch2);
+$query_ses2 = $db->selectSession3(@$_SESSION['session']);
+$result_ses2 = mysqli_fetch_assoc($query_ses2);
 
 
 
 
+@$school = $school2;
 
-if(isset($_POST['search_button'])) {
+if(@$school && @$session) {
 
-    @$school = $school2;
+    if(@$school2 == 11) {
+        $query = $db->selectPinNum222(@$school, $session, @$_SESSION['program']);
+        $result = mysqli_fetch_assoc($query);
+    }
+    else{
 
-    @$session = htmlspecialchars($_POST['session']);
-
-    if(@$school && @$session) {
-
-        if(@$school2 == 11) {
-            @$query = $db->selectPinNum222(@$school, @$session, @$_POST['program']);
-            @$result = mysqli_fetch_assoc($query);
-        }
-        else{
-
-            @$query = $db->selectPinNum22(@$school, $session);
-            @$result = mysqli_fetch_assoc($query);
-        }
-
+        $query = $db->selectPinNum22(@$school, $session);
+        $result = mysqli_fetch_assoc($query);
     }
 
-    if(!@$result) {
 
-        echo '<script type="text/javascript"> alert("No records for this school") </script>';
-    }
-}
 
-if(@$school2 == 11) {
+
+
+
+    if(@$school2 == 11) {
 
 //loop through
 
-    @$query2 = $db->selectPinNum222($school, $session, $_POST['program']);
-    @$result2 = mysqli_fetch_assoc($query2);
+        @$query2 = $db->selectPinNum222($school, $session, @$_SESSION['program']);
+        @$result2 = mysqli_fetch_assoc($query2);
 
-    if (@$result2) {
-        @$count = 0;
+        if (@$result2) {
+            @$count = 0;
 
-        do {
-            @$result2["surname"];
-            @$count++;
-        } while (@$result2 = mysqli_fetch_assoc($query2));
+            do {
+                @$result2["surname"];
+                @$count++;
+            } while (@$result2 = mysqli_fetch_assoc($query2));
 
-        @$total_applicants = $count++;
+            @$total_applicants = $count++;
 
-    } else {
-        @$total_applicants = 0;
+        } else {
+            @$total_applicants = 0;
+        }
+
+    }
+    else{
+        @$query2 = $db->selectPinNum22($school, $session);
+        @$result2 = mysqli_fetch_assoc($query2);
+
+        if (@$result2) {
+            @$count = 0;
+
+            do {
+                @$result2["surname"];
+                @$count++;
+            } while (@$result2 = mysqli_fetch_assoc($query2));
+
+            @$total_applicants = $count++;
+
+        } else {
+            @$total_applicants = 0;
+        }
     }
 
-}
-else{
-    @$query2 = $db->selectPinNum22($school, $session);
-    @$result2 = mysqli_fetch_assoc($query2);
+}else{
 
-    if (@$result2) {
-        @$count = 0;
-
-        do {
-            @$result2["surname"];
-            @$count++;
-        } while (@$result2 = mysqli_fetch_assoc($query2));
-
-        @$total_applicants = $count++;
-
-    } else {
-        @$total_applicants = 0;
-    }
+    echo '<script type="text/javascript"> alert("No records for this school") </script>';
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -163,43 +144,13 @@ else{
         <div class="panel-body">&nbsp;&nbsp;
             <div class="row">
                 <form class="form-horizontal form-inline"   method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
-                    <div class="input-container col-lg-8">
 
-                        <!-- <select name="school" class="input-field" required>
-                            <option value="">Select School</option>
-                            <?php do{?>
-                                <option value="<?php echo @$result_sch['schools_id'];?>"><?php echo @$result_sch['school'];?></option>
-                            <?php }while(@$result_sch = mysqli_fetch_assoc($query_sch));?>
-                        </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
 
-                        <select class="input-field state state-control" name="session" required>
-                            <option value="">Select Session</option>
-                            <?php do{  ?>
-                                <option value="<?php echo @$result_ses['session_id']; ?>"><?php echo @$result_ses['session'];?></option>
-                            <?php }while(@$result_ses = mysqli_fetch_assoc($query_ses)); ?>
-                        </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        <?php if(@$school2 == 11){
-                      echo '<select class="input-field state state-control" name="program" required>';
-                            echo'<option value="">Select Program</option>';
-                             do {
-                              echo   '<option value="'.@$result_pro['programs_id'].'">'.@$result_pro['program'].'</option>';
-                             } while(@$result_pro = mysqli_fetch_assoc($query_pro));
-                      echo '</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';}?>
-
-                        <button type="submit"  name="search_button" class="button">Search</button>
+                    <div class="col-lg-4" >
+                        <h6 class="button" align="left"> Applicants: <?php echo @$total_applicants;?></h6>
                     </div>
 
 
-                    <div class="col-lg-2" align="right">
-                        <h6 class="button"> Applicants: <?php echo @$total_applicants;?></h6>
-                    </div>
-
-                    <div class="col-lg-2" align="right">
-                        <a href="admin.php" style="font-size: 23px;" class="button fa fa-backward">
-                            Back
-                        </a>
-                    </div>
                 </form>
 
 
@@ -208,9 +159,8 @@ else{
             <br/><br />
             <div class="row">
 
-                <div class="col-lg-3 col-sm-offset-1 input-container" align="center"> <input type="text" id="myInput" class="input-field" onkeyup="myFunction()" placeholder="Search By Surname" name="myInput"></div>
-                <div class="col-lg-3 col-sm-offset-1 input-container" align="center"> <input type="text" id="myInput2" class="input-field" onkeyup="myFunction2()" placeholder="Search By Form NO" name="myInput2"></div>
-                <div class="col-lg-3 col-sm-offset-1 input-container" align="center"> <a href="student_score.php" class="btn btn-success" target="_blank">Enter Student's Score</a> </div>
+                <div class="col-lg-4 col-sm-offset-1 input-container" align="center"> <input type="text" id="myInput" class="input-field" onkeyup="myFunction()" placeholder="Search By Form NO" name="myInput"></div>
+                <div class="col-lg-4 col-sm-offset-1 input-container" align="center"> <input type="text" id="myInput2" class="input-field" onkeyup="myFunction2()" placeholder="Search By Surname" name="myInput2"></div>
 
             </div>
             <div class="row">
@@ -228,10 +178,7 @@ else{
                             <th>Firstname</th>
                             <th>Othername</th>
                             <th>Gender</th>
-                            <!-- <th>Exam NO</th>-->
-                            <th>DOB/Age</th>
-                            <th>Email</th>
-                            <th>Phone NO</th>
+                            <th>Score</th>
 
                         </tr>
                         </thead>
@@ -245,12 +192,8 @@ else{
                                 $firstname = $result['bfirstname'];
                                 $othername = $result['bothername'];
                                 $gender = $result['gender'];
+                                $score = $result['student_score'];
 
-                                // $exam_no = substr($result['capture'],  0, strlen($result['capture']) - 4);
-
-                                $date_of_birth = date('d-m-Y', strtotime($result['date_of_birth']));
-                                $email = $result['email'];
-                                $phone_no = $result['phone_no'];
                                 $applicant =  $result['pin_no_id'];
 
                                 // @$_SESSION['id'] = $result['pin_no_id'];
@@ -270,10 +213,8 @@ else{
                                 <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$gender; ?></td>
-                                <!-- <td><?php echo @$exam_no; ?></td>-->
-                                <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($date_of_birth).'yrs)'; ?></td>
-                                <td><?php echo @$email; ?></td>
-                                <td><?php echo @$phone_no; ?></td>
+                                <td> <a href="student_exam_score.php?id=<?php echo @$applicant; ?>" class="btn btn-success" target="_blank">Enter Score</a> <br/>  <?php if(@$score){echo'<span style="font-size: 20px;"><strong>score:</strong></span>'.' '.@$score ;}?></td>
+
 
                             </tr>
                         <?php }while(@$result = mysqli_fetch_assoc($query));
@@ -291,7 +232,7 @@ else{
 
             <div class="row">
                 <div class="col-lg-12">
-                    <div align="right"><button class="button" ><a href="print.php" style="color: #FFFFFF;" target="_blank"><i class="fa fa-print"></i> Print</a> </button>
+                    <div align="right"><button class="button" ><a href="print_st_score.php" style="color: #FFFFFF;" target="_blank"><i class="fa fa-print"></i> Print</a> </button>
                     </div>
                 </div>
                 <?php require ('footer.php')?>
@@ -311,7 +252,7 @@ else{
                 tr = table.getElementsByTagName("tr");
                 for(i = 0; i < tr.length; i++){
 
-                    td = tr[i].getElementsByTagName("td")[3];
+                    td = tr[i].getElementsByTagName("td")[2];
                     if(td){
 
                         if(td.innerHTML.toUpperCase().indexOf(filter) > -1){
@@ -338,7 +279,7 @@ else{
                 tr = table.getElementsByTagName("tr");
                 for(i = 0; i < tr.length; i++){
 
-                    td = tr[i].getElementsByTagName("td")[2];
+                    td = tr[i].getElementsByTagName("td")[3];
                     if(td){
 
                         if(td.innerHTML.toUpperCase().indexOf(filter) > -1){

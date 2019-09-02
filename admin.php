@@ -80,21 +80,27 @@ if (isset($_POST['reset'])) {
 
 //Set Session
 
+@$query_sch = $db->selectAllUsers(@$_SESSION['user']);
+@$result_sch = mysqli_fetch_assoc($query_sch);
 
-if (isset($_POST['button3'])) {
+//$school = $result_sch['school_id'];
+
+if(isset($_POST['submit'])) {
     $session = $_POST['session'];
-    $school = $_POST['school'];
+    $school = $result_sch['school_id'];
+    $score = trim($_POST['score']);
 
-    $query31 = $db->selectSetSession($session, $school);
+    $query31 = $db->selectCutOffMark($session, $school);
     $result3 = mysqli_fetch_assoc($query31);
 
-    if ($result3) {
+    if($result3){
 
-        echo '<script type="text/javascript"> alert("This record exists") </script>';
+        $query3 = "UPDATE cut_off_mark SET score ='{$score}' WHERE school_id ='{$school}' AND session_id ='{$session}'";
+        $db->update($query3);
         echo "<meta http-equiv='refresh' content='0'>";
-    } else {
+    } else{
 
-        $query3 = "INSERT INTO set_session(set_session, school) VALUES ('{$session}', '{$school}')";
+        $query3 = "INSERT INTO cut_off_mark(score, school_id, session_id) VALUES ('{$score}', '{$school}', '{$session}')";
         $db->insert($query3);
         echo "<meta http-equiv='refresh' content='0'>";
 
@@ -105,9 +111,10 @@ if (isset($_POST['button3'])) {
 
 
 
-if (isset($_POST['reset3'])) {
+if (isset($_POST['reset'])) {
 
-    $_POST['set_time'] = " ";
+    $_POST['score'] = " ";
+    $_POST['session'] = " ";
 
 }
 
@@ -180,8 +187,8 @@ if (isset($_POST['reset3'])) {
         <div class="col-lg-2" style="margin-top: -40px;">
             <div class="btn-group-vertical">
                 <!--<button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal"><a href="qualification.php" style="color: #ffffff"><i class="fa fa-external-link icon"></i>Add Qualification</a></button>-->
-                <a href="applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>SON Applicants</a>
-                <!--  <a href="applicants2.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Post Basic <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicants</a>-->
+                <a href="applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Applicants</a>
+                <button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-external-link icon"></i>Set Cut-Off Mark</button>
 
                 <!-- <a href="statistics.php" style="color: #ffffff;text-align: left;"  class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i> Statistics</a><br /><br />-->
             </div>
@@ -220,10 +227,8 @@ if (isset($_POST['reset3'])) {
         <div class="row" style="margin-top: 40px;">
             <div class="col-lg-2">
                 <div class="btn-group-vertical">
-
-                    <!--<button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal"><a href="qualification.php" style="color: #ffffff"><i class="fa fa-external-link icon"></i>Add Qualification</a></button>-->
+                    <button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-external-link icon"></i>Set Cut-Off Mark</button>
                     <a href="applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Applicants</a>
-                    <!-- <a href="applicants2.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Post Basic <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicants</a>-->
 
                     <!-- <a href="statistics.php" style="color: #ffffff;text-align: left;"  class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i> Statistics</a><br /><br />-->
                 </div>
@@ -268,7 +273,7 @@ if (isset($_POST['reset3'])) {
                         <?php require ('header.php')?>
                         <div class="panel-body" style="margin-left: 80px">
                             <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close</button>
-                            <h4 class="modal-title" align="center" style="color:#000000; font-size: 20px ;">Add User</h4>
+                            <h4 class="modal-title" align="center" style="color:#000000; font-size: 20px ;">Add Cut-Off Mark</h4>
                         </div>
                         <div class="modal-body">
                             <div class="container-fluid">
@@ -276,38 +281,20 @@ if (isset($_POST['reset3'])) {
                                     <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
                                         <div class="input-container">
                                             <i class="fa fa-text-width icon"></i>
-                                            <input type="text" class="input-field" id="surname"  name="surname" value="<?php echo @$surname; ?>" required placeholder="Enter Surname">
+                                            <input type="text" class="input-field" id="surname"  name="score"  required placeholder="Enter Score">
                                         </div>
                                         <div class="input-container">
-                                            <i class="fa fa-text-width icon"></i>
-                                            <input type="text" class="input-field" name="firstname" id="firstname" value="<?php echo @$firstname; ?>" required placeholder="Enter Firstname">
-                                        </div>
-                                        <div class="input-container">
-                                            <i class="fa fa-envelope icon"></i>
-                                            <input type="email" class="input-field" name="email" value="<?php echo @$email; ?>"  placeholder="Enter Email">
+                                            <i class="fa fa-sort-alpha-asc icon"></i>
+                                            <select class="input-field" name="session" required="required">
+                                                <option value="">Select Session</option>
+                                                <?php  do{  ?>
+                                                    <option value="<?php echo @$result_ses['session_id']; ?>"><?php echo @$result_ses['session'];?></option>
+                                                <?php  }while(@$result_ses = mysqli_fetch_assoc($session)); ?>
+                                            </select>
                                         </div>
 
-                                        <div class="input-container">
-                                            <i class="fa fa-phone icon"></i>
-                                            <input type="text" class="input-field" name="phone_no" value="<?php echo @$phone_no; ?>" required placeholder="Enter Phone NO">
-                                        </div>
 
-                                        <div class="input-container">
-                                            <i class="fa fa-key icon">&nbsp;Password</i>
-                                            <input type="password" class="input-field" id="pwd" name="password" placeholder="Password" value="<?php  echo @$password; ?>" required>
-                                        </div>
-
-                                        <div class="input-container">
-                                            <i class="fa fa-key icon">&nbsp;Re-type Password</i>
-                                            <input type="password" class="input-field" id="pwd1"  placeholder="Re-type Password" value="<?php echo @$password1;?>" name="password1" required>
-                                        </div>
-
-                                        <div class="input-container">
-                                            <i class="fa fa-arrow-circle-o-right icon">Click</i>&nbsp;&nbsp;
-                                            &nbsp;<input type="radio" class="radio-inline" name="role" value="1"><span class="radio-select">&nbsp;&nbsp;Admin </span>  &nbsp;&nbsp;&nbsp;<input type="radio" class="radio-inline" name="role" value="2"> <span class="radio-select"> &nbsp;&nbsp; User</span>
-                                        </div>
-
-                                        <div align="right"> <button type="submit" name="user" class="button">Submit</button> &nbsp;&nbsp;<button type="submit" name="reset" class="button">Clear Text</button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="button2"><a href="update_users.php" style="color: #FFFFFF">Edit</a> </button></div>
+                                        <div align="right"> <button type="submit" name="submit" class="button">Submit</button> &nbsp;&nbsp;<button type="submit" name="reset" class="button">Clear Text</button> </button></div>
 
                                     </form>
                                 </div>
