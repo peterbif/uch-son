@@ -285,9 +285,7 @@ else{
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$gender; ?></td>
                                 <td><?php echo @$image; ?></td>
-                                <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($date_of_birth).'yrs)'; ?></td>
-                                <td><?php echo @$email; ?></td>
-                                <td><?php echo @$phone_no; ?></td>
+                                <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($db->orderDate($date_of_birth)).'yrs)'; ?></td>                                   <td><?php echo @$phone_no; ?></td>
 
                             </tr>
                         <?php }while(@$result = mysqli_fetch_assoc($query));

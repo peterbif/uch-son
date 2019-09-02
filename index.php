@@ -186,6 +186,24 @@ if(isset($_POST['login'])) {
     </style>
     <style>
 
+        .marquee {
+            width: 400px;
+            line-height: 50px;
+            color: Black;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .marquee p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 60s linear infinite;
+            font-size: 20px;
+        }
+        @keyframes marquee {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
 
     </style>
 
@@ -197,9 +215,9 @@ if(isset($_POST['login'])) {
     <div class="marquee">
         <p id="div1"><span style="color: deeppink; background-color: #FFFFFF" id="son"> The List of Successful Candidates for SON Entrance Examination, 2019/2020 Academic Session:  <a href="1st_set2.pdf"><i class="fa fa-list-ol"> 1st List</i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="2nd_set2.pdf"><i class="fa fa-list-ol"> 2nd List</i></a>
         </p>
-        <p id="div2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: purple; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC PERIOPERATIVE NURSING COURSE For 2019/2020 Academic Session are on ....<a href="https://pns.uch-ibadan.org.ng/" target="_blank">Click here</a></span></p>
-        <p id="div3">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: dodgerblue; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC OCCUPATIONAL HEALTH NURSING COURSE  For 2019/2020 Academic Session are on ....<a href="SOHN.pdf" target="_blank">Click here</a></span></p>
-        <p id="div4">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: orangered; background-color: #FFFFFF" >Sales of Admission Forms into School of Health Information Management For 2019/2020 Academic Session are on ....<a href="http://shim.uch-ibadan.org.ng/" target="_blank">Click here</a></span></p>
+     <!--   <p id="div2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: purple; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC PERIOPERATIVE NURSING COURSE For 2019/2020 Academic Session are on ....<a href="https://pns.uch-ibadan.org.ng/" target="_blank">Click here</a></span></p>->
+        <!--<p id="div3">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: dodgerblue; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC OCCUPATIONAL HEALTH NURSING COURSE  For 2019/2020 Academic Session are on ....<a href="SOHN.pdf" target="_blank">Click here</a></span></p>-->
+        <p id="div4">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: orangered; background-color: #FFFFFF" >Sales of Admission Forms into School of Health Information Management For 2019/2020 Academic Session is closed</p>
         </p>
 
     </div>
@@ -290,10 +308,10 @@ if(isset($_POST['login'])) {
 
     <br /><br/><br/><br /><br/><br/><br />
 
-    <div class="row" align="center" style="margin-top: 15px;">
+   <!-- <div class="row" align="center" style="margin-top: 15px;">
 
-        <button class="button" onclick="openForm()"><span class="login-button"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Enter Pin</span></button> &nbsp;&nbsp;&nbsp;&nbsp;<!-- <a href="#"  ><img src="img/pay.png"></a>-->&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="button" onclick="openForm3()"><span class="login-button"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Log In</span></button>
-    </div><br/><br /><br/><br/><br />
+        <button class="button" onclick="openForm()"><span class="login-button"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Enter Pin</span></button> &nbsp;&nbsp;&nbsp;&nbsp;<!-- <a href="#"  ><img src="img/pay.png"></a>--> <!--&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="button" onclick="openForm3()"><span class="login-button"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Log In</span></button>
+    </div><br/><br /><br/><br/><br />-->
 
     <div class="col-lg-12"><br/><br />
 
@@ -360,11 +378,11 @@ if(isset($_POST['login'])) {
         $(function () {
 
             var counter = 0,
-                divs = $('#div1, #div2, #div3, #div4');
+                divs = $('#div1,  #div4');
 
             function showDiv () {
                 divs.hide() // hide all divs
-                    .filter(function (index) { return index == counter % 4; }) // figure out correct div to show
+                    .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
                     .show('fast'); // and show it
 
                 counter++;

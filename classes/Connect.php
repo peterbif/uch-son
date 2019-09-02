@@ -211,6 +211,20 @@ class Connect
 
     }
 
+    public function orderDate($date)
+    {
+
+
+        $date = new DateTime($date);
+        //echo $date->format('d.m.Y'); // 31.07.2012
+        return $date->format('d-m-Y'); // 31-07-2012
+
+
+    }
+
+
+
+
 
     public function selectProgram($id)
     {
@@ -290,6 +304,7 @@ class Connect
         $from = new DateTime($dob);
         $to   = new DateTime('today');
         return $from->diff($to)->y;
+
     }
 
     public function selectSchools()
