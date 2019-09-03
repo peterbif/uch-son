@@ -375,6 +375,15 @@ class Connect
 
     }
 
+    public function selectSchool222($id)
+    {
+        $query = "SELECT * FROM school INNER JOIN schools on schools.schools_id = school.schools_id INNER JOIN session ON session.session_id = school.session WHERE applicant_id = '{$id}'";
+        $result = $this->link->query($query);
+        return $result;
+
+
+    }
+
 
 
     public function selectWorkExperience($id)

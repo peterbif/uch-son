@@ -138,10 +138,10 @@ else{
 <body>
 <div class="container-fluid">
 
-    <div class="panel panel-danger">
+  <!--  <div class="panel panel-danger">-->
         <?php require ('header.php')?>
 
-        <div class="panel-body">&nbsp;
+        <!--<div class="panel-body">&nbsp;-->
             <div class="row">
                 <div class="col-lg-12" >
                     <table class="table table-bordered" id="applicants">
@@ -156,6 +156,9 @@ else{
                             <th>Firstname</th>
                             <th>Othername</th>
                             <th>Gender</th>
+                            <!--<th>Time In</th>
+                            <th>Time Out</th>
+                            <th>Sign</th>-->
                             <th>Image</th>
                             <th>DOB/Age</th>
                             <th>Email</th>
@@ -194,11 +197,14 @@ else{
                                 <td class="td"><?php if(@$result) {echo $sn++;} ?></td>
                                 <td><img  align="right" src="uploads/<?php echo @$image;?>" class="img-rounded" width="80px" height="80px" /></td>
                                 <td><?php echo @$form_no; ?></td>
-                                <td class="td"> <a href="admin_applicant.php?id=<?php echo @$applicant;?>" target="_blank" > <?php echo @$surname;?></a>
+                                <td class="td"><!-- <a href="admin_applicant.php?id=<?php echo @$applicant;?>" target="_blank" > --><?php echo @$surname;?></a></td>
                                 <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
-                                <td><?php echo @$gender; ?></td>
-                                <td><?php echo @$image; ?></td>
+                                 <td><?php echo @$gender; ?></td>
+                               <!-- <td></td>
+                                <td></td>
+                                <td></td>-->
+                                  <td><?php echo @$image; ?></td>
                                 <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($db->orderDate($date_of_birth)).'yrs)'; ?></td>
                                 <td><?php echo @$email; ?></td>
                                 <td><?php echo @$phone_no; ?></td>
@@ -235,8 +241,8 @@ else{
                 </div>
             </div>
 
-        </div>
-    </div>
+   <!--     </div>-->
+  <!--  </div>-->
     <?php require ('footer.php')?>
     <script src="src/v1/v1.1/js/jquery-1.11.3.min.js"></script>
     <script src="src/v1/v1.0/js/xlsx.core.js"></script>

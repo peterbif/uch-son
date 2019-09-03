@@ -3,7 +3,7 @@ require_once("connection.php");
 
 session_start();
 
-require('time_out.php');
+//require('time_out.php');
 
 $_SESSION['user'];
 
@@ -89,15 +89,14 @@ if($_SESSION['user']) {
     @$result_pin2 = $db->selectPinCode(@$record_pin['pin']);
     @$record_pin2 = mysqli_fetch_assoc($result_pin2);
 
-
-   @$school = @$record_pin2['school_id'];
+//school_id
+  @$school = @$record_res2['schools_id'];
 
     @$result_set_ses = $db->selectSetSession3($school);
     @$record_set_ses = mysqli_fetch_assoc($result_set_ses);
 
-
-   @$session = @$record_set_ses['set_session'];
-
+//session id
+  @$session = @$record_set_ses['set_session'];
 
     //query cut_off_mark table
     @$query_cutoff = $db->selectCutOffMarks(@$school, $session);
@@ -908,6 +907,7 @@ else{
 }
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -1482,7 +1482,7 @@ else{
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
-                                                        <h3>Score: <?php if(@$result_score){ echo @$result_score['student_score'];} else{ echo 'N/A';}?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Admission Status: <?php if(@$result_score['student_score'] >= @$result_cutoff['score']) {echo  ' ' .'<a href="admission_letter.php"><span style="color: forestgreen">Print Admission Letter</span></a>' ;} else{ echo '<span style="color: red">NOT Admitted YET!</span>';}?> </h3>
+                                                        <h3>Score: <?php if(@$result_score){ echo @$result_score['student_score'];} else{ echo 'N/A';}?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Admission Status: <?php if(@$result_score && (@$result_score['student_score'] >= @$result_cutoff['score'])) {echo  ' ' .'<a href="admission_letter.php"><span style="color: forestgreen">Print Admission Letter</span></a>' ;} else{ echo '<span style="color: red">NOT Admitted YET!</span>';}?> </h3>
                                                     </form>
                                                 </div>
 
