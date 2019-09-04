@@ -23,8 +23,8 @@ $school_name = @$result_sch['school'];
 @$school = @$school2 ;
 @$session = $_SESSION['session'];
 
-$query_ses2 = $db->selectSession3(@$_SESSION['session']);
-$result_ses2 = mysqli_fetch_assoc($query_ses2);
+@$query_ses2 = $db->selectSession3(@$_SESSION['session']);
+@$result_ses2 = mysqli_fetch_assoc($query_ses2);
 
 
 
@@ -33,6 +33,35 @@ $result_ses2 = mysqli_fetch_assoc($query_ses2);
 
 
 @$school = $school2;
+
+
+// submitting position
+if(isset($_POST['submit'])) {
+
+    $score = [];
+    $applicant = [];
+    $checkbox = [];
+
+    @$score = $_POST['score'];
+    @$applicant = $_POST['applicant'];
+    @$checkbox = $_POST['checkbox'];
+
+    foreach($checkbox as $key =>$value):
+
+        @$score2 = $score[$key];
+        @$applicant_id = $applicant[$key];
+        //$checkbox2 =  $checkbox[$key];
+
+        @$sql = "INSERT INTO student_exam_score(student_score, applicant_id) VALUES ('{$score2}', '{$applicant_id}')";
+        $db->insertPin($sql);
+      endforeach;
+      echo "<meta http-equiv='refresh' content='0'>";
+      echo '<script type="text/javascript"> alert("Information successfully submitted") </script>';
+
+
+}
+
+
 
 if(@$school && @$session) {
 
@@ -160,6 +189,8 @@ if(@$school && @$session) {
             </div> <br/><br />
 
             <br/><br />
+            <form class="form-horizontal form-inline"   method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
+
             <div class="row">
 
                 <div class="col-lg-4 col-sm-offset-1 input-container" align="center"> <input type="text" id="myInput" class="input-field" onkeyup="myFunction()" placeholder="Search By Form NO" name="myInput"></div>
@@ -182,6 +213,8 @@ if(@$school && @$session) {
                             <th>Othername</th>
                             <th>Gender</th>
                             <th>Score</th>
+                            <th>Check</th>
+                            <th>Edit</th>
 
                         </tr>
                         </thead>
@@ -196,7 +229,6 @@ if(@$school && @$session) {
                                 $othername = $result['bothername'];
                                 $gender = $result['gender'];
                                 $score = $result['student_score'];
-
                                 $applicant =  $result['pin_no_id'];
 
                                 // @$_SESSION['id'] = $result['pin_no_id'];
@@ -216,9 +248,9 @@ if(@$school && @$session) {
                                 <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$gender; ?></td>
-                                <td> <a href="student_exam_score.php?id=<?php echo @$applicant; ?>" class="btn btn-success" target="_blank">Enter Score</a> <br/>  <?php if(@$score){echo'<span style="font-size: 20px;"><strong>score:</strong></span>'.' '.@$score ;}?></td>
-
-
+                                <td><?php  if(@$result['student_score']){echo @$result['student_score'];}?><input type="text"     name="score[<?php echo @$sn ?>]" placeholder="Enter Score"/> </td>
+                                <td><input type="checkbox" name="checkbox[<?php echo @$sn ?>]"/></td>
+                                <td><input type="hidden"   name="applicant[<?php echo @$sn ?>]" value="<?php echo @$applicant;?>"> <a href="student_exam_score.php?id=<?php echo @$applicant; ?>" class="btn btn-success" target="_blank"><i class="fa fa-edit"></i></a> </td>
                             </tr>
                         <?php }while(@$result = mysqli_fetch_assoc($query));
 
@@ -233,14 +265,22 @@ if(@$school && @$session) {
 
             </div>
 
+
             <div class="row">
-                <div class="col-lg-12">
-                    <div align="right"><button class="button" ><a href="print_st_score.php" style="color: #FFFFFF;" target="_blank"><i class="fa fa-print"></i> Print</a> </button>
+                <div class="col-lg-4 col-lg-offset-1">
+                    <div align="right"><a href="print_st_score.php" style="color: #FFFFFF;" target="_blank" class="button"><i class="fa fa-print">print</i></a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-lg-offset-1">
+                    <div align="right"><button type="submit" name="submit" class="button"><i class="fa fa-save icon">save</i> </a> </button>
+                    </div>
+                </div><br /><br />
+
+            </form>
+
                 <?php require ('footer.php')?>
 
-            </div>
+            </div><br /><br /><br /><br />
 
         </div>
 

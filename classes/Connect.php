@@ -91,6 +91,7 @@ class Connect
     {
 
         $result = $this->link->query($query);
+        return $result;
 
     }
 
