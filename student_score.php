@@ -32,6 +32,10 @@ $school_name = @$result_sch['school'];
 @$result_sch2 = mysqli_fetch_assoc($query_sch2);
 
 
+
+
+
+
 @$school = $school2;
 
 
@@ -41,18 +45,21 @@ if(isset($_POST['submit'])) {
     $score = [];
     $applicant = [];
     $checkbox = [];
+    $admin_status = [];
 
     @$score = $_POST['score'];
     @$applicant = $_POST['applicant'];
+    $admin_status = $_POST['status'];
     @$checkbox = $_POST['checkbox'];
 
     foreach($checkbox as $key =>$value):
 
         @$score2 = $score[$key];
         @$applicant_id = $applicant[$key];
+        $admin_status_id = $admin_status[$key];
         //$checkbox2 =  $checkbox[$key];
 
-        @$sql = "INSERT INTO student_exam_score(student_score, applicant_id) VALUES ('{$score2}', '{$applicant_id}')";
+        @$sql = "INSERT INTO student_exam_score(student_score, admin_status_id, applicant_id) VALUES ('{$score2}', '{$admin_status_id}', '{$applicant_id}')";
         $db->insertPin($sql);
       endforeach;
       echo "<meta http-equiv='refresh' content='0'>";
@@ -125,6 +132,26 @@ if(@$school && @$session) {
 
     echo '<script type="text/javascript"> alert("No records for this school") </script>';
 }
+
+
+
+
+@$query_status = $db->selectAdminStatus();
+@$result_status = mysqli_fetch_assoc($query_status);
+
+
+$status = [];
+$admin_status_id = [];
+$total = 0;
+
+do{
+    array_push($status, $result_status['status']);
+    array_push($admin_status_id, $result_status['admin_status_id']);
+
+    $total ++;
+}
+while(@$result_status = mysqli_fetch_assoc($query_status));
+
 ?>
 
 
@@ -213,6 +240,7 @@ if(@$school && @$session) {
                             <th>Othername</th>
                             <th>Gender</th>
                             <th>Score</th>
+                            <th>Admission Status</th>
                             <th>Check</th>
                             <th>Edit</th>
 
@@ -248,7 +276,14 @@ if(@$school && @$session) {
                                 <td><?php echo @$firstname; ?></td>
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$gender; ?></td>
-                                <td><?php  if(@$result['student_score']){echo @$result['student_score'];}?><input type="text"     name="score[<?php echo @$sn ?>]" placeholder="Enter Score"/> </td>
+                                <td><?php  if(@$result['student_score']){echo @$result['student_score'] ;}?><br/><input type="text"     name="score[<?php echo @$sn ?>]" placeholder="Enter Score"/> </td>
+                                <td><?php  if(@$result['admin_status_id']){echo @$result['status'] ;}?> <br/> <select name="status[<?php echo @$sn ?>]" class="form-control">
+                                        <option value=""> Select Status</option>
+                                        <?php $count = 0; do{?>
+                                            <option value="<?php echo @$admin_status_id[$count];?>"><?php  echo @$status[$count]; $count++;?></option>
+
+                                        <?php }while($count < $total);?>
+                                    </select></td>
                                 <td><input type="checkbox" name="checkbox[<?php echo @$sn ?>]"/></td>
                                 <td><input type="hidden"   name="applicant[<?php echo @$sn ?>]" value="<?php echo @$applicant;?>"> <a href="student_exam_score.php?id=<?php echo @$applicant; ?>" class="btn btn-success" target="_blank"><i class="fa fa-edit"></i></a> </td>
                             </tr>

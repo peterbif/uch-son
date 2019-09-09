@@ -3,7 +3,7 @@ require_once("connection.php");
 
 session_start();
 
-//require('time_out.php');
+require('time_out.php');
 
 $_SESSION['user'];
 
@@ -1482,7 +1482,8 @@ else{
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
-                                                        <h3>Score: <?php if(@$result_score){ echo @$result_score['student_score'];} else{ echo 'N/A';}?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Admission Status: <?php if(@$result_score && (@$result_score['student_score'] >= @$result_cutoff['score'])) {echo  ' ' .'<a href="admission_letter.php"><span style="color: forestgreen">Print Admission Letter</span></a>' ;} else{ echo '<span style="color: red">NOT Admitted YET!</span>';}?> </h3>
+                                                        <h3>Score: <?php if(@$result_score['student_score']){ echo '<span style="color: forestgreen"><strong>'. @$result_score['student_score'].'</strong></span>';} else{ echo 'N/A';}?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Admission Status:  <?php if(@$result_score['student_score'] && @$result_score['admin_status_id']) {echo '<span style="color: forestgreen"><strong>'. @$result_score['status'] . '</strong></span>';}      ?> </h3>
+                                                        <h3 class="text-center"> <?php if(@$result_score['student_score'] && (@$result_score['admin_status_id'] == 6)) {echo  '<br/> ' .'<a href="admission_letter.php"><span style="color: orangered">Print Admission Letter</span></a>' ;}  ?> </h3>
                                                     </form>
                                                 </div>
 

@@ -27,7 +27,8 @@ if(isset($_POST['submit'])) {
     //if this session exists
 
 
-    $score = trim($_POST['score']);
+   @$score = trim($_POST['score']) or  @$score = @$result_po['student_score'];
+    @$admin_status = $_POST['status'] or  @$admin_status = @$result_po['admin_status_id'];
 
 
     if($applicant_id) {
@@ -35,7 +36,7 @@ if(isset($_POST['submit'])) {
         //query position table
 
         if ($result_po) {
-            @$sql = "UPDATE student_exam_score SET student_score = '{$score}' WHERE applicant_id = '{$applicant_id}'";
+            @$sql = "UPDATE student_exam_score SET student_score = '{$score}', admin_status_id = '{$admin_status}' WHERE applicant_id = '{$applicant_id}'";
             $db->update($sql);
             header('location:student_score.php');
         } else {
@@ -58,6 +59,24 @@ if(isset($_POST['reset2'])){
 
 
 }
+
+
+
+@$query_status = $db->selectAdminStatus();
+@$result_status = mysqli_fetch_assoc($query_status);
+
+
+$status = [];
+$admin_status_id = [];
+$total = 0;
+
+do{
+    array_push($status, $result_status['status']);
+    array_push($admin_status_id, $result_status['admin_status_id']);
+
+    $total ++;
+}
+while(@$result_status = mysqli_fetch_assoc($query_status));
 
 ?>
 
@@ -101,7 +120,7 @@ if(isset($_POST['reset2'])){
             <div class="row">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h2 align="center">Add Score
+                        <h2 align="center">Update Score and Status
                         </h2>
                     </div>
                     <div class="col-lg-4">
@@ -122,7 +141,17 @@ if(isset($_POST['reset2'])){
                         <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
                             <div class="input-container">
                                 <i class="fa fa-text-width icon"></i>
-                                <input type="text" class="input-field" id="score"  name="score" value="<?php echo @$result_po['student_score']; ?>" required placeholder="e.g 200">&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" class="input-field" id="score"  name="score" value="<?php echo @$result_po['student_score']; ?>"  placeholder="e.g 200">&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+                                <select name="status" class="form-control">
+                                    <option value=""> Select Status</option>
+                                    <?php $count = 0; do{?>
+                                        <option value="<?php echo @$admin_status_id[$count];?>"><?php  echo @$status[$count]; $count++;?></option>
+
+                                    <?php }while($count < $total);?>
+                                </select>
                                 <input type="hidden" class="input-field" id="hidden"  name="hidden" value="<?php echo @$id; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
 
                                 <button type="submit" name="submit" class="button">Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" name="reset2" class="button">Clear Text</button> </button>
