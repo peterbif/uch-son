@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-// check to see if $_SESSION['timeout'] is set
-
-//require ('time_out.php');
 
 @$_SESSION['user'] = $_POST['email'];
 
@@ -83,7 +80,7 @@ if(isset($_POST['login'])) {
 
     if(isset($_POST['login'])) {
 
-        $email = strtolower($_POST['email']);
+        $email = strtolower(trim($_POST['email']));
 
         $password = md5($_POST['password']);
 
@@ -184,7 +181,16 @@ if(isset($_POST['login'])) {
 
         }
     </style>
+
     <style>
+
+        .blink{
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            30% { opacity: 0; }
+        }
 
         .marquee {
             width: 400px;
@@ -204,7 +210,6 @@ if(isset($_POST['login'])) {
             100% { transform: translate(-100%, 0); }
         }
 
-
     </style>
 
 </head>
@@ -213,13 +218,8 @@ if(isset($_POST['login'])) {
 <div class="container-fluid" >
     <?php require ('header.php');?>
     <div class="marquee">
-      <!--  <p id="div1"><span style="color: deeppink; background-color: #FFFFFF" id="son"> The List of Successful Candidates for SON Entrance Examination, 2019/2020 Academic Session:  <a href="1st_set2.pdf"><i class="fa fa-list-ol"> 1st List</i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="2nd_set2.pdf"><i class="fa fa-list-ol"> 2nd List</i></a>
-        </p>-->
-     <!--   <p id="div2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: purple; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC PERIOPERATIVE NURSING COURSE For 2019/2020 Academic Session are on ....<a href="https://pns.uch-ibadan.org.ng/" target="_blank">Click here</a></span></p>->
-        <!--<p id="div3">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; C&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: dodgerblue; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC OCCUPATIONAL HEALTH NURSING COURSE  For 2019/2020 Academic Session are on ....<a href="SOHN.pdf" target="_blank">Click here</a></span></p>-->
-        <p id="div4"> <span style="color: orangered; background-color: #FFFFFF" >All SHIM applicants should login to check their Admission Status &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; School of Health Information Management's  Interview comes up on  Friday, 13th September, 2019 ............<a href="interview.pdf" target="_blank">Read More<a> </p>
+        <p><span style="color: orangered; background-color: #FFFFFF">All SHIM applicants should login to check their Admission Status &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; School of Health Information Management's  Interview comes up on  Friday, 13th September, 2019 ............<a href="interview.pdf" target="_blank">Read More</a></span>
         </p>
-
     </div>
 
 
@@ -308,9 +308,9 @@ if(isset($_POST['login'])) {
 
     <br /><br/><br/><br /><br/><br/><br />
 
-   <div class="row" align="center" style="margin-top: 15px;">
+    <div class="row" align="center" style="margin-top: 15px;">
 
-        <button class="button" onclick="openForm()"><span class="login-button"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Enter Pin</span></button> &nbsp;&nbsp;&nbsp;&nbsp;<!-- <a href="#"  ><img src="img/pay.png"></a>--> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="button" onclick="openForm3()"><span class="login-button"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Log In</span></button>
+        <button class="button" onclick="openForm()"><span class="login-button"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Enter Pin</span></button> &nbsp;&nbsp;&nbsp;&nbsp;<!-- <a href="#"  ><img src="img/pay.png"></a>-->&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="button" onclick="openForm3()"><span class="login-button"><i class="fa fa-folder-open"></i>&nbsp;&nbsp;Log In</span></button>
     </div><br/><br /><br/><br/><br />
 
     <div class="col-lg-12"><br/><br />
@@ -358,43 +358,7 @@ if(isset($_POST['login'])) {
         }
 
 
-        var son = document.getElementById("son");
-        var perio = document.getElementById("perio");
-        var occ = document.getElementById("occ");
-        var shim = document.getElementById("shim");
 
-        var arrayShow =[son, perio, occ, shim];
-        var countArrayShow = 0;
-
-
-        function changeURLAdvert() {
-
-            arrayShow.visibility = visible();
-
-        }
-
-
-
-        $(function () {
-
-            var counter = 0,
-                divs = $('#div4');
-
-            function showDiv () {
-                divs.hide() // hide all divs
-                    .filter(function (index) { return index == counter % 1; }) // figure out correct div to show
-                    .show('fast'); // and show it
-
-                counter++;
-            }; // function to loop through divs and show correct div
-
-            showDiv(); // show first div
-
-            setInterval(function () {
-                showDiv(); // show next div
-            }, 40 * 1000); // do this every 20 seconds
-
-        });
     </script>
 
 
