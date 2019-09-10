@@ -6,7 +6,7 @@ class Connect
     private $hostname = "localhost";
     private $db_name = "son";
     private $username = "root";
-    private $password = "Password@234";
+    private $password = "Passsword@234";
 
     public $link;
 
@@ -250,6 +250,15 @@ class Connect
     public function selectProgram($id)
     {
         $query = "SELECT * FROM program INNER JOIN programs ON programs.programs_id = program.programs_id WHERE applicant_id = '{$id}'";
+        $result = $this->link->query($query);
+        return $result;
+
+
+    }
+
+    public function selectProgram2($id)
+    {
+        $query = "SELECT * FROM program  WHERE applicant_id = '{$id}'";
         $result = $this->link->query($query);
         return $result;
 
@@ -966,9 +975,9 @@ class Connect
 
 
 
-    public function selectCutOffMark($session_id, $school_id)
+    public function selectCutOffMark($session_id, $school_id, $program_id)
     {
-        $query = "SELECT * FROM cut_off_mark WHERE session_id ='{$session_id}' AND school_id ='{$school_id}'";
+        $query = "SELECT * FROM cut_off_mark WHERE session_id ='{$session_id}' AND school_id ='{$school_id}' AND program_id ='{$program_id}'";
         $result = $this->link->query($query);
         return $result;
 
@@ -976,6 +985,25 @@ class Connect
     }
 
 
+
+    public function selectCutOffMarkSet($school)
+    {
+        $query = "SELECT * FROM cut_off_mark INNER JOIN session ON session.session_id = cut_off_mark.session_id INNER JOIN schools ON schools.schools_id = cut_off_mark.school_id INNER JOIN programs ON programs.programs_id = cut_off_mark.program_id WHERE cut_off_mark.school_id ='{$school}'";
+        $result = $this->link->query($query);
+        return $result;
+
+
+    }
+
+
+    public function selectCutOffMarkSet2($id)
+    {
+        $query = "SELECT * FROM cut_off_mark INNER JOIN session ON session.session_id = cut_off_mark.session_id INNER JOIN schools ON schools.schools_id = cut_off_mark.school_id INNER JOIN programs ON programs.programs_id = cut_off_mark.program_id WHERE cut_off_id ='{$id}'";
+        $result = $this->link->query($query);
+        return $result;
+
+
+    }
 
 
     public function selectStudentExamScore($applicant_id)
@@ -1206,9 +1234,9 @@ class Connect
 
 
 
-    public function selectCutOffMarks($school, $session)
+    public function selectCutOffMarks($school, $session, $program)
     {
-        $query = "SELECT * FROM cut_off_mark WHERE school_id ='{$school}' AND  session_id ='{$session}'ORDER BY cut_off_id DESC LIMIT 1";
+        $query = "SELECT * FROM cut_off_mark WHERE school_id ='{$school}' AND  session_id ='{$session}' and program_id ='{$program}' ORDER BY cut_off_id DESC LIMIT 1";
         $result = $this->link->query($query);
         return $result;
 

@@ -98,8 +98,15 @@ if($_SESSION['user']) {
 //session id
   @$session = @$record_set_ses['set_session'];
 
+
+  //program_id
+    @$result_pro_cut = $db->selectProgram2(@$record_pin['pin_no_id']);
+    @$record_pro_cut = mysqli_fetch_assoc($result_pro_cut);
+
+    @$program_cut = $record_pro_cut['programs_id'];
+
     //query cut_off_mark table
-    @$query_cutoff = $db->selectCutOffMarks(@$school, $session);
+    @$query_cutoff = $db->selectCutOffMarks(@$school, $session, $program_cut);
     @$result_cutoff = mysqli_fetch_assoc($query_cutoff);
 
 

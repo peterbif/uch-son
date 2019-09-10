@@ -213,11 +213,11 @@ if(isset($_POST['login'])) {
 <div class="container-fluid" >
     <?php require ('header.php');?>
     <div class="marquee">
-        <p id="div1"><span style="color: deeppink; background-color: #FFFFFF" id="son"> The List of Successful Candidates for SON Entrance Examination, 2019/2020 Academic Session:  <a href="1st_set2.pdf"><i class="fa fa-list-ol"> 1st List</i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="2nd_set2.pdf"><i class="fa fa-list-ol"> 2nd List</i></a>
-        </p>
+      <!--  <p id="div1"><span style="color: deeppink; background-color: #FFFFFF" id="son"> The List of Successful Candidates for SON Entrance Examination, 2019/2020 Academic Session:  <a href="1st_set2.pdf"><i class="fa fa-list-ol"> 1st List</i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="2nd_set2.pdf"><i class="fa fa-list-ol"> 2nd List</i></a>
+        </p>-->
      <!--   <p id="div2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: purple; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC PERIOPERATIVE NURSING COURSE For 2019/2020 Academic Session are on ....<a href="https://pns.uch-ibadan.org.ng/" target="_blank">Click here</a></span></p>->
-        <!--<p id="div3">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: dodgerblue; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC OCCUPATIONAL HEALTH NURSING COURSE  For 2019/2020 Academic Session are on ....<a href="SOHN.pdf" target="_blank">Click here</a></span></p>-->
-        <p id="div4">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: orangered; background-color: #FFFFFF" >Sales of Admission Forms into School of Health Information Management For 2019/2020 Academic Session is closed! </p>
+        <!--<p id="div3">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; C&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: dodgerblue; background-color: #FFFFFF" >Sales of Admission Forms for POST-BASIC OCCUPATIONAL HEALTH NURSING COURSE  For 2019/2020 Academic Session are on ....<a href="SOHN.pdf" target="_blank">Click here</a></span></p>-->
+        <p id="div4"> <span style="color: orangered; background-color: #FFFFFF" >All SHIM applicants should login to check their Admission Status &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; School of Health Information Management's  Interview comes up on  Friday, 13th September, 2019 ............<a href="interview.pdf" target="_blank">Read More<a> </p>
         </p>
 
     </div>
@@ -378,11 +378,11 @@ if(isset($_POST['login'])) {
         $(function () {
 
             var counter = 0,
-                divs = $('#div1,  #div4');
+                divs = $('#div4');
 
             function showDiv () {
                 divs.hide() // hide all divs
-                    .filter(function (index) { return index == counter % 2; }) // figure out correct div to show
+                    .filter(function (index) { return index == counter % 1; }) // figure out correct div to show
                     .show('fast'); // and show it
 
                 counter++;

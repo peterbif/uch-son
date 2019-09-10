@@ -1,5 +1,4 @@
 <?php
-require_once('connection.php');
 session_start();
 
 require ('time_out.php');
@@ -15,109 +14,119 @@ $db = new Connect();
 
 //submit users details
 
+if(@$_SESSION['user']) {
 
-@$user = $db->selectAllUsers($_POST['email']);
-@$result = mysqli_fetch_assoc($user);
-
-
-
-@$session = $db->selectSession();
-@$result_ses = mysqli_fetch_assoc($session);
+    @$user = $db->selectAllUsers($_POST['email']);
+    @$result = mysqli_fetch_assoc($user);
 
 
-@$school = $db->selectSchools();
-@$result_sch = mysqli_fetch_assoc($school);
+    @$session = $db->selectSession();
+    @$result_ses = mysqli_fetch_assoc($session);
 
 
+    @$program = $db->selectPrograms();
+    @$result_pro = mysqli_fetch_assoc($program);
 
-if (isset($_POST['user'])) {
+    @$school = $db->selectSchools();
+    @$result_sch = mysqli_fetch_assoc($school);
 
-    $surname = ucwords(htmlspecialchars($_POST['surname']));
-    $firstname = ucwords(htmlspecialchars($_POST['firstname']));
-    $email = strtolower(htmlspecialchars($_POST['email']));
-    $phone_no = htmlspecialchars($_POST['phone_no']);
-    $password = htmlspecialchars($_POST['password']);
-    $password1 = htmlspecialchars($_POST['password1']);
-    @$role = htmlspecialchars($_POST['role']);
 
-    if ($result['email']) {
-        echo '<script type="text/javascript"> alert("This user exists") </script>';
+    if (isset($_POST['user'])) {
 
-    } elseif ($password != $password1) {
+        $surname = ucwords(htmlspecialchars($_POST['surname']));
+        $firstname = ucwords(htmlspecialchars($_POST['firstname']));
+        $email = strtolower(htmlspecialchars($_POST['email']));
+        $phone_no = htmlspecialchars($_POST['phone_no']);
+        $password = htmlspecialchars($_POST['password']);
+        $password1 = htmlspecialchars($_POST['password1']);
+        @$role = htmlspecialchars($_POST['role']);
 
-        echo '<script type="text/javascript"> alert("Passwords don\'t match, re-type") </script>';
-    } elseif (empty($_POST['role'])) {
+        if ($result['email']) {
+            echo '<script type="text/javascript"> alert("This user exists") </script>';
 
-        echo '<script type="text/javascript"> alert("Select role") </script>';
-    } else {
+        } elseif ($password != $password1) {
 
-        $pass = md5($password);
-        $query = "INSERT INTO users(usurname, ufirstname, uemail, uphone_no, password, role) VALUES('{$surname}', '{$firstname}', '{$email}', '{$phone_no}', '{$pass}', '{$role}')";
-        $run = $db->insert($query);
-        echo "<meta http-equiv='refresh' content='0'>";
+            echo '<script type="text/javascript"> alert("Passwords don\'t match, re-type") </script>';
+        } elseif (empty($_POST['role'])) {
+
+            echo '<script type="text/javascript"> alert("Select role") </script>';
+        } else {
+
+            $pass = md5($password);
+            $query = "INSERT INTO users(usurname, ufirstname, uemail, uphone_no, password, role) VALUES('{$surname}', '{$firstname}', '{$email}', '{$phone_no}', '{$pass}', '{$role}')";
+            $run = $db->insert($query);
+            echo "<meta http-equiv='refresh' content='0'>";
+
+        }
+
 
     }
 
-
-}
-
 //clear all text fields
-if (isset($_POST['reset'])) {
-    $surname = " ";
-    $firstname = "";
-    $email = " ";
-    $phone_no = " ";
-    $password = " ";
-    $password1 = " ";
-    @$role = " ";
+    if (isset($_POST['reset'])) {
+        $surname = " ";
+        $firstname = "";
+        $email = " ";
+        $phone_no = " ";
+        $password = " ";
+        $password1 = " ";
+        @$role = " ";
 
-}
+    }
 
 
 //
 
 
-
 //Set Session
 
-@$query_sch = $db->selectAllUsers(@$_SESSION['user']);
-@$result_sch = mysqli_fetch_assoc($query_sch);
+    @$query_sch = $db->selectAllUsers(@$_SESSION['user']);
+    @$result_sch = mysqli_fetch_assoc($query_sch);
+
+    @$query_cut = $db->selectCutOffMarkSet($result_sch['school_id']);
+    @$result_cut = mysqli_fetch_assoc($query_cut);
 
 //$school = $result_sch['school_id'];
 
-if(isset($_POST['submit'])) {
-    $session = $_POST['session'];
-    $school = $result_sch['school_id'];
-    $score = trim($_POST['score']);
+    if (isset($_POST['submit'])) {
+        $session = $_POST['session'];
+        $school = $result_sch['school_id'];
+        $score = trim($_POST['score']);
+        $program = $_POST['program'];
 
-    $query31 = $db->selectCutOffMark($session, $school);
-    $result3 = mysqli_fetch_assoc($query31);
+        $query31 = $db->selectCutOffMark($session, $school, $program);
+        $result3 = mysqli_fetch_assoc($query31);
 
-    if($result3){
+        if ($result3){
 
-        $query3 = "UPDATE cut_off_mark SET score ='{$score}' WHERE school_id ='{$school}' AND session_id ='{$session}'";
-        $db->update($query3);
-        echo "<meta http-equiv='refresh' content='0'>";
-    } else{
+            echo '<script type="text/javascript"> alert("This record exists")</script>';
 
-        $query3 = "INSERT INTO cut_off_mark(score, school_id, session_id) VALUES ('{$score}', '{$school}', '{$session}')";
-        $db->insert($query3);
-        echo "<meta http-equiv='refresh' content='0'>";
+            echo "<meta http-equiv='refresh' content='0'>";
+
+        } else {
+
+            $query3 = "INSERT INTO cut_off_mark(score, school_id, session_id,  program_id) VALUES ('{$score}', '{$school}', '{$session}', '{$program}')";
+            $db->insert($query3);
+            echo "<meta http-equiv='refresh' content='0'>";
+
+        }
+
 
     }
 
 
+    if (isset($_POST['reset'])) {
+
+        $_POST['score'] = " ";
+        $_POST['session'] = " ";
+
+    }
+
+
+}else{
+
+    header('index.php');
 }
-
-
-
-if (isset($_POST['reset'])) {
-
-    $_POST['score'] = " ";
-    $_POST['session'] = " ";
-
-}
-
 
 ?>
 
@@ -228,6 +237,7 @@ if (isset($_POST['reset'])) {
             <div class="col-lg-2">
                 <div class="btn-group-vertical">
                     <button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-external-link icon"></i>Set Cut-Off Mark</button>
+                    <button type="button"  style="text-align: left" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal2"><i class="fa fa-external-link icon"></i>Cut-Off Marks</button>
                     <a href="applicants.php" style="color: #ffffff;text-align: left;" class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i>Applicants</a>
 
                     <!-- <a href="statistics.php" style="color: #ffffff;text-align: left;"  class="btn btn-danger btn-lg"><i class="fa fa-external-link icon"></i> Statistics</a><br /><br />-->
@@ -293,6 +303,16 @@ if (isset($_POST['reset'])) {
                                             </select>
                                         </div>
 
+                                        <div class="input-container">
+                                            <i class="fa fa-sort-alpha-asc icon"></i>
+                                            <select class="input-field" name="program" required="required">
+                                                <option value="">Select Program</option>
+                                                <?php  do{  ?>
+                                                    <option value="<?php echo @$result_pro['programs_id']; ?>"><?php echo @$result_pro['program'];?></option>
+                                                <?php  }while(@$result_pro = mysqli_fetch_assoc($program)); ?>
+                                            </select>
+                                        </div>
+
 
                                         <div align="right"> <button type="submit" name="submit" class="button">Submit</button> &nbsp;&nbsp;<button type="submit" name="reset" class="button">Clear Text</button> </button></div>
 
@@ -309,6 +329,72 @@ if (isset($_POST['reset'])) {
     </div>
 </div>
 </div>
+
+
+
+
+<!-- Modal -->
+<div class="container-fluid">
+
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="panel panel-danger">
+                        <?php require ('header.php')?>
+                        <div class="panel-body" style="margin-left: 80px">
+                            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close</button>
+                            <h4 class="modal-title" align="center" style="color:#000000; font-size: 20px ;">School Cut-Off Marks</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="col-lg-12">
+                                    <table class="table table-bordered" id="myTable">
+                                        <thead>
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>School</th>
+                                            <th>Session</th>
+                                            <th>Program</th>
+                                            <th>Cut-Off Mark</th>
+                                            <th>Edit</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php $sn = 1; do{
+
+                                        if(@$result_cut) { ?>
+                                        <tr>
+                                            <td><?php echo @$sn++; ?></td>
+                                            <td><?php echo  @$result_cut['school']?></></td>
+                                            <td><?php echo  @$result_cut['session']?></td>
+                                            <td><?php echo  @$result_cut['program']?></td>
+                                            <td><?php echo  @$result_cut['score']?></td>
+                                            <td><a href="update_cut_off_mark.php?id=<?php echo  @$result_cut['cut_off_id']?>"><i class="fa fa-edit btn btn-primary"></i></a></td>
+
+
+                                        </tr>
+
+
+                                        <?php } ?>
+                                        <?php }while(@$result_cut = mysqli_fetch_assoc($query_cut));?>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 
 <!-- MAIN CONTENT -->
 <div class="main-content">
