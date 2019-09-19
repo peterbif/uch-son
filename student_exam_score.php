@@ -137,7 +137,7 @@ while(@$result_status = mysqli_fetch_assoc($query_status));
                 </div><br/>
 
                 <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-6 col-lg-offset-2">
                         <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
                             <div class="input-container">
                                 <i class="fa fa-text-width icon"></i>

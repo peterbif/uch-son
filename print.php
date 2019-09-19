@@ -146,7 +146,7 @@ else{
 <div class="container-fluid">
 
     <div class="panel panel-danger">
-        <?php require ('header.php')?>
+        <?php require ('../header.php')?>
 
         <div class="panel-body">&nbsp;
             <div class="row">

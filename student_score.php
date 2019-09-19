@@ -148,7 +148,7 @@ do{
     array_push($status, $result_status['status']);
     array_push($admin_status_id, $result_status['admin_status_id']);
 
-    $total ++;
+    $total++;
 }
 while(@$result_status = mysqli_fetch_assoc($query_status));
 
@@ -266,7 +266,6 @@ while(@$result_status = mysqli_fetch_assoc($query_status));
                             }
 
 
-
                             ?>
                             <tr>
                                 <td class="td"><?php if(@$result) {echo $sn++;} ?></td>
@@ -277,14 +276,15 @@ while(@$result_status = mysqli_fetch_assoc($query_status));
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$gender; ?></td>
                                 <td><?php  if(@$result['student_score']){echo @$result['student_score'] ;}?><br/><input type="text"     name="score[<?php echo @$sn ?>]" placeholder="Enter Score"/> </td>
-                                <td><?php  if(@$result['admin_status_id']){echo @$result['status'] ;}?> <br/> <select name="status[<?php echo @$sn ?>]" class="form-control">
+                                <td> <select name="status[<?php echo @$sn ?>]" class="form-control">
                                         <option value=""> Select Status</option>
                                         <?php $count = 0; do{?>
                                             <option value="<?php echo @$admin_status_id[$count];?>"><?php  echo @$status[$count]; $count++;?></option>
 
                                         <?php }while($count < $total);?>
-                                    </select></td>
-                                <td><input type="checkbox" name="checkbox[<?php echo @$sn ?>]"/></td>
+                                    </select>
+                                </td>
+                                <td><input type="checkbox" name="checkbox[<?php echo @$sn ?>]"/> </td>
                                 <td><input type="hidden"   name="applicant[<?php echo @$sn ?>]" value="<?php echo @$applicant;?>"> <a href="student_exam_score.php?id=<?php echo @$applicant; ?>" class="btn btn-success" target="_blank"><i class="fa fa-edit"></i></a> </td>
                             </tr>
                         <?php }while(@$result = mysqli_fetch_assoc($query));
