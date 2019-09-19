@@ -6,7 +6,7 @@ class Connect
     private $hostname = "localhost";
     private $db_name = "son";
     private $username = "root";
-    private $password = "";
+    private $password = "Password@234";
 
     public $link;
 
@@ -390,6 +390,17 @@ class Connect
     public function selectSchool2($id)
     {
         $query = "SELECT * FROM school INNER JOIN schools on schools.schools_id = school.schools_id WHERE applicant_id = '{$id}'";
+        $result = $this->link->query($query);
+        return $result;
+
+
+    }
+
+
+
+    public function selectAllSchool($id)
+    {
+        $query = "SELECT * FROM school  WHERE applicant_id = '{$id}'";
         $result = $this->link->query($query);
         return $result;
 
