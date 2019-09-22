@@ -1019,7 +1019,7 @@ class Connect
 
     public function selectStudentExamScore($applicant_id)
     {
-        $query = "SELECT * FROM student_exam_score LEFT OUTER JOIN admin_status ON admin_status.admin_status_id =  student_exam_score.admin_status_id WHERE applicant_id ='{$applicant_id}'";
+        $query = "SELECT * FROM student_exam_score LEFT OUTER JOIN admin_status ON admin_status.admin_status_id =  student_exam_score.admin_status_id WHERE applicant_id ='{$applicant_id}' ORDER BY student_exam_score_id DESC LIMIT 1";
         $result = $this->link->query($query);
         return $result;
 
