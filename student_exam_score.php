@@ -19,7 +19,7 @@ $db = new Connect();
 
 $applicant_id = $id;
 
-$query_po = $db->selectStudentExamScore($applicant_id);
+$query_po = $db->selectStudentExamScore2($applicant_id);
 @$result_po = mysqli_fetch_assoc($query_po);
 
 // submitting position
@@ -36,13 +36,13 @@ if(isset($_POST['submit'])) {
         //query position table
 
         if ($result_po) {
-            @$sql = "UPDATE student_exam_score SET student_score = '{$score}', admin_status_id = '{$admin_status}' WHERE applicant_id = '{$applicant_id}'";
+            @$sql = "UPDATE student_exam_score SET student_score = '{$score}', admin_status_id = '{$admin_status}' WHERE student_exam_score_id = '{$applicant_id}'";
             $db->update($sql);
             header('location:student_score.php');
         } else {
             //Insert into student_exam_score table
-            @$sql = "INSERT INTO student_exam_score(student_score, applicant_id) VALUES ('{$score}', '{$applicant_id}')";
-            $db->insert($sql);
+         echo   @$sql = "INSERT INTO student_exam_score(student_score, applicant_id) VALUES ('{$score}', '{$applicant_id}')";
+           $db->insert($sql);
             header('location:student_score.php');
         }
 

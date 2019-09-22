@@ -285,7 +285,7 @@ while(@$result_status = mysqli_fetch_assoc($query_status));
                                     </select>
                                 </td>
                                 <td><input type="checkbox" name="checkbox[<?php echo @$sn ?>]"/> </td>
-                                <td><input type="hidden"   name="applicant[<?php echo @$sn ?>]" value="<?php echo @$applicant;?>"> <a href="student_exam_score.php?id=<?php echo @$applicant; ?>" class="btn btn-success" target="_blank"><i class="fa fa-edit"></i></a> </td>
+                                <td><input type="hidden"   name="applicant[<?php echo @$sn ?>]" value="<?php echo @$applicant;?>"> <a href="student_exam_score.php?id=<?php  if($result['student_exam_score_id']) {echo @$result['student_exam_score_id'];} else {echo @$applicant;}?>" class="btn btn-success" target="_blank"><i class="fa fa-edit"></i></a> </td>
                             </tr>
                         <?php }while(@$result = mysqli_fetch_assoc($query));
 

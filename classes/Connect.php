@@ -1027,6 +1027,16 @@ class Connect
     }
 
 
+    public function selectStudentExamScore2($applicant_id)
+    {
+        $query = "SELECT * FROM student_exam_score  WHERE student_exam_score_id  ='{$applicant_id}'";
+        $result = $this->link->query($query);
+        return $result;
+
+
+    }
+
+
 
     public function selectPinSessionSchool($school, $session)
     {
