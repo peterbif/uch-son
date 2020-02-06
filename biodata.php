@@ -115,12 +115,12 @@ if($_SESSION['user']) {
     @$result_cutoff = mysqli_fetch_assoc($query_cutoff);
 
 
-
+/*
     if(!($record_ress2['schools_id'])) {
         if (@$record_pin) {
 
 
-            @$char = "0123456789346899567543219876094567123458765432154328976575432156788999876565443109876555432123456789987654321245678899987654322123567987655443212345678923634";
+            @$char = "0123456";
 
             if ($code = substr(str_shuffle($char), -1000000000, 7)) {
 
@@ -139,7 +139,7 @@ if($_SESSION['user']) {
         }
 
     }
-
+*/
 
     if (isset($_POST['update_res'])) {
         $school = $_POST['school'];

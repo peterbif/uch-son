@@ -29,13 +29,13 @@ if(isset($_POST['generate'])) {
 
 
 
-    if(((string) $row['pin']) == ((string) $_POST['pin']) && ($row['bar'] != 1)){
+    if(($row['pin']) === ($_POST['pin']) && ($row['applicant_id'] == 0)){
 
 
         header('location:create_acct.php');
     }
 
-    else if($row['bar'] == 1)
+    else if($row['applicant_id'] != 0)
     {
 
         echo '<script type="text/javascript"> alert("Already Used Pin")</script>';
@@ -217,10 +217,10 @@ if(isset($_POST['login'])) {
 <body ><!-- background="img/jamb.jpg"-->
 <div class="container-fluid" >
     <?php require ('header.php');?>
-    <div class="marquee">
+   <!-- <div class="marquee">
         <p><span style="color: orangered; background-color: #FFFFFF">All SHIM applicants should login to check their Admission Status &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp; School of Health Information Management's  Interview comes up on  Friday, 13th September, 2019 ............<a href="interview.pdf" target="_blank">Read More</a></span>
         </p>
-    </div>
+    </div>-->
 
 
 

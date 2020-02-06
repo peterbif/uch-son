@@ -28,19 +28,23 @@ $db = new Connect();
 
 if(isset($_POST['submit'])) {
     $number = 1;
-    $length = 1000;
+    $length = $_POST['total'];
+
+    $counter = $_POST['first'];
 
     do {
-        $char = "ABXXbb65asGHBADgKJYTxzCDrE89FGHI123456789JKLMNOP4QeRSTd39UVWXYZ1234567890abcdscaefghij123h456789kmnopqr25dcnstuvttwxyz";
-        $pin = substr(str_shuffle($char), -1000000000, 8);
+        $char = "1233456789012356432176896543290186423615178837353535436378887543214567986543754433624513980754267389654231098763451987243564781298707501312145167484948765443122436536748748982625244232452526436738909022";
+       $pin = trim(substr(str_shuffle($char), -1000000000, 10));
         $school = $_POST['school'];
         $session = $_POST['session'];
-        $query_con = "INSERT INTO pin(pin, school_id, session_id) VALUES ('{$pin}', '{$school}', '{$session}')";
+        $counter = trim($counter);
+        $query_con = "INSERT INTO pin(pin, school_id, session_id, form_no, applicant_id) VALUES ('{$pin}', '{$school}', '{$session}', '{$counter}', '')";
         $db->insertPin($query_con);
         $number++;
+        $counter++;
     } while ($number <= $length);
 
-    if($query_con) {
+    if(@$query_con) {
         echo '<script type="text/javascript"> alert("Pins successfully generated")</script>';
 
     }
@@ -131,8 +135,27 @@ if(isset($_POST['submit3'])) {
 
     <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
 
-                <div class="row col-sm-offset-1">
+        <div class="row col-sm-offset-2">
 
+
+            <div class="col-lg-3">
+                <label>First Pin</label>
+                <input type="text" class="form-control" name="first">
+            </div>
+
+
+
+            <div class="col-lg-3">
+                <label>Total Pins</label>
+                <input type="text" class="form-control" name="total">
+            </div>
+
+
+        </div>
+
+        <br/>
+
+                <div class="row col-sm-offset-1">
                     <div class="col-lg-7">
                         <select name="school" class="input-field" required>
                             <option value="">Select School</option>

@@ -14,8 +14,9 @@ spl_autoload_register(function ($class) {
 $db = new Connect();
 
 
-@$school = $_SESSION['school'];
+@$school = $_SESSION['school'] ;
 @$session = $_SESSION['session'];
+;
 @$query_sepin = $db->selectPinSessionSchool($school, $session);
 @$result_sepin = mysqli_fetch_assoc($query_sepin);
 

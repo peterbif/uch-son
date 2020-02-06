@@ -2,7 +2,7 @@
 session_start();
 //maintain session for user's email
 
-require ('time_out.php');
+//require ('time_out.php');
 
 @$_SESSION['user'];
 
@@ -28,67 +28,74 @@ $db = new Connect();
         @$result_pass = $db->selectPassport($applicant_id);
         @$record_pass = mysqli_fetch_assoc($result_pass);
 
-        $imgFile = $_FILES['user_image']['name'];
-        $tmp_dir = $_FILES['user_image']['tmp_name'];
-        $imgSize = filesize($_FILES['user_image']['tmp_name']);
-
-
-        /*
-                 if(@$record_pass){
-
-                    echo '<script type="text/javascript"> alert("Your Passport already exists")</script>';
-                }
-                else
-                {*/
-        $upload_dir = 'uploads/'; // upload directory
-
-        $imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
-
-        // valid image extensions
-        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
-
-        // rename uploading image
-        $userpic = rand(100000, 100000000) . "." . $imgExt;
 
         // allow valid image file formats
-        if (in_array($imgExt, $valid_extensions)) {
-            // Check file size '300kb'
-            if ($imgSize < 300000) {
-                move_uploaded_file($tmp_dir,$upload_dir.$userpic);
-            } else {
+        if(isset($_FILES['image'] ) ) {
 
-                echo $errMSG = '<script type="text/javascript"> alert("Sorry, your file is too large, not more than 300kb")</script>';
-            }
-        } else {
+            include 'libs/img_upload_resize_crop.php';
+            $your_image = new _image;
 
-            echo $errMSG = '<script type="text/javascript"> alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed")</script>';
-        }
+            //To Upload
+            $your_image->uploadTo = 'uploads/';
+            $upload = $your_image->upload($_FILES['image']);
+           // echo "<div>" . $upload . "</div>";
+
+            //To Resize
+            $your_image->newPath = 'thumbs/';
+            $your_image->newWidth = 150;
+            $your_image->newHeight = 150;
+            $resized = $your_image->resize();
+           // echo "<div>" . $resized . "</div>";
+
+            //To Crop
+            $width = "150";
+            $height = "100";
+            $fromX = "0";
+            $fromY = "0";
+            $your_image->newPath = 'cropped/';
+            $cropped = $your_image->crop($width,$height,$fromX,$fromY);
+          //  echo "<div>" . $cropped . "</div>";
+
+
+
+
+            $userpic =   trim($resized, "thumbs/") ;
 
 
         // if no error occured, continue ....
 
         if (!$record_pass) {
-            if (!isset($errMSG)) {
+            if ($userpic) {
 
                 @$query = "INSERT INTO capture(applicant_id, capture) VALUES('{$applicant_id}', '{$userpic}')";
                 $db->insertImage($query);
                // header('location:biodata.php');
             }
+            else{
 
-        } else {
+                echo '<script type="text/javascript"> alert("Passport is not uploaded, there is an error, use another picture")</script>';
+            }
+        }
 
-            if (!isset($errMSG)) {
+         else {
+
+            if ($userpic) {
                 @$query = "UPDATE capture SET capture = '{$userpic}'  WHERE applicant_id = '{$applicant_id}'";
                 $db->update($query);
 
 
 
             }
+            else{
+
+                echo  '<script type="text/javascript"> alert("Passport is not uploaded, there is an error, use another picture")</script>';
+
+            }
 
         }
     }
 
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -177,11 +184,12 @@ $db = new Connect();
 
                                 <tr>
                                     <td><label class="control-label">Passport</label></td>
-                                    <td><input id="src" class="form-control" required type="file" name="user_image" onchange="readURL(this);" accept="image/*" /></td>
+                                    <td><input id="src" class="form-control" required type="file" name="image" id="image" onchange="readURL(this);" accept="image/*" /></td>
                                 </tr>
 
 
                                 <tr>
+                                    <td></td>
                                     <td colspan="2">
                                         <button type="submit" name="save" class="button btn-lg btn-block">
                                             Save

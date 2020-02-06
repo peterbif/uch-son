@@ -6,7 +6,7 @@ class Connect
     private $hostname = "localhost";
     private $db_name = "son";
     private $username = "root";
-    private $password = "Password@234";
+    private $password = "";
 
     public $link;
 
@@ -37,6 +37,8 @@ class Connect
         $escaped_string = mysqli_real_escape_string($this->link, $string);
         return $escaped_string;
     }
+
+
 
 
 
@@ -389,7 +391,7 @@ class Connect
 
     public function selectSchool2($id)
     {
-        $query = "SELECT * FROM school INNER JOIN schools on schools.schools_id = school.schools_id WHERE applicant_id = '{$id}'";
+        $query = "SELECT * FROM pin INNER JOIN schools on schools.schools_id = pin.school_id WHERE applicant_id = '{$id}'";
         $result = $this->link->query($query);
         return $result;
 
@@ -1164,6 +1166,16 @@ class Connect
     }
 
 
+
+    public function selectPinPinNo($pin, $email)
+    {
+        $query = "SELECT * FROM pin_nos WHERE pin = '{$pin}' OR email = '{$email}'";
+        $result = $this->link->query($query);
+        return $result;
+
+    }
+
+
     public function selectPinNum22($school,$session)
     {
         $query = "SELECT * FROM pin_nos LEFT OUTER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN school ON school.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN gender ON gender.gender_id = bio_data.bgender LEFT OUTER JOIN capture ON capture.applicant_id = bio_data.applicant_id  WHERE school.schools_id ='{$school}' AND school.session ='{$session}'  ORDER BY school.code ASC";
@@ -1175,7 +1187,7 @@ class Connect
 
     public function selectPinNum222($school,$session, $program)
     {
-        $query = "SELECT * FROM pin_nos LEFT OUTER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN school ON school.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN gender ON gender.gender_id = bio_data.bgender LEFT OUTER JOIN capture ON capture.applicant_id = bio_data.applicant_id LEFT OUTER JOIN student_exam_score ON student_exam_score.applicant_id =  pin_nos.pin_no_id  LEFT OUTER JOIN admin_status ON admin_status.admin_status_id =  student_exam_score.admin_status_id INNER JOIN program ON program.applicant_id = pin_nos.pin_no_id INNER JOIN programs ON programs.programs_id = program.programs_id  WHERE school.schools_id ='{$school}' AND school.session ='{$session}' AND programs.programs_id ='{$program}' ORDER BY school.code ASC";
+        $query = "SELECT * FROM pin_nos LEFT OUTER JOIN bio_data ON bio_data.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN school ON school.applicant_id = pin_nos.pin_no_id LEFT OUTER JOIN gender ON gender.gender_id = bio_data.bgender LEFT OUTER JOIN capture ON capture.applicant_id = bio_data.applicant_id LEFT OUTER JOIN student_exam_score ON student_exam_score.applicant_id =  pin_nos.pin_no_id  LEFT OUTER JOIN admin_status ON admin_status.admin_status_id =  student_exam_score.admin_status_id INNER JOIN program ON program.applicant_id = pin_nos.pin_no_id INNER JOIN programs ON programs.programs_id = program.programs_id LEFT OUTER JOIN contact_add ON contact_add.applicant_id = bio_data.applicant_id LEFT OUTER JOIN marital_status ON marital_status.marital_status_id = bio_data.bmarital_status LEFT OUTER JOIN permanent_add ON permanent_add.applicant_id = bio_data.applicant_id WHERE school.schools_id ='{$school}' AND school.session ='{$session}' AND programs.programs_id ='{$program}' ORDER BY school.code ASC";
         $result = $this->link->query($query);
         return $result;
 

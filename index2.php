@@ -1,156 +1,154 @@
 <?php
-require_once ('connection.php');
-
 session_start();
 
-// check to see if $_SESSION['timeout'] is set
-
-require ('time_out.php');
 
 @$_SESSION['user'] = $_POST['email'];
+
+
+@$_SESSION['pin'] = $_POST['pin'];
 
 //auto load classes required
 spl_autoload_register(function ($class) {
     include 'classes/' . $class . '.php';
 });
 
+
 $db = new Connect();
 
 
 
-//query set time table
-$result2 = $db->selectSetTime3();
-$row2 = mysqli_fetch_assoc($result2);
-
-//query position
-$result = $db->selectPosition2();
-$row = mysqli_fetch_assoc($result);
-
-
 if(isset($_POST['generate'])) {
 
-    $email = strtolower(htmlspecialchars($_POST['email2']));
-    $phone_no = htmlspecialchars($_POST['phone_no']);
 
-    @$result = $db->selectPinNo($email,$phone_no);
+    @$pin = (string) $_POST['pin'];
+
+//query pin table
+
+    @$result = $db->selectPinCode($pin);
     $row = mysqli_fetch_assoc($result);
 
 
-    $char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz";
 
-    if($row){
+    if(((string) $row['pin']) == ((string) $_POST['pin']) && ($row['bar'] != 1)){
 
-        echo '<script type="text/javascript"> alert("Your Record exists")</script>';
+
+        header('location:create_acct.php');
     }
 
-    else if ($pin = substr(str_shuffle($char), -1000000000, 8)) {
+    else if($row['bar'] == 1)
+    {
 
-        @$pin;
-        $time = $row2['set_time'];
-        $position = $_POST['position'];
-        $query_pin = "INSERT INTO pin_nos (pin_no, email, phone_no, time, position_id) VALUES ('{$pin}', '{$email}','{$phone_no}','{$time}', '{$position}')";
-        $db->insert($query_pin);
-
-        $to = $_POST['email2'];
-        $subject = "My PIN Code Request";
-        $body = "This is your PIn Code:" . '   ' . $pin . " Click this link to create password to sign in: => " . ' ' . "http://employment.uch-ibadan.org.ng/sign_in.php";
-        $header = 'From: <employment.uch-ibadan.org.ng>';
-
-        if(mail($to, $subject, $body, $header)) {
-            echo $email_sent = '<script type="text/javascript"> alert("Pin Code has been sent to your email to continue your application!")</script>';
-        }
-
+        echo '<script type="text/javascript"> alert("Already Used Pin")</script>';
     }
 
-    else {
+    else
+    {
 
-        echo '<script type="text/javascript"> alert("Pin Code not generated, retry")</script>';
-
+        echo '<script type="text/javascript"> alert("Incorrect Pin")</script>';
     }
 
 
 }
+
+
+
+
 if(isset($_POST['login'])) {
 
     $email = $_POST['email'];
 
-    $password = /*md5*/($_POST['password']);
-
-    //$password = $_POST['password'];
+    $password = md5($_POST['password']);
 
 
     //query pin_no table
-
-    @$result_pin = $db->selectPinNoEMail($_POST['email'], $_POST['password']);
+    @$result_pin = $db->selectPinNoEMail($email);
     @$row_pin = mysqli_fetch_assoc($result_pin);
 
 
     //query users table
-
     $query = $db->selectAllUsers($email);
     $record = mysqli_fetch_assoc($query);
 
     // echo $record['uemail'];
 
-    //echo $row_pin['pin_no'] ;
-    // echo  $_POST['password'];
-    if ($record){
-        if ($record['uemail'] != $email) {
+    // echo $row_pin['email'] ;
 
-            echo '<script type="text/javascript"> alert("Email is incorrect") </script>';
-        } else if ($record['password'] != $password) {
+    // echo  $_POST['email'];
+
+    //echo $record['uemail'];
 
 
-            echo '<script type="text/javascript"> alert("Password is incorrect") </script>';
+    if(isset($_POST['login'])) {
 
-        }
+        $email = strtolower(trim($_POST['email']));
 
-        else{
-            if($record['password'] == $password && $record['role'] == 1) {
+        $password = md5($_POST['password']);
+
+        //$password = $_POST['password'];
+
+
+        //query pin_no table
+
+        @$result_pin = $db->selectPinNoEMail($email);
+        @$row_pin = mysqli_fetch_assoc($result_pin);
+
+
+        //query users table
+
+        $query = $db->selectAllUsers($email);
+        $record = mysqli_fetch_assoc($query);
+
+
+        if($record) {
+            if ((strtolower($record['uemail'])) != $email) {
+
+                echo '<script type="text/javascript"> alert("Email is incorrect") </script>';
+            } else if ($record['password'] != $password) {
+
+
+                echo '<script type="text/javascript"> alert("Password is incorrect") </script>';
+
+            } elseif ($record['password'] == $password && $record['role'] == 1) {
 
                 header('location: admin.php');
 
+            } else {
+                if ($record['password'] == $password && $record['role'] == 2) {
+
+                    header('location: super_admin.php');
+
+                }
+            }
+        }
+
+
+        if(!$record){
+
+            if ((strtolower($row_pin['email'])) != $email) {
+
+                echo '<script type="text/javascript"> alert("Email is incorrect") </script>';
+            } else if ($row_pin['pin_no'] != md5($_POST['password'])) {
+
+
+                echo '<script type="text/javascript"> alert("Password is incorrect") </script>';
+
+            } else {
+
+
+                if ($row_pin['pin_no'] == $password) {
+
+                    header('location: biodata.php');
+
+                }
+
             }
 
-
-        }
-    }
-
-
-
-    if(@$row_pin){
-
-        if($row_pin['email'] != $email){
-
-            echo '<script type="text/javascript"> alert("Email is incorrect") </script>';
-        }
-
-
-        else if($row_pin['pin_no'] != $_POST['password']){
-
-
-            echo '<script type="text/javascript"> alert("Password is incorrect") </script>';
-
-        }
-
-        else {
-
-
-            if($row_pin) {
-
-                header('location: biodata.php');
-
-            }
-
         }
 
     }
-
 
 
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -176,55 +174,108 @@ if(isset($_POST['login'])) {
     <script src="js/jquery.min.js"></script>
     <script src="js/myOpenForm.js"></script>
 
+
+    <style>
+
+        .blink{
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            30% { opacity: 0; }
+        }
+
+        .marquee {
+            width: 400px;
+            line-height: 50px;
+            color: Black;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .marquee p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 60s linear infinite;
+            font-size: 20px;
+        }
+        @keyframes marquee {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+    </style>
+
 </head>
 
-<body>
+<body style="background-color:white"><!-- background="img/jamb.jpg"-->
+<div class="container-fluid" ><br/><br/>
 
-<div class="container-fluid">
-    <div class="row">
-        <div align="center" class="col-sm-12">
-<h1 style="font-size: 50px; background-color: #3c763d; color: #FFFFFF"> For  UCH Vacancies, Please Check Back Very Soon! </h1>
-        </div>
+    <div class="marquee">
+        <p><span style="color: #FFFFFF; font-size: 50px; background-color: forestgreen"> Application is Closed!</span>
+        </p>
     </div>
-</div>
-
-
-<script>
-    function openForm() {
-        document.getElementById("myForm1").style.display = "block";
-    }
-
-    function closeForm1() {
-        document.getElementById("myForm1").style.display = "none";
-    }
-</script>
 
 
 
+    <!--Pin form-->
+    <div class="row" align="center" style="margin-top: 30px;">
+        <div class="col-lg-6 col-sm-offset-3">
+            <div class="top">
+                <div class="form-popup2" id="myForm1">
+                    <h1 style="background-color: #FFFFFF; color: forestgreen; text-align: center">Enter Pin Code</h1>
+                    <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
 
-<script>
-    function openForm2() {
-        document.getElementById("myForm2").style.display = "block";
-    }
+                        <div class="input-container">
+                            <i class="fa fa-key icon"> </i>
+                            <input class="input-field" type="text"   placeholder="Enter Pin"  required name="pin">
+                        </div>
 
-    function closeForm2() {
-        document.getElementById("myForm2").style.display = "none";
-    }
-</script>
+                        <button type="submit" name="generate" class="button"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;login</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="button" onclick="closeForm1()"><i class="fa fa-sign-out"></i>&nbsp;&nbsp;Close</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!--login form-->
+    <!-- <div class="row" align="center" style="margin-top: 30px;">
+        <div class="col-lg-6 col-sm-offset-3">
+            <div class="top">
+                <div class="form-popup" id="myForm2">
+                    <h1 style="background-color: #FFFFFF; color: forestgreen; text-align: center">Applicant Login</h1>
+                    <form class="form-horizontal"  method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" enctype="multipart/form-data">
+                        <div class="input-container">
+                            <i class="fa fa-text-width icon"></i>
+                            <input class="input-field" type="text"   placeholder="Email" required name="email">
+                        </div>
+
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input class="input-field" type="text" placeholder="Password"  required name="psw">
+                        </div>
+
+                        <button type="submit" class="button">Login</button> &nbsp;&nbsp;
+                        <button type="submit" class="button" onclick="closeForm2()">Close</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>-->
+
+    <!--Login form-->
 
 
 
-<script>
-    function openForm3() {
-        document.getElementById("myForm3").style.display = "block";
-    }
-
-    function closeForm3() {
-        document.getElementById("myForm3").style.display = "none";
-    }
-</script>
 
 
 </body>
 
 </html>
+</script>
+

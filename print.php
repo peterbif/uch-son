@@ -146,7 +146,7 @@ else{
 <div class="container-fluid">
 
     <div class="panel panel-danger">
-        <?php require ('../header.php')?>
+        <?php require ('header.php')?>
 
         <div class="panel-body">&nbsp;
             <div class="row">
@@ -164,10 +164,18 @@ else{
                             <th>Firstname</th>
                             <th>Othername</th>
                             <th>Gender</th>
-                            <!-- <th>Exam NO</th>-->
                             <th>DOB/Age</th>
+                            <!-- <th>Marital Status</th>
+                            <th>Exam NO</th>
+
+                            <th>Contact Address</th>
+                            <th>lg of Res</th>
+                            <th>State of Res</th>
+                            <th>lg of Origin</th>
+                            <th>State of Origin</th>-->
                             <th>Email</th>
                             <th>Phone NO</th>
+                            <!--<th>Nationality</th>-->
 
                         </tr>
                         </thead>
@@ -175,19 +183,25 @@ else{
                         <?php $sn = 1; do{
 
                             if (@$result){
-                                $image = $result['capture'];
-                                $form_no = $result['code'];
-                                $surname = $result['bsurname'];
-                                $firstname = $result['bfirstname'];
-                                $othername = $result['bothername'];
-                                $gender = $result['gender'];
+                                @$image = $result['capture'];
+                                @$form_no = $result['code'];
+                                @$surname = $result['bsurname'];
+                                @$firstname = $result['bfirstname'];
+                                @$othername = $result['bothername'];
+                                @$gender = $result['gender'];
+                                @$marital_status = $result['status'];
+                                @$contact_add = $result['street_add2'];
+                                @$lg_of_res = $result['lg_of_origin'];
+                                @$state_of_res = $result['state_of_origin'];
+                                @$lg_of_origin = $result['lg_of_origin2'];
+                                @$state_of_origin = $result['state_of_origin2'];
 
                                 // $exam_no = substr($result['capture'],  0, strlen($result['capture']) - 4);
 
-                                $date_of_birth = date('d-m-Y', strtotime($result['date_of_birth']));
-                                $email = $result['email'];
-                                $phone_no = $result['phone_no'];
-                                $applicant =  $result['pin_no_id'];
+                                @$date_of_birth = /*date('d-m-Y', strtotime(*/ $result['date_of_birth'];
+                                @$email = $result['email'];
+                                @$phone_no = $result['phone_no'];
+                                @$applicant =  $result['pin_no_id'];
 
                                 // @$_SESSION['id'] = $result['pin_no_id'];
 
@@ -207,9 +221,17 @@ else{
                                 <td><?php echo @$othername; ?></td>
                                 <td><?php echo @$gender; ?></td>
                                 <!-- <td><?php echo @$exam_no; ?></td>-->
+                                <!-- <td><?php echo @$marital_status; ?></td>-->
                                 <td><?php echo  @$date_of_birth  .  ' ('.@$db->age($db->orderDate($date_of_birth)).'yrs)'; ?></td>
+                                <!--<td><?php echo @$contact_add; ?></td>
+                                <td><?php echo @$lg_of_res; ?></td>
+                                <td><?php echo @$state_of_res; ?></td>
+                                <td><?php echo @$lg_of_origin; ?></td>
+                                <td><?php echo @$state_of_origin; ?></td>-->
                                 <td><?php echo @$email; ?></td>
                                 <td><?php echo @$phone_no; ?></td>
+                                <!--  <td><?php echo "Nil" ; ?></td>-->
+
 
                             </tr>
                         <?php }while(@$result = mysqli_fetch_assoc($query));

@@ -1,6 +1,4 @@
 <?php
-require_once ('connection.php');
-
 session_start();
 
 // check to see if $_SESSION['timeout'] is set
@@ -16,7 +14,7 @@ spl_autoload_register(function ($class) {
 
 $db = new Connect();
 
-$_SESSION['pin'];
+// @$_SESSION['pin'];
 
 
 
@@ -41,6 +39,9 @@ if(isset($_POST['create'])) {
     @$result = $db->selectPinNo($email,$phone_no);
     $row = mysqli_fetch_assoc($result);
 
+    @$result22 = $db->selectPinPinNo($_SESSION['pin'], $email);
+    $row22 = mysqli_fetch_assoc($result22);
+
 
     if(isset($_POST['hidden'])){
 
@@ -62,15 +63,24 @@ if(isset($_POST['create'])) {
 
    
     else {
-        $pin = md5($_POST['pass']);
-        $query_pin = "INSERT INTO pin_nos (pin_no, email, phone_no, pin) VALUES ('{$pin}', '{$email}','{$phone_no}', '{$pin22}')";
-        $db->insert($query_pin);
 
-        $bar = 1;
+                //  echo $row22['pin'];
 
-        @$query_pin_update = "UPDATE pin SET  bar = '{$bar}' WHERE pin ='{$pin22 }'";
-        @$db->updatePin($query_pin_update);
+            if(!$row22) {
+                $pin = md5($_POST['pass']);
+                $query_pin = "INSERT INTO pin_nos (pin_no, email, phone_no, pin) VALUES ('{$pin}', '{$email}','{$phone_no}', '{$pin22}')";
+                $db->insert($query_pin);
 
+
+                $applicant_id = $db->last_inserted_id();
+
+
+                @$query_pin_update = "UPDATE pin SET  applicant_id = '{$applicant_id}' WHERE pin ='{$pin22}'";
+                @$db->updatePin($query_pin_update);
+            }{
+
+            echo '<script type="text/javascript"> alert("There is an error, this account exists!")</script>';
+        }
     }
     
     
