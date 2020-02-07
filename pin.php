@@ -27,29 +27,41 @@ $db = new Connect();
 
 
 if(isset($_POST['submit'])) {
-    $number = 1;
-    $length = $_POST['total'];
 
-    $counter = $_POST['first'];
+    if (empty($_POST['first'])) {
 
-    do {
-        $char = "1233456789012356432176896543290186423615178837353535436378887543214567986543754433624513980754267389654231098763451987243564781298707501312145167484948765443122436536748748982625244232452526436738909022";
-       $pin = trim(substr(str_shuffle($char), -1000000000, 10));
-        $school = $_POST['school'];
-        $session = $_POST['session'];
-        $counter = trim($counter);
-        $query_con = "INSERT INTO pin(pin, school_id, session_id, form_no, applicant_id) VALUES ('{$pin}', '{$school}', '{$session}', '{$counter}', '')";
-        $db->insertPin($query_con);
-        $number++;
-        $counter++;
-    } while ($number <= $length);
+        echo '<script type="text/javascript"> alert("Enter first Pin Pattern")</script>';
+    }
 
-    if(@$query_con) {
-        echo '<script type="text/javascript"> alert("Pins successfully generated")</script>';
+    else if (empty($_POST['total'])) {
+
+        echo '<script type="text/javascript"> alert("Enter total number of pins to generate")</script>';
 
     }
-}
+    else {
+        $number = 1;
+        $length = $_POST['total'];
 
+        $counter = $_POST['first'];
+
+        do {
+            $char = "1233456789012356432176896543290186423615178837353535436378887543214567986543754433624513980754267389654231098763451987243564781298707501312145167484948765443122436536748748982625244232452526436738909022";
+            $pin = trim(substr(str_shuffle($char), -1000000000, 10));
+            $school = $_POST['school'];
+            $session = $_POST['session'];
+            $counter = trim($counter);
+            $query_con = "INSERT INTO pin(pin, school_id, session_id, form_no, applicant_id) VALUES ('{$pin}', '{$school}', '{$session}', '{$counter}', '')";
+            $db->insertPin($query_con);
+            $number++;
+            $counter++;
+        } while ($number <= $length);
+
+        if (@$query_con) {
+            echo '<script type="text/javascript"> alert("Pins successfully generated")</script>';
+
+        }
+    }
+}
 
 if(isset($_POST['submit2'])) {
     $school = $_POST['school'];
@@ -137,17 +149,17 @@ if(isset($_POST['submit3'])) {
 
         <div class="row col-sm-offset-2">
 
-
             <div class="col-lg-3">
-                <label>First Pin</label>
-                <input type="text" class="form-control" name="first">
+                <label for="first">First Pin (Pattern)</label>
+                <input type="number" id="first"  name="first" class="form-control"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); show();"
+                       maxlength = "10"/> &nbsp;&nbsp;&nbsp;&nbsp;
+                <span id="showme" style="color: red"></span>
             </div>
 
 
-
             <div class="col-lg-3">
-                <label>Total Pins</label>
-                <input type="text" class="form-control" name="total">
+                <label for="total">Total Pins</label>
+                <input type="number" id="total" class="form-control" name="total">
             </div>
 
 
@@ -179,14 +191,38 @@ if(isset($_POST['submit3'])) {
 
                         </div>
 
-                    </div>
 
-                </div>
+                </div><br/><br/><br/><br/>
 
 
     </form>
-        </div>
 
+
+<script>
+
+    function show(){
+        var first = document.getElementById("first").value;
+
+        var min = "Minimum of 10 numbers entry ";
+
+        if((first.length) < 10) {
+           // alert("hi");
+           document.getElementById("showme").innerHTML = min;
+        }
+
+         if((first.length) == 10) {
+            // alert("hi");
+            document.getElementById("showme").innerHTML = "";
+        }
+        if((first.length) == 0){
+
+                document.getElementById("showme").innerHTML = "";
+            }
+
+        }
+
+
+</script>
 
 </body>
 

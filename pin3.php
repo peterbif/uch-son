@@ -104,15 +104,29 @@ $db = new Connect();
                 $val = implode(@$rows[$j]);
                 @$val2 = implode(@$rows[$j+1]);
 
+                    if(@$school == 3) {
+
+                        echo "<tr>";
+                        echo '<td  style=\"font-size: 9px; padding: 15px; height: 100px; width: 120px;\" align=\"center\" \"><img  src="uploads/' . @$result_logo['logo'] . '"class="img-rounded" width="50px" height="50px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>' . $result_sepin2['school'] . ',' . ' ' . "UCH, Ibadan</strong><br/><br /><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-size:25px; text-align: center !important;'>"
+                            . 'PIN:' . ' ' . $val . '</span></strong> <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To continue your application online <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visit: https://portal.uch-ibadan.org.ng' . '</td>' .
+                            '<td  style=\"font-size: 9px; padding: 15px; height: 100px; width: 120px;\" align=\"center\" \"><img  src="uploads/' . @$result_logo['logo'] . '"class="img-rounded" width="50px" height="50px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>' . @$result_sepin2['school'] . ',' . ' ' . "UCH, Ibadan</strong><br/><br /><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-size:25px;'>"
+                            . 'PIN:' . ' ' . $val2 . '</span></strong> <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>To continue your application online <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; visit: https://portal.uch-ibadan.org.ng</span>' . '</td>';
+                        echo "</tr>";
+                        echo "</tr>";
 
 
-                echo "<tr>";
-               echo  '<td  style=\"font-size: 9px; padding: 15px; height: 100px; width: 120px;\" align=\"center\" \"><img  src="uploads/'.@$result_logo['logo'] . '"class="img-rounded" width="50px" height="50px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>'.$result_sepin2['school'].','. ' '."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UCH, Ibadan</strong><br/><br /><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-size:25px; text-align: center !important;'>"
-               .'PIN:' .' ' .$val. '</span></strong> <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To continue your application online <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visit: https://portal.uch-ibadan.org.ng'.'</td>'.
-                   '<td  style=\"font-size: 9px; padding: 15px; height: 100px; width: 120px;\" align=\"center\" \"><img  src="uploads/'.@$result_logo['logo'] . '"class="img-rounded" width="50px" height="50px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>'.@$result_sepin2['school'].',' . ' '."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UCH, Ibadan</strong><br/><br /><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-size:25px;'>"
-               .'PIN:' .' ' .$val2. '</span></strong> <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>To continue your application online <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; visit: https://portal.uch-ibadan.org.ng</span>'.'</td>';
-                echo "</tr>";
-                echo "</tr>";
+                    }
+
+                    else{
+
+                        echo "<tr>";
+                        echo '<td  style=\"font-size: 9px; padding: 15px; height: 100px; width: 120px;\" align=\"center\" \"><img  src="uploads/' . @$result_logo['logo'] . '"class="img-rounded" width="50px" height="50px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>' . $result_sepin2['school'] . ',' . ' ' . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UCH, Ibadan</strong><br/><br /><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-size:25px; text-align: center !important;'>"
+                            . 'PIN:' . ' ' . $val . '</span></strong> <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To continue your application online <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visit: https://portal.uch-ibadan.org.ng' . '</td>' .
+                            '<td  style=\"font-size: 9px; padding: 15px; height: 100px; width: 120px;\" align=\"center\" \"><img  src="uploads/' . @$result_logo['logo'] . '"class="img-rounded" width="50px" height="50px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>' . @$result_sepin2['school'] . ',' . ' ' . "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UCH, Ibadan</strong><br/><br /><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-size:25px;'>"
+                            . 'PIN:' . ' ' . $val2 . '</span></strong> <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>To continue your application online <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; visit: https://portal.uch-ibadan.org.ng</span>' . '</td>';
+                        echo "</tr>";
+                        echo "</tr>";
+                    }
             }
             echo "</table>";
 
