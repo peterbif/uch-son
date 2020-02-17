@@ -151,7 +151,7 @@ else{
     
     <div class="row">
         <div class="col-lg-12" align="right">
-           <a href="index.php" class="button" style="color: #ffffff">Login</a>
+           <a href="logoutlogic.php" class="button" style="color: #ffffff">Logout</a>
         </div>
     </div>
     
@@ -195,7 +195,7 @@ else{
 
                     </form>
                 </div>
-            </div>
+            </div><br/><br/>
 
 
 

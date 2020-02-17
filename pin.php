@@ -3,7 +3,7 @@ require_once ('connection.php');
 
 session_start();
 
-require ('time_out.php');
+//require ('time_out.php');
 
 //auto load classes required
 spl_autoload_register(function ($class) {
@@ -150,15 +150,15 @@ if(isset($_POST['submit3'])) {
         <div class="row col-sm-offset-2">
 
             <div class="col-lg-3">
-                <label for="first">First Pin (Pattern)</label>
+                <label for="first">Form No (Pattern)</label>
                 <input type="number" id="first"  name="first" class="form-control"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); show();"
-                       maxlength = "10"/> &nbsp;&nbsp;&nbsp;&nbsp;
+                       maxlength = "7"/> &nbsp;&nbsp;&nbsp;&nbsp;
                 <span id="showme" style="color: red"></span>
             </div>
 
 
             <div class="col-lg-3">
-                <label for="total">Total Pins</label>
+                <label for="total">Total Form NO</label>
                 <input type="number" id="total" class="form-control" name="total">
             </div>
 
@@ -203,18 +203,18 @@ if(isset($_POST['submit3'])) {
     function show(){
         var first = document.getElementById("first").value;
 
-        var min = "Minimum of 10 numbers entry ";
+        var min = "Minimum of 7 numbers entry ";
 
-        if((first.length) < 10) {
+        if((first.length) < 7) {
            // alert("hi");
            document.getElementById("showme").innerHTML = min;
         }
 
-         if((first.length) == 10) {
+         if((first.length) == 7) {
             // alert("hi");
             document.getElementById("showme").innerHTML = "";
         }
-        if((first.length) == 0){
+        if((first.length) == 7){
 
                 document.getElementById("showme").innerHTML = "";
             }
