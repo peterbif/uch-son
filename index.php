@@ -320,7 +320,7 @@ if(isset($_POST['login'])) {
     <div class="row" align="center" style="margin-top: 15px;">
         <!--<button><a href="vanc.pdf" class="blink" style="font-size:20px; color:#EE1122;" target="_blank">New Advertisement for Vacancies</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
         <button><a href="Applicants User Guide.pdf" class="blink" style="font-size:20px; color:#EE1122;" target="_blank">Download Applicant's Guide</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="mailto:admission@uch-ibadan.org.ng" style="font-size:20px; background-color: black; color:#ffffff;" target="_blank">Mail us for any complaint or call: 08067155307</a>
+        <a href="mailto:admission@uch-ibadan.org.ng" style="font-size:20px; background-color: black; color:#ffffff;" target="_blank">Mail us for any complaint or call: Elizabeth: 07035073765 or Omobolanle:08034635861</a>
 
     </div>
 
