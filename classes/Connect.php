@@ -504,7 +504,7 @@ class Connect
     public function selectPermanentAddSenatorialStateLgCountry($id)
     {
         $query = "SELECT * FROM permanent_add INNER JOIN senatorial_district ON senatorial_district.senatorial_district_id = permanent_add.senatorial_district 
-                 INNER JOIN state ON state.state_id = permanent_add.state_of_origin INNER JOIN local_govt ON lg_id = permanent_add.lg_of_origin
+                 INNER JOIN state ON state.state_id = permanent_add.state_of_origin2 INNER JOIN local_govt ON lg_id = permanent_add.lg_of_origin2
                  INNER JOIN countries ON countries.country_id = permanent_add.nationality WHERE applicant_id ='{$id}'";
         $result = $this->link->query($query);
         return $result;

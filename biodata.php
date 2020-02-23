@@ -165,7 +165,7 @@ if($_SESSION['user']) {
 
 
         if (@$record_pin) {
-            $query = "INSERT INTO bio_data(bsurname, bfirstname, bothername, maiden_name, date_of_birth, bgender, bmarital_status,  breligion_id, hobby, applicant_id) VALUES('{$surname}', '{$firstname}', '{$othername}', '{$maiden}', '{$dob}', '{$gender}', '{$marital}', '{$religion}', '{$hobby}', '{$applicant}')";
+            @$query = "INSERT INTO bio_data(bsurname, bfirstname, bothername, maiden_name, date_of_birth, bgender, bmarital_status,  breligion_id, hobby, applicant_id) VALUES('{$surname}', '{$firstname}', '{$othername}', '{$maiden}', '{$dob}', '{$gender}', '{$marital}', '{$religion}', '{$hobby}', '{$applicant}')";
             $db->insert($query);
             //  echo '<script type="text/javascript"> alert("Click and fill next form : Department") </script>';
             echo "<meta http-equiv='refresh' content='0'>";
@@ -216,17 +216,17 @@ if($_SESSION['user']) {
 
     if (isset($_POST['submit_per'])) {
         if (@$record_pin) {
-            $query_per = "INSERT INTO permanent_add (street_add, home_town, senatorial_district, lg_of_origin, state_of_origin, nationality, applicant_id) VALUES ('{$street_add_esc2}', '{$home_town}', '{$senate}', '{$lg}', '{$state}', '{$nation}', '{$applicant}')";
+           echo  $query_per = "INSERT INTO permanent_add (street_add, home_town, senatorial_district, lg_of_origin2, state_of_origin2, nationality, applicant_id) VALUES ('{$street_add_esc2}', '{$home_town}', '{$senate}', '{$lg}', '{$state}', '{$nation}', '{$applicant}')";
             $db->insert($query_per);
             // echo '<script type="text/javascript"> alert("Click and fill next form : Contact Address") </script>';
-            echo "<meta http-equiv='refresh' content='0'>";
+           echo "<meta http-equiv='refresh' content='0'>";
         }
 
     }
 
     if (isset($_POST['update_per'])) {
         if (@$recordset_per) {
-            $query_per = "UPDATE permanent_add SET street_add = '{$street_add_esc2}', home_town = '{$home_town}', senatorial_district = '{$senate}', lg_of_origin = '{$lg}', state_of_origin = '{$state}', nationality = '{$nation}' WHERE applicant_id = '{$applicant}'";
+            $query_per = "UPDATE permanent_add SET street_add = '{$street_add_esc2}', home_town = '{$home_town}', senatorial_district = '{$senate}', lg_of_origin2 = '{$lg}', state_of_origin2 = '{$state}', nationality = '{$nation}' WHERE applicant_id = '{$applicant}'";
             $db->update($query_per);
             echo "<meta http-equiv='refresh' content='0'>";
         }

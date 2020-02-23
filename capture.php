@@ -1,8 +1,7 @@
 <?php
 session_start();
 //maintain session for user's email
-
-//require ('time_out.php');
+require ('time_out.php');
 
 @$_SESSION['user'];
 
